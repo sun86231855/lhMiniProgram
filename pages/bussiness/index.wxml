@@ -1,0 +1,339 @@
+<!--pages/bussiness/index.wxml-->
+<!--<loading hidden="{{!loading}}">
+	{{title}}
+</loading>-->
+<view class="container">
+  <view class="header" hidden="{{hideHeader}}">
+    <view class='text_j' style="justify-content:center;">
+      <image class='img' src='/images/loadinga.gif'></image>
+      <text>加载更多……</text>
+
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="page-body" style='height:{{scrHeight}}px' lower-threshold="0" bindscrolltolower="loadMore">
+    <!--banner-->
+    <!-- <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for-items="{{picUrlList}}" wx:key="item.id">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+
+    <view class='swiper-container'>
+      <!--筛选-->
+      <view class='input_div'>
+
+        <text class="iconfont icon-shaixuan Screening" bindtap="ScreeningIndustry" style="font-size:22px;color:red"></text>
+        <view class='input_box'>
+          <input bindinput="keyWordInput" type="text" confirm-type="search" class=' input login-form-pwd' placeholder='输入公司名或行业关键字' value="{{keyWord}}" placeholder-class="center" id="KeyWord"></input>
+          <text class='iconfont #icon-sousuofangdajing search' style="font-size:22px;" bindtap="keyWordSearch"></text>
+        </view>
+      </view>
+
+
+      <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <block wx:for="{{picUrlList}}"  wx:key="item.id">
+      <swiper-item>
+        <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+      </swiper-item>
+      </block>
+    </swiper>
+      
+    <view class="dots">
+      <block wx:for="{{picUrlList}}" wx:key="item.id">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+
+
+      <!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" catchtap="onItemClick" current="{{swiperCurrent}}" bindchange="swiperChange">
+        <block wx:for="{{picUrlList}}" wx:key="item.id">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="dots">
+        <block wx:for="{{picUrlList}}" wx:key="unique">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view> -->
+    </view>
+
+
+
+
+
+
+    <!--线-->
+    <view class='lin_x'></view>
+
+    <!--快速入口-->
+    <view class='quick_box_d'>
+
+      <block wx:if="{{industryList.length <= 0 }}">
+        <view class='hangye' bindtap="ScreeningIndustry">
+          <text class='on'>选择行业</text>
+          <text class='iconfont #icon-hongsexiangxia right_ico'></text>
+        </view>
+      </block>
+
+      <view class='hy_box'>
+
+        <block wx:if="{{industryList.length > 0 && industryList.length <= 3  }}">
+          <view class='hangye tit' bindtap="ScreeningIndustry">
+            <text class='on'>当前行业</text>
+            <text class=' right_ico font_s'>|</text>
+          </view>
+        </block>
+        <block wx:if="{{industryList.length > 3 && industryList.length <= 6  }}">
+          <view class='hangye tit padding_top' bindtap="ScreeningIndustry">
+            <text class='on'>当前行业</text>
+            <text class=' right_ico font_s'>|</text>
+          </view>
+        </block>
+
+        <view class='infor'>
+          <view bindtap='removeSelectedIndustry' data-selectedId="{{item.id}}" data-indexa="{{index}}" class='quick_text inmanyline' wx:for="{{industryList}}" wx:key="index" wx:for-item="item">{{item.name}}
+            <!-- <text class='iconfont icon-shanchu ClearThis' data-selectedId="{{item.id}}" style='color:red'> </text> -->
+            <image class='ClearThis' data-selectedId="{{item.id}}" src="../../images/close_ico.png" mode="aspectFill"></image>
+
+          </view>
+        </view>
+
+
+      </view>
+
+    </view>
+
+
+
+    <!--线-->
+    <view class='lin_x'></view>
+    <!--切换-->
+
+    <view class="tab">
+      <view class="tab-left" bindtap="tabFun">
+        <view class="{{type=='1'? 'active' : ''}} view_infor" id="tab-hd01" data-id="1" data-type="1">找公司<view class='bot_line'></view></view>
+        <!--超过999后面加+号-->
+        <view class="{{type=='2'? 'active' : ''}} view_infor" id="tab-hd02" data-id="2" data-type="2">找专家<view class='bot_line'></view></view>
+        <view class="{{type=='3'? 'active' : ''}} view_infor" id="tab-hd03" data-id="3" data-type="3">找合作<view class='bot_line'></view></view>
+        <view class="{{type=='4'? 'active' : ''}} view_infor" id="tab-hd04" data-id="4" data-type="4">找折扣<view class='bot_line'></view></view>
+      </view>
+
+      <view class="tab-right">
+        <!--找公司-->
+        <view class="right-item {{type=='1'? 'active' : ''}}">
+          <view wx:for="{{bizlist}}" wx:key="item.id">
+            <view class="nav_section_items">
+              <!--image-->
+              <view class="section_image" bindtap="CompanyDetails" data-id="{{item.id}}" data-headImageUrl="{{item.headImageUrl}}">
+                <block>
+                  <image mode="aspectFill" src="{{item.headImageUrl}}"></image>
+                </block>
+              </view>
+              <!--content-->
+              <view class="section_cont" bindtap="CompanyDetails" data-id="{{item.id}}" data-headImageUrl="{{item.headImageUrl}}">
+                <view class="list name">{{item.name}}</view>
+                <view class='list trade'>行业:
+                  <text>{{item.industryName}}</text>
+                </view>
+                <view class='list introduce'>公司介绍:
+                  <text>{{item.productPublicity}}</text>
+                </view>
+                <view class='phone'>
+                  <view class='p_list'>
+                    <view class='iconfont #icon-lianxiren2 phone_ico'></view>
+                    <view class='text line_1'>{{item.userName}}</view>
+                  </view>
+                  <view class='p_list'>
+                    <view class='iconfont #icon-lianxiren1 phone_ico'></view>
+                    <view class='number line_1 ' wx:if="{{item.tel != null && item.tel != ''}}">{{item.tel}}</view>
+                    <view class='number line_1 q_color' wx:else>未填写</view>
+                  </view>
+                </view>
+              </view>
+
+            </view>
+            <view class='lin_x'></view>
+          </view>
+          <view class='no_else' wx:if="{{pullFlag}}">
+            <image class='img' src='/images/smsb1.png'></image>
+            <text class='text'></text> 没有更多数据了
+          </view>
+        </view>
+
+        <!--找专家-->
+        <view class="right-item {{type=='2'? 'active' : ''}}">
+          <view wx:for="{{bizlist}}" wx:key="item.id">
+            <view class="nav_section_items">
+              <!--image-->
+              <view class="section_image" bindtap="navigateDetail" data-id="{{item.id}}">
+                <block>
+                  <image mode="aspectFill" src="{{item.headImageUrl}}"></image>
+                </block>
+              </view>
+              <!--content-->
+
+              <view class="section_cont" bindtap="navigateDetail" data-id="{{item.id}}">
+                <view class="name list">
+                  <text class='text'>{{item.name}}</text>
+                </view>
+
+                <view class='trade list qh_font'>
+                  <text class='text' wx:if="{{item.industryName != null && item.industryName != ''}}">{{item.industryName}}</text>
+                  <text class='text q_color' wx:else>未填写</text>
+                </view>
+                 <view class='introduction list'>{{item.industrySummary}}</view>
+                <view class='phone'>
+                  <!-- <view class='p_list'>
+                      <view class='iconfont icon-tongxunlu phone_ico'></view><view class='text line_list'>{{item.industrySummary}}</view></view> -->
+                  <view class='p_list'>
+                    <view class='iconfont #icon-bohaodianhua phone_ico'></view>
+                    <view class='number line_1 text_d' wx:if="{{item.industryTel != null && item.industryTel != ''}}">{{item.industryTel}}</view>
+                    <view class='number line_1 q_color' wx:else>未填写</view>
+                  </view>
+                </view>
+               
+              </view>
+
+            </view>
+            <view class='lin_x'></view>
+          </view>
+
+
+        </view>
+
+        <!--找合作-->
+        <view class="right-item q_bg {{type=='3'? 'active' : ''}} hz_v">
+          <view class='hz_box ' wx:for="{{bizlist}}" wx:key="item.id" data-id="{{item.id}}">
+
+            <view class='infor_main' data-id="{{item.id}}" data-headImageUrl="{{item.imageUrl}}" bindtap="CooperationDetails">
+              <view class='user_head'>
+                <image src="{{item.imageUrl}}"></image>
+              </view>
+              <view class='Cooperation_name line_1'>{{item.subject}}</view>
+              <view class='company_box'>
+                <view class='text name line_1'>{{item.companyName}}</view>
+                <view class='lin_in'>|</view>
+                <view class='text DemandIndustry'>
+                  <text>{{item.demandIndustry}}</text>
+                </view>
+              </view>
+              <view class='in_for  line_2'>{{item.summary}}</view>
+              <view class='phone_time'>
+                <view class='list phone'>
+                  <text class='tit iconfont #icon-bohaodianhua'></text>
+                  <text class='time_infor line_under line_1' wx:if="{{item.tel != null && item.tel != ''}}">{{item.tel}}</text>
+                  <text class='time_infor line_1 q_color' wx:else>未填写</text>
+                </view>
+
+                <view class='list time'>
+                  <text class='tit'>日期：</text>
+                  <text class='time_infor'>{{item.releaseDate}}</text>
+                </view>
+
+
+              </view>
+
+
+              <!-- <view class='phone'>
+                      <view class='p_list'>
+                          <view class='iconfont icon-tongxunlu phone_ico'></view><view class='text line_1'>{{item.industrySummary}}</view></view> 
+                      <view class='p_list'>
+                          <view class='iconfont icon-dianhua1 phone_ico'></view>
+                          <view class='number line_1'>{{item.tel}}</view>
+                      </view>
+                    </view> -->
+
+
+            </view>
+
+          </view>
+
+
+
+          <view class='fa_hz' bindtap='add_reward'>
+            <text>发布</text>
+            <text>合作</text>
+          </view>
+        </view>
+
+
+        <!--找折扣-->
+        <view class="right-item q_bg {{type=='4'? 'active' : ''}}">
+          <view class='sale' bindtap="DiscountDetails" wx:for="{{bizlist}}" wx:key="{{item.id}}" data-id="{{item.id}}">
+            <view class='sale_box'>
+              <view class=' DiscountTheme line_1'>{{item.subject}}</view>
+              <view class='list liat Discount_profile'>
+                <text class='tit'>折扣简介：</text>
+                <text class='text line_3'>{{item.summary}}</text>
+              </view>
+              <view class='list address'>
+                <text class='tit'>地址：</text>
+                <text class='text' wx:if="{{item.addr != null && item.addr != ''}}">{{item.addr}}</text>
+                <text class='text q_color' wx:else>未填写</text>
+              </view>
+              <!-- <image class='img' mode='aspectFill' src='{{item.subjectImageUrl}}'></image> -->
+              <block wx:if="{{item.subjectImageUrl}}">
+                <image class='img' src="{{item.subjectImageUrl}}" mode="aspectFill"></image>
+              </block>
+              <block wx:else>
+                <image class='img ' src="../../images/default_pic.png" mode="aspectFill"></image>
+              </block>
+              <view class='bot_box'>
+
+                <view class='list'>
+                  <view class='tit'>优惠信息：</view>
+                  <text class='text' style="white-space:pre-wrap">{{item.discount}}</text>
+                </view>
+                <view class='list type'>
+
+                  <text class='text' style="white-space:pre-wrap" wx:if="{{item.type != null && item.type != ''}}">#{{item.type}}#</text>
+                  <text class='text' style="white-space:pre-wrap" wx:if="{{item.type == null || item.type == ''}}">未填写</text>
+                </view>
+              </view>
+
+              <!-- <view class='list'>
+                  <view class='tit'>店内联系人：</view>
+                  <text class='text' style="white-space:pre-wrap">{{item.storeContacts}}</text>
+                </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{bizlist.length <= 0 || bizlist == null}}" class='no_any'>
+        <image class='img' src='/images/no_any.png'></image>
+        <view class='text'>暂无数据</view>
+      </view>
+    </view>
+
+
+
+  </scroll-view>
+  <view class="bottom" hidden="{{hideBottom}}">
+    <view class='text_j' style="justify-content:center;">
+      <image class='img' src='/images/loadinga.gif'></image>
+      <text>加载更多……</text>
+    </view>
+  </view>
+</view>

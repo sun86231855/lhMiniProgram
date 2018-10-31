@@ -1,0 +1,32 @@
+<!--associiation.wxml-->
+
+<view class="container">
+  <view class='list' wx:for="{{list}}" bindtap='detialSQ' data-id="{{item.communityId}}">
+    <view class='user_pic'><text class='people-number'>{{item.communityPersonNum}}人</text><image src='/images/avatar.png'></image><image src='/images/avatar.png'></image><image src='/images/avatar.png'></image></view>
+    <view class='header'>{{item.communityName}} </view>
+    <view class='content line_2'>{{item.communitySummary}}
+    </view>
+    <!--<view class='look_detial'>查看详情</view>-->
+
+    <view class='href'>
+      <!-- <navigator class='href-friends' url="" hover-class="navigator-hover">邀请好友</navigator> -->
+      <!-- <navigator class='href-detail' url="../association_details/association_details?id={{item.communityId}}" hover-class="navigator-hover">查看详情</navigator> -->
+      <navigator class='href-detail' >立即进入<text class='iconfont icon-chakangengduo'></text></navigator><!--该按钮只起到提示效果，没有点击事件-->
+    </view>
+    <view class="alert {{isShow?'show':'hide'}}">
+      <view class='alert-content'>
+        <input class='alert-input' placeholder='输入加入社群验证码' />
+        <view class='alert-btn' bindtap='is_show'>完成</view>
+        <icon type="cancel" size="40" color="#e02e24" bindtap='is_show' class='close' />
+      </view>
+    </view>
+     
+  </view>
+  <view wx:if="{{list.length <= 0 || list == null}}" class='no_any no_any_pic'>
+    <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+  </view>
+</view>
+
+    
+                    

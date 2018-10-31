@@ -1,0 +1,12 @@
+<!--pages/ScreeningIndustry/index.wxml-->
+<view class='container_box '>
+     <block wx:for="{{industryList}}" wx:key="item.id">  
+      <view class='item_container' bindtap='itemSelected' data-index='{{index}}'>  
+      <image class='select_icon' src="{{item.isSelected?'/images/selected.png':'/images/unselected.png'}}"></image> 
+        <text class='text'>{{item.name}}</text>  
+      </view>  
+    </block>
+       <button class='tj bot_fix' bindtap='chooseCatalog'>确定</button>
+  </view>
+
+

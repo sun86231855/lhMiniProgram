@@ -1,0 +1,99 @@
+<!--pages/AddTheDiscount/index.wxml-->
+<!--company_show.wxml  -->
+<view class='container'>
+ <scroll-view scroll-y='true' style='height:{{scrHeight-20}}px'>
+  <view class='name'>
+    <text class='name-label'>折扣主题：</text>
+    <input class='name-input' placeholder='请输入' value="{{subject}}"  bindinput="subjectInput"/>
+  </view>
+    <view class='jianj'>
+    <text class='name-label'>折扣简介：</text>
+    <input class='name-input' placeholder='请输入' value="{{summary}}" bindinput="summaryInput"/>
+  </view>
+  <view class='their'>
+    <text class='their-label'>服务类型：</text>
+	<view class='their-check'  bindtap='chooseServiceType'>
+	  <block wx:if="{{serviceTypeList==null || serviceTypeList.length== 0}}">
+	    <text class='icon-xiajiantou iconfont'></text>
+	  </block>
+	  <block wx:else>
+	    <text data-selectedId="{{item.id}}" data-index="{{index}}"  wx:for="{{serviceTypeList}}" wx:key="{{item.id}}">
+        <text class='text_n'>{{item.name}}</text> <text class='icon-xiajiantou iconfont'></text></text>
+	  </block>
+    </view>
+  </view>
+   <view class='tel'>
+    <text class='tel-label'>联系电话：</text>
+    <input class='tel-input' placeholder='请输入' value="{{tel}}" bindinput='telInput'/>
+    <!-- <text class='tel-check'>同个人电话</text> -->
+  </view>
+       <view class='tel'>
+    <text class='tel-label'>优惠信息：</text>
+    <input class='yh-input' placeholder='请输入' value="{{discount}}" bindinput='discountInput'/>
+    <text class=' zk_t'>折</text>
+  </view>
+   <!-- <view class='zk'>
+    <view class='tel-label zk_text'>折扣范围：</view>
+     <radio-group class="radio-group" bindchange="radioChange">  
+      <label class="radio">  
+        <radio class='radio_v' value="1" checked="{{rangeType=='1'?true:false}}"/>会员折扣  
+      </label>
+	  <label class="radio">  
+        <radio class='radio_v' value="2" checked="{{rangeType=='2'?true:false}}"/>部分班级折扣  
+      </label>
+	  <label class="radio">  
+        <radio class='radio_v' value="3" checked="{{rangeType=='3'?true:false}}"/>部分身份折扣  
+      </label>
+    </radio-group>
+  </view> -->
+
+
+
+  <view class='add_vie'>
+    <text class='add-label'>地址：</text>
+    <!-- <input class='tel-input' placeholder='请输入' value="" bindinput='addrsInput'/> -->
+    <view class='address_list'>
+          <block wx:for="{{lists}}" wx:key="{{index}}">
+          <input class='add-input' data-id="{{index}}" placeholder="请输入" value="{{item}}"  bindinput='addrsInput'></input>
+        </block> 
+        <view class='button_a'>
+            <button class='add-li' bindtap='addList'>添加地址</button>
+            <button class='add-li' bindtap='delList'>删除地址</button> 
+        </view>
+    </view>
+  </view>
+
+  
+
+ 
+
+   <view class='photo'>
+    <text class='photo-label'>封面图：</text>
+    <view class='photo-content'>
+          <view class='add_v' wx:if="{{headImageUrl!=null}}">
+             <image  class='bg_img' mode='aspectFill' src="{{headImageUrl}}" data-src="{{headImageUrl}}" bindtap="previewImage"></image>
+          </view>
+    
+    
+
+	  <image src='/images/add.png' bindtap='headImageUpload' class='add_img'></image>
+    </view>
+  </view>
+  <view class='photo'>
+    <text class='photo-label'>相册：</text>
+    <view class='photo-content'>
+      <view class='add_v' wx:for="{{detailImageUrlList}}" wx:key="{{item}}">
+           <view  class=' iconfont icon-shanchu ClearThis' data-index="{{index}}" bindtap = "delItem"> </view>
+            <image class='bg_img' mode='aspectFill'  src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      </view>
+    
+	  <image src='/images/add.png' bindtap='detailImageUpload' class='add_img'></image>
+    </view>
+  </view>
+ 
+  </scroll-view>
+ 
+</view>
+  <view class='save bot_v'>
+    <view class='save-btn tj' bindtap="goAhead">保存</view>
+  </view>

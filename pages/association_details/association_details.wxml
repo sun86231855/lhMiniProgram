@@ -1,0 +1,85 @@
+<!--associiation_details.wxml-->
+<view class='user_top'>
+    <view class='infor'>
+        <view class='header'>
+         {{communityName}}
+        </view>
+        <view class='people'>
+          {{communityPersonNum}}人
+        </view>
+       
+    </view>
+    <view class='time'>2017/06/05</view>
+     <view class='user_bot'>
+          <!-- <view class='add_but' >
+            <view class='tj'  bindtap='exitGroup'>退出社群<image src='/images/fx_hy.png'></image></view>
+          </view> -->
+          <button class='add_but invit_bg' bindtap='exitGroup' >
+             <text class='iconfont icon-tuichushequn1 '></text>
+      <!-- <image src='/images/fx_hy.png'></image>  -->
+          </button>
+          <button class='creat-group add_but  share_bg' open-type="share">
+            <text class='iconfont icon-yaoqinghaoyou1'></text>
+           <!-- <image src='/images/tj_hy.png'></image> -->
+          </button>
+        </view>
+    <image src="/images/xq_bg.png" mode='widthFix'></image>
+</view>
+<view class="container">
+  <scroll-view class="list-scroll" scroll-y="true" style='height:{{scrHeight-20}}px; width: 100%'>
+ 
+    <view class='list writ_bg'>
+      <view class='list_tit'><view class='line'></view>社群简介</view>
+       <view class='jianjie_box '><view class='{{ moreFont ==  true ?"line3":""}} infor'>{{communitySummary}}</view></view>
+
+ 
+       <view  wx:if='{{moreFont}}' class='look_more' bindtap='morefont'>全部</view>
+       
+         <view wx:else class='look_more' bindtap='morefont'>关闭</view>
+    </view>
+    <view class='list mar_top'>
+      <view class='list_tit'>
+          <view class='line'></view>成员列表
+
+
+          <view wx:if='{{moreFlag}}' class='Addmore' bindtap="loadMore"><text>更多 <text class='icon-chakangengduo iconfont'></text></text></view>
+          <view wx:else class='Addmore' bindtap="loadLess"><text> <text class='icon-xiangyoujiantou iconfont'></text></text></view>
+      </view>
+      
+        <view wx:if="{{list}}" class='list_p'>
+          <block wx:for="{{list}}"   wx:for-index="index"  wx:key="item.userId">
+              <view  wx:if="{{index <  pageIndex}}"  class="nav_section_items" >
+                <view class='infor'>
+                    <!--image-->
+                    <view class="section_image" bindtap="navigateDetail" data-aid="{{item.userId}}">
+                    <block wx:if="{{item.userImageUrl}}">
+                        <image src="{{item.userImageUrl}}" mode="aspectFill"></image>
+                    </block>
+                    <block wx:else>
+                        暂无成员
+                    </block>
+                    </view>
+                    <!--content-->
+                    <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.userId}}">                 
+                        <view class="section_cont_name">{{item.userName}}</view>
+                        
+                    </view>
+                  </view> 
+              </view>
+              
+          </block>
+        
+      </view>
+      
+      <view class='no_any no_any_pic' wx:else> <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view></view>
+
+      
+    </view>
+  
+  
+
+   
+  </scroll-view>
+ 
+</view>

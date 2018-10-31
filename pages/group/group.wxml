@@ -1,0 +1,62 @@
+<!--group.wxml-->
+
+<view class="container">
+  <scroll-view class='scroll-content'>
+    <view class='list' wx:for="{{message}}" wx:key="{{item.groupId}}">
+      <view class='' data-index="{{item.groupId}}" bindtap='detialGroup'>
+        <view class='header'>
+          <view class='header-content'>
+            <view class='content-title'>圈子名称：</view>
+            <view class='master-name group_infor line_1'>{{item.groupName}}</view>
+            <text class='people-number'>人数：{{item.groupPersonNum}}</text>
+          </view>
+
+        </view>
+        <view class='master'>
+          <view class='master-label'>圈主：</view>
+          <view class='master-name line_1'>{{item.groupMasterName}}</view>
+        </view>
+        <view class='content'>
+          <view class='content-title'>圈子简介：</view>
+          <view class='content-content '>
+            <view class='infor line_3'>{{item.groupSummary}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='href'> -->
+      <!-- <button class='href-detail' bindtap = "delItem" >删除</button> -->
+      <!-- <button class='href-detail' data-name="shareBtn" open-type="share">邀请好友</button> -->
+      <!-- <navigator class='href-detail' url="../group_details/group_details?id={{item.groupId}}" hover-class="navigator-hover">查看详情</navigator> -->
+      <!-- </view> -->
+
+
+
+    </view>
+
+    <view wx:if="{{message.length <= 0 || message == null}}" class='no_any'>
+      <image class='img' src='/images/no_any.png'></image>
+      <view class='text'>暂无数据</view>
+    </view>
+    <view class="alert {{isShow?'show':'hide'}}">
+      <view class='alert-content'>
+        <view class='tc_tit'>加入圈子</view>
+        <input class='alert-input' bindinput='inviteCodeInput' placeholder='输入加入圈子邀请码' />
+        <view class='but_view'>
+          <view class='alert-btn' bindtap='is_complete'>完成</view>
+        </view>
+
+        <icon type="cancel" size="28" color="#363636" bindtap='is_show' class='close' />
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='bot_v'>
+    <view class='add_but' bindtap='welcomeFriend'>
+      <!-- <image class='add-img' src="{{src}}" bindtap='welcomeFriend' ></image> -->
+      <view class='tj'>加入圈子</view>
+    </view>
+    <view class='creat-group creat_q' bindtap='creat_group'>
+      <view class='tj'>创建圈子</view>
+    </view>
+  </view>
+</view>

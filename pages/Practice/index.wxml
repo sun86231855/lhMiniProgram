@@ -1,0 +1,155 @@
+<!--pages/Practice/index.wxml-->
+<!--<loading hidden="{{!loading}}">
+	{{title}}
+</loading>-->
+<view class="container">
+  <view class="header" hidden="{{hideHeader}}">
+    <view class='text_j' style="justify-content:center;"><image class='img' src='/images/loadinga.gif'></image><text>加载更多……</text>
+    
+    </view>
+    
+  </view>
+  
+<scroll-view  scroll-y="true"  class="page-body" style="height:100vh;" lower-threshold="0"  bindscrolltolower="loadMore"  >
+
+  <!--nav-->
+  <view class="nav_top">
+    <block>
+      <view class="nav_top_items {{curNavId == '1' ? 'active_red' : ''}}" bindtap="switchTab" data-type="1">
+         <image class="tit_img" src="/images/xla.png" mode="aspectFill"></image>
+         <text class='text'>信息化咨询</text>
+      </view>
+    </block>
+	<block>
+      <view class="nav_top_items {{curNavId == '2' ? 'active_red' : ''}}" bindtap="switchTab" data-type="2">
+         <image class="tit_img" src="/images/xlb.png" mode="aspectFill"></image>
+         <text class='text'>商业模式设计</text>
+      </view>
+    </block>
+	<block>
+      <view class="nav_top_items {{curNavId == '3' ? 'active_red' : ''}}" bindtap="switchTab" data-type="3">
+         <image class="tit_img" src="/images/xlc.png" mode="aspectFill"></image>
+         <text class='text'>企业管理咨询</text>
+      </view>
+    </block>
+	<block>
+      <view class="nav_top_items {{curNavId == '4' ? 'active_red' : ''}}" bindtap="switchTab" data-type="4">
+         <image class="tit_img" src="/images/xld.png" mode="aspectFill"></image>
+         <text class='text'>同学问答</text>
+      </view>
+    </block>
+  </view>
+  <!--线-->
+  <view class='lin_x'></view>
+  <!--list-->
+  
+  <view class="nav_section">
+    <!--筛选-->
+    <view class="Screening_v">
+  <radio-group bindchange="radioCheckedChange">
+    <view class="flex_box">
+      <view class="screen_list_tit" bindtap="switchOrder" data-index="1">
+        <label class="{{radioCheckVal==0?'active':''}}"> 热度 
+          <radio value="0"   hidden="true"></radio>
+        </label>
+      </view>
+      <view class="screen_list_tit" bindtap="switchOrder" data-index="2">
+        <label class="{{radioCheckVal==1?'active':''}}"> 收藏 
+          <radio  value="1"  hidden="true"></radio>
+        </label>
+      </view>
+      <view class="screen_list_tit" bindtap="switchOrder" data-index="3">
+        <label class="{{radioCheckVal==2?'active':''}}"> 时间 
+          <radio value="2" hidden="true"></radio>
+        </label>
+      </view>
+    </view>
+  </radio-group>
+</view>
+
+  <view wx:if="{{questionList}}" class='list_p'>
+        <block wx:for="{{questionList}}" wx:key="{{item.questionId}}">
+            <view class="nav_section_items"  data-id="{{item.questionId}}">
+                <!--content-->
+                <view class="section_cont">                                
+                    <view class="section_cont_name">
+                       <!--bindtap="navigateDetail" data-id="{{item.answerUserId}}"-->
+                      <view class="section_image" >
+                      <block wx:if="{{item.askUserHeadImageUrl}}">
+                          <image   src="{{item.askUserHeadImageUrl}}" mode="aspectFill"></image>
+                      </block>
+                      <block wx:else>
+                          <image src="../../images/user_pic.png" mode="aspectFill"></image>
+                      </block>
+                      </view>
+                      <view class='font_v' bindtap="askedDetial" data-id="{{item.questionId}}">
+                            <view class='name line_1'>{{item.askUser}}</view>
+                            <view class='time'>{{item.askTime}}</view>
+                      </view>
+                      
+                       
+                    </view>
+                    <view class='pj_main' bindtap="askedDetial" data-id="{{item.questionId}}">
+                        <view class="section_cont_sub">
+                            <text>{{item.subject}}</text>
+                        </view>
+                        <view class='Position'>{{item.summary}} </view>
+                        <view class='button'>
+                            <text class='button_t eye_ico'><text class='iconfont #icon-yanjing1 phone_ico '></text>{{item.browsingVolume}}</text>
+                            <text class='button_t'><text class='iconfont #icon-shoucang2 phone_ico'></text>{{item.collection}}</text>
+                        </view>
+                    </view>
+                </view>
+              
+                    
+                    <!--回复-->
+                <!-- <view class='answer' >      
+                   <image class='text_bg_sj' src="/images/h_sj.png"> </image> 
+                    <view class='main'>
+                         <view class='tit_w'>
+                             <view class='big_tit'>
+                             最佳答案
+                             <view class='zj_big_tit'>专家回答</view>  
+                              <image class='right_img' src='/images/zuiji.png'></image>
+                            <image class='right_img' src='/images/zj_bg.png'></image> 
+                              
+                          </view>
+                         </view>
+                         
+                          <view class='main_detial'>
+                              <view class='tit' >
+                                  <image class='user_pic' src='/images/avatar.png'></image>
+                                  <view class='font_v'>
+                                       <view class='name line_1'>{{answerUser}}huida 回答标题回答标题回答标题</view>
+                                        <view class='time'>2018.3.4</view>
+                                  </view>
+                              </view>
+                              <view class='ans_text line_2'>
+                                  {{answerSummary}}回答标题回答标题内容回答标题回答标题内容回答标题回答标题内容回答标题回答标题内容回答标题回答标题内容回答标题回答标题内容
+                              </view>
+                          </view>
+                    </view>
+                </view> -->
+                
+            </view>
+             <view class='lin_x'></view>   
+        </block>
+            
+    </view>
+   
+
+    <view wx:else class='no_any no_any_pic'>
+      <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+    </view>
+
+
+</view>
+
+</scroll-view>
+<view class="bottom" hidden="{{hideBottom}}">
+     <view class='text_j' style="justify-content:center;"><image class='img' src='/images/loadinga.gif'></image><text>加载更多……</text></view>
+  </view>
+<view class='AskQuestions iconfont' bindtap="AskQuestions" ><image src='../../images/tiwen_ico.png'></image></view>
+</view>
+

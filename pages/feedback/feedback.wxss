@@ -1,0 +1,77 @@
+/**call_center.wxss**/
+/**color #e02e24**/
+.container{ padding:0 2%; margin:0rpx; width: 100%;}
+
+.content,
+.phone,
+.name {
+  width: 100%;
+  padding: 0 2%;
+  box-sizing: border-box;
+ border: 1px solid #EEEEEE; border-width: 0 0 1px 0;
+}
+.content{ margin-bottom: 20rpx; border: none !important; padding: 0}
+.phone,
+.name{ height: 70rpx; line-height: 70rpx;}
+
+.phone .header{ font-size: 30rpx; line-height: 60rpx;padding-left: 0; max-width: 190rpx; display: inline-block; vertical-align: top; color: #666}
+.name .header{ font-size: 30rpx; color: #666; line-height: 60rpx;padding-left: 0;max-width: 190rpx; display: inline-block; vertical-align: top}
+.header_v{ height: 70rpx; line-height: 70rpx; padding-left: 35rpx; position: relative; font-size: 30rpx; }
+.textarea-content,
+.input-phone,
+.input-name {
+  width: 100%;
+  border: 1rpx solid #EEEEEE;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;  
+}
+.textarea-content{ padding: 18rpx}
+.auth-code {
+  width: 100%;
+  padding: 20rpx 2%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-phone,
+.input-name,
+.input-auth-code {
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 16rpx; height: 60rpx; line-height: 60rpx; display: inline-block; vertical-align: top; border: none; max-width: 70%; color: #999
+}
+.input-auth-code {
+  width: 76%;
+  border: 1rpx solid #ccc;
+  text-indent: 10rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx; height: 60rpx; line-height: 60rpx;
+}
+.input-img {
+  width: 20%;
+  height: 60rpx;
+}
+.submit-btn {
+  
+}
+.alert {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.alert-content {
+  width: 66%;
+  padding: 40rpx 20rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 20rpx;
+  
+}
+.line{ top: 20rpx; width: 6rpx; height: 30rpx;}

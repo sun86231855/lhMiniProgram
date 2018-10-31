@@ -1,0 +1,8 @@
+<!--pages/bannerSecond/index.wxml-->
+<view class='container'>
+  <scroll-view scroll-y="true" height >  
+  <image  src="https://123-1256884206.cos.ap-chengdu.myqcloud.com/banner_l2.jpg" mode='widthFix'></image>
+  </scroll-view>
+</view>
+
+

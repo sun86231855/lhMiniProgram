@@ -1,0 +1,23 @@
+<!--feedback.wxml-->
+
+<view class="container">
+<view class='header_v'><view class='line'></view>反馈内容</view>
+  <view class='content'>
+    <textarea class='textarea-content' placeholder='请填写反馈内容' bindinput='textareaSummary'></textarea>
+  </view>
+  <view class='phone'>
+    <view class='header'>联系电话：</view>
+    <input class='input-phone' placeholder='请输入联系方式' bindinput='textareaNickName'/>
+  </view>
+  <view class='name'>
+    <view class='header'>昵<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>称：</view>
+    <input class='input-name' placeholder='哈哈镜子里的人' bindinput='textareaTel'/>
+  </view>
+  <!-- <view class='auth-code'>
+    <input class='input-auth-code' placeholder='验证码'/>
+    <image class='input-img' src='../../images/default_pic.png'></image>
+  </view> -->
+  <view class='submit bot_v'>
+    <view class='submit-btn tj' bindtap="submit">提交</view>
+  </view>
+</view>

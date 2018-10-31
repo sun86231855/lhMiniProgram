@@ -1,0 +1,141 @@
+<!--pages/askedDetial/index.wxml-->
+
+<!--practise-->
+<view class='wrap'>
+ <scroll-view scroll-y='true' style='height:{{scrHeight-butHeight}}px'>
+    <view class='practise_tit'>
+        <view class='tit'><view class='left_tit line_1'>{{subject}}</view> <view class='time line_1'><text></text><text class='time'>{{askTime}}</text></view></view>
+        <view class='{{moreFont == true? "line2" : ""}} list_infor '>{{summary}}</view>
+        <view class="{{leadIndex==item.id?'green':'red'}}"
+wx:for="{{pickList}}" bindtap="pick" data-id="{{item.id}}">
+{{item.title}}
+</view>
+
+  
+
+        <view wx:if='{{moreFont}}'  class='show_all' bindtap='morefont'><text>展开全文</text></view>
+          <view   wx:else  class='show_all' bindtap='morefont'><text>关闭</text></view>
+        <view class='peo_v'>
+          <view class='name line_1'><image class='user_pic' src='{{askUserHeadImg}}'></image><view class='text'>{{askUser}}</view></view>
+          
+        </view>
+    </view>
+    <view class='lin_x'></view>
+  
+    <!--专家回答 最贱回答-->
+    <view class='zj_v'>
+           
+           <view class='big_tit zj_big_tit right_ico' wx:if="{{isExpert == '1'}}">
+              
+                <image class='right_img' src='/images/zj_bg.png'></image> 
+          </view>
+          <view class='big_ti right_ico' wx:else>
+		
+             <image class='right_img' src='/images/best_ico.png'></image>  
+           </view>
+                         
+        <view class='zj_box'>
+            <view class='name'>
+              
+                
+                   <block wx:if="{{bestHeaderImageUrl}}">
+                        <image class='user' src='{{bestHeaderImageUrl}}'></image>
+                    </block>
+                    <block wx:else>
+                      <image src="../../images/user_pic.png" mode="aspectFill"></image>
+                    </block>
+
+                <view class='infor'>
+                    <view class='text line_1'>{{bestAnswerUser}}</view>
+                    
+                
+                </view>
+                
+            </view>
+            <view class='ask_infor line_4'>{{bestAnswerSummary}}</view>
+             <view class='time'>{{bestAnswerTime}}  
+             <view class='zan on'>
+                <text class='iconfont icon-dianzan {{item.isThumbsUp=="0"?"no_on":"yes_on"}} '><text class='text_in'>1</text></text>
+              </view>
+             </view>
+        </view>
+         
+    </view>
+      <!--线-->
+ 
+  
+      <!--线-->
+    <view class='lin_x'></view>
+    
+    <view class='answer'>
+       <view class='answer_tit'><view class='line'></view>其他回答     
+           <!-- <view class='item_container' bindtap='itemSelected' data-index='{{index}}' wx:for="{{itemList}}" wx:key="id">  
+          <image class='select_icon' src="{{item.isSelected?'/images/px_s.png':'/images/px_x.png'}}"></image> 
+           
+        </view>   -->
+
+   </view>
+
+     
+
+
+	     <block wx:for="{{answerList}}" wx:key="{{item.answerId}}" wx:if="{{answerList.length > 0 }}">
+           <view class='ans_box'>
+             <view class='user'>
+               <image class='img' src="{{item.userImageUrl  != null ? item.userImageUrl :'/images/user_pic.png'}}"></image>
+               <view class='infor_v'>
+                    <view class='text'> {{item.userName}}</view>
+                   
+               </view>
+                  <view class='time'>{{item.createDate}}</view>
+             </view>
+             <!-- {{item.userAnswerSummary}} -->
+			 <view class='answer_text line_4' >{{item.userAnswerSummary}}</view>
+           </view>
+           <view class='bot_vie'>
+             
+                <view class='zan on' bindtap="praise" data-id="{{item.answerId}}">
+                  <view class='iconfont icon-dianzan {{item.isThumbsUp=="0"?"no_on":"yes_on"}} '><text class='text_in'>{{item.thumbsUpNum}}</text></view>
+                </view>
+           </view>
+         
+		   <view style=" border-bottom: 1px solid #efefef;" >
+           </view>
+           <view class='lin_x'></view>
+        </block>
+         <view wx:if="{{answerList.length <= 0 || answerList == null}}" class='no_any'>
+            <image class='img' src='/images/no_any.png'></image>
+            <view class='text'>人都到哪里去了......</view>
+          </view>
+    </view>
+
+      <view class='ico_box bot_box'>
+          
+          <view class='ico_list {{isCollection=="0"?"no_on":"yes_on"}}' bindtap="collect" data-id="{{questionId}}">
+          <view class='lin_l'></view>
+              <!-- <view class='iconfont  {{isCollection=="0"?"icon-xin":"icon-shoucang1"}}'></view> -->
+                <view class='iconfont  #icon-shoucang }'></view>
+              
+              <text class='text '>{{isCollection=="0"?"收藏":"已收藏"}}</text>
+          </view>
+         
+          <!-- <view class='ico_list' bindtap="share">
+              <view class='iconfont icon-fenxiang'></view>
+              <text class='text'>分享</text>
+          </view> -->
+          <view class='ico_list' bindtap="comment">
+              <view class='iconfont icon-pinglun'></view>
+              <text class='text'>评论</text>
+          </view>
+    </view>
+    
+	<modal hidden="{{hiddenmodalput}}" title="评论" confirm-text="提交" cancel-text="取消" bindcancel="comment_cancel" bindconfirm="comment_confirm"> 
+        <view  class='text_v'>
+		    <!-- <textarea class='ask_infor' placeholder='评论内容' bindinput="comment_textarea"  value="{{commentContent}}"></textarea>  -->
+        <input class='ask_infor' placeholder='评论内容' bindinput="comment_textarea" maxlength='92'  value="{{commentContent}}"></input>
+		</view>	
+		
+	</modal> 
+  </scroll-view>
+
+</view>

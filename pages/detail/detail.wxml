@@ -1,0 +1,167 @@
+<view class="container">
+  <view class="ar_cont" style=''>
+
+    <view class="ar_coverpath">
+      <view class='user_in'>
+        <view class='user_top'>
+          <view class='user_image_v'>
+                 <image mode="aspectFill" class='user_image' src="{{personal.headUrl}} "  /> 
+          </view>
+
+          <!--<image class='user_image' mode="aspectFill" src="{{headUrl}}" ></image>-->
+          <view class='user_infor'>
+            <view class='name'>{{personal.nickName}}</view>
+            <view class='zw'>
+              <text class='text line_1 text_company'>{{company.companyName }}</text>
+              <text class='text text_line'>|</text>
+              <text class='text text_position'>{{company.positionName}}</text>
+            </view>
+            <view class='qm line_2'>{{personal.userSign}}</view>
+          </view>
+        </view>
+        <view class='user_bot'>
+
+        </view>
+      </view>
+      <image class='bg_img' mode="widthFix" src='/images/pen_head_bg.png' ></image>
+     
+    </view>
+
+
+    <view class='main_infor'>
+     <view class='lin_x'></view>
+      <view class="ar_cont_tit">
+        <view class='line'></view>基本信息</view>
+
+      <view class='user_list'>
+        <text class='min_w user_tit'><text class='iconfont #icon-dianhua ico'></text>电话：</text>
+
+        <text class='max_w user_text text_d {{personal.telephone != null && personal.telephone != "" ? "":"q_color"}}'>{{personal.telephone != null && personal.telephone !="" ? personal.telephone:"未填写"}}</text>
+      </view>
+
+      <view class='user_list'>
+        <text class='min_w user_tit'><text class='iconfont ico #icon-weixin2'></text>微信：</text>
+        <text class='max_w user_text {{personal.wecat != null && personal.wecat != ""?"":"q_color"}}'>{{personal.wecat != null && personal.wecat != ''? personal.wecat:"未填写"}}</text>
+        <!-- <text  class='add icon-tianjia iconfont'></text>-->
+      </view>
+      
+     <view class='person_photo'>
+        
+	
+	<text class='person_photo_l'>
+     <text class='iconfont ico #icon-tuijianren'></text>推荐人：</text>
+        
+              
+           <text class='max_w user_text'>{{personal.inviterName == '无推荐人'?    personal.inviterName:''}}</text>
+
+        <view wx:if="{{personal.inviterName!='无推荐人'}}" class='person_photo_v'>
+          <image class='bg_img' bindtap='detail' data-userId="{{personal.inviterName}}"  src="{{personal.inviterUrl}}"></image> 
+        </view>
+      
+      </view>
+
+      <view class='user_list'>
+        <text class='user_tit'><text class='iconfont ico #icon-yaoqinghaoyou'></text>邀请好友：</text>
+        <text class='user_text red_font' style='color:#E02E24' bindtap='InviteFriends'>点击查看</text>
+      </view>
+      <view class='lin_x'></view>
+      <view class="ar_cont_tit">
+        <view class='line'></view>TA的技能</view>
+
+      <view class='user_list'>
+        <text class='min_w user_tit'><text class='iconfont ico #icon-suoshuhangye'></text>所属行业：</text>
+        <text class='max_w user_text' wx:if="{{personal.industryName != null && personal.industryName != ''}}">{{personal.industryName}}</text>
+        <text class='user_text q_color' wx:if="{{personal.industryName == null || personal.industryName == ''}}">未填写</text>
+      </view>
+
+      <!-- <view class='user_list'>
+        <text class='user_tit'><text class='iconfont ico #icon-weixin'></text>联系方式：</text> -->
+        <!-- <text class='user_text' >{{personal.telephone==null?"":personal.telephone}}</text> -->
+        <!-- <text class='user_text {{personal.telephone != null & personal.telephone != "" ? "":"q_color"}}' >{{personal.telephone != null & personal.telephone != '' ? '':"未填写" }}</text> -->
+        <!-- <text class='user_text}}' wx:if="{{personal.telephone != null & personal.telephone != '' }}">{{personal.telephone }}</text>
+        <text class='user_text q_color}}' wx:else>未填写</text>
+      </view> -->
+
+      <view class='user_js'>
+        <view class='user_tit'><text class='iconfont ico #icon-gerenjieshao'></text>个人介绍：</view>
+        <view class='user_text w_100 padd_r' wx:if="{{personal.industrySummary != null && personal.industrySummary != ''}}">{{personal.industrySummary}}</view>
+        <view class='user_text q_color' wx:if="{{personal.industrySummary == null || personal.industrySummary == ''}}">未填写</view>
+      </view>
+   <view class='lin_x'></view>
+      <view class="ar_cont_tit">
+        <view class='line'></view>TA的公司</view>
+   
+      <!-- <view class='user_list'>
+        <text class='user_tit'><text class='iconfont ico #icon-suoshuhangye'></text>所在行业：</text>
+        <text class='user_text' wx:if="{{company.industryName != null && company.industryName != ''}}">{{company.industryName}}</text>
+
+        <text class='user_text q_color' wx:if="{{company.industryName == null || company.industryName == ''}}">未填写</text>
+      </view>
+  -->
+      <view class='user_list' bindtap="CompanyDetails" data-id="{{company.id}}">
+        <text class='user_tit min_w'><text class='iconfont ico #icon-gongsimingcheng'></text>公司名称：</text>
+        <text class='user_text max_w' wx:if="{{company.companyName != null && company.companyName != ''}}">{{company.companyName}}</text>
+        <text class='user_text q_color' wx:if="{{company.companyName == null || company.companyName == ''}}">未填写</text>
+      </view>
+   
+      <view class='user_list'>
+        <text class='user_tit min_w'><text class='iconfont ico #icon-zhiwei'></text>职位：</text>
+        <text class='user_text max_w' wx:if="{{company.positionName != null && company.positionName != '' }}">{{company.positionName}}</text>
+        <text class='user_text q_color' wx:if="{{company.positionName == nul || company.positionName == ''}}">未填写</text>
+      </view>
+    <view class='photo'  wx:if="{{company.imageUrlList != null && company.imageUrlList != '' }}">
+        <text class='photo_l'><text class='iconfont ico #icon-xiangce'></text>相册：</text>
+        <view class='photo_v'>
+          <image class='bg_img' wx:for="{{company.imageUrlList}}" wx:key="{{item}}" src="{{item}}" data-index="{{index}}" bindtap="previewImage"></image>
+        </view>
+      
+      </view>
+
+ 
+
+      <view class='user_list' wx:else>
+        <text class='user_tit min_w'><text class='iconfont ico #icon-xiangce'></text>相册：</text>
+      
+        <text class='user_text q_color'>未填写</text>
+      </view>
+
+
+
+
+
+      <view class='user_list_no'>
+        <text class='user_tit'><text class='iconfont ico #icon-chanpinxuanchuan'></text>产品宣传：</text>
+        <text class='user_text line30 padd_r w_100' wx:if="{{company.productPublicity != null && company.productPublicity != ''}}">{{company.productPublicity}}</text>
+        <text class='user_text line70 q_color' wx:if="{{company.productPublicity == null || company.productPublicity == ''}}">未填写</text>
+      </view>
+ 
+    
+   
+      <view class='user_list'>
+        <text class='user_tit min_w'><text class='iconfont ico #icon-gongsidianhua'></text>公司电话：</text>
+        <text class='user_text max_w text_d' wx:if="{{company.companyContact != null && company.companyContact != ''}}">{{company.companyContact}}</text>
+
+        <text class='user_text q_color' wx:if="{{company.companyContact == null || company.companyContact == ''}}">未填写</text>
+        <text class='phone icon-dianhua1 iconfont' data-phn="{{company.companyContact}}" bindtap="phoneCall"></text>
+      </view>
+  
+      <!--相册-->
+      <!-- 
+            <view class='phone_v'>
+              <view class='image_v' bindtap='detail'><image src="../../images/sjb.jpg"></image></view>
+              <view class='image_v' bindtap='detail'><image src="../../images/sjb.jpg"></image></view>
+              <view class='image_v' bindtap='detail'><image src="../../images/sjb.jpg"></image></view>
+              <view class='image_v'><image src="../../images/sjb.jpg"></image></view>
+              <view class='image_v'><image src="../../images/sjb.jpg"></image></view>
+
+              <view class='image_v'><image src="../../images/recommend_img_01.png"></image></view>
+              <view class='image_v'><image src="../../images/recommend_img_01.png"></image></view>
+              <view class='image_v'><image src="../../images/recommend_img_01.png"></image></view>
+   
+            </view>
+            <button class="ar_book" bindtap="bookTap">预定</button>
+            -->
+    </view>
+  </view>
+
+</view>

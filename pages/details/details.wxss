@@ -1,0 +1,46 @@
+/* pages/details/details.wxss */
+/**color #e02e24**/
+.hide{ display: none;}
+.show{ display: flex;}
+.container{ margin:0rpx;padding: 20rpx;box-sizing: border-box;}
+.list { width: 100%;}
+.header {
+  width: 100%;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+
+.status {
+  font-size: 28rpx;
+  color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.content {
+  width: 100%;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.info-content {
+  width: 50%;
+  font-size: 28rpx;
+  color: #ccc;
+}

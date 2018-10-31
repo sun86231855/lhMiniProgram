@@ -1,0 +1,86 @@
+/* pages/ctdetial/detail.wxss */
+/* 轮播图 */
+
+.swiper{
+    width:100%;
+    margin:0rpx;
+}
+.swiper image{
+    display: inline;
+}
+/* 导航条 */
+.nav_top{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+    box-sizing: border-box; height: 90rpx; line-height: 90rpx;
+    color:#333;
+    border-bottom: 1px solid #efefef;
+    background: #fff
+}
+
+.nav_top_items{
+    text-align: center;
+    font-size:30rpx;
+    width:34%;
+    padding-bottom: 4px;
+  
+    box-sizing:border-box;
+}
+.nav_top_items image{
+    width:83rpx;
+    height:93rpx;
+    display: inline-block;
+}
+.nav_top .active{
+    color:#ff5e5e;
+    border-bottom: 2px solid #ff5e5e;
+}
+.active_red{
+    color:#ff5e5e;
+    border-bottom: 2px solid #ff5e5e;
+   
+}
+.active_orange{
+    color:#ff5e5e;
+    border-bottom: 2px solid #ff5e5e;
+}
+.active_yellow{
+    color:#ff5e5e;
+    border-bottom: 2px solid #ff5e5e;
+}
+.active_green{
+    color:#ff5e5e;
+    border-bottom: 2px solid #ff5e5e;
+}
+
+.Addmore{ width: 100% ; text-align: center; padding: 8px 0; line-height: 70rpx; font-size:28rpx; display: block; background: #fff}
+.Addmore text{ line-height: 10px; display: inline-block; vertical-align:  top}
+.Addmore image{ width: 70rpx; height: 70rpx; display: inline-block; vertical-align: top ; margin-top: -10rpx; padding: 0 10rpx}
+/* 导航对应内容项 */
+.nav_section{
+    width:100%;
+    background: #fff; overflow: hidden; padding-bottom: 80rpx;
+   
+}
+.list_p{   background: #fff; }
+
+.nav_section_items{text-align: center;flex-direction: row;justify-content: space-between;padding:30rpx 0%; position: relative;
+ width: 100%; float: left;}
+.xq_lt{padding:0 8%;color:#333;line-height:70rpx;font-size:27rpx;border-bottom:1px solid #efefef;}
+.xq_lt .tit{ display: inline-block; vertical-align: top; width: 25%; text-align: center; font-size: 30rpx; font-weight: bold}
+.xq_lt .text{width:75%; display: inline-block; vertical-align: top;text-align:left;text-indent:2%;font-size:28rpx; line-height: 30rpx; color: #363636; padding: 22rpx 0; overflow: hidden}
+.nav_section_items:active{  background:#ddd;}
+.nav_section_items .section_cont{ width:100%;font-size:26rpx;color:#a9a9a9; }
+.nav_section_items .section_cont .xq_list{ padding: 0 8%;  color: #333; height: 70rpx; line-height: 70rpx; font-size: 27rpx; border-bottom: 1px solid #efefef}
+.nav_section_items .section_cont .xq_list .tit{ font-weight: bold; width: 25%; text-align: center; display: inline-block; vertical-align: top; font-size: 30rpx; }
+.nav_section_items .section_cont .xq_list .text{ width: 75%; text-align: left; text-indent: 2%; font-size: 28rpx; display: inline-block; vertical-align: top; color: #363636}
+.ct_tongji{ padding: 20px 0; position: relative; width: 80%; margin: 5% 10%; border-radius: 100rpx; }
+.ct_tongji .line_box{ width: 100%; height: 20rpx; background: #fff; border: 1px solid #f7f7f7; border-radius: 100rpx; overflow: hidden}
+.ct_tongji .line_box .line_l{ width: 20%; height: 100%; background:#f03029; }
+.ct_tongji .text_l{ position: absolute; left: 20%; font-size: 10px; color: #363636; top:10rpx}
+.ct_tongji .text_z{ font-size: 24rpx; color: #363636}
+
+ .section_book{ width: 60%; height: 70rpx; line-height: 70rpx; background: #f03029; color: #fff; font-size:27rpx; border-radius: 100rpx; margin: 30px 20%; }
+

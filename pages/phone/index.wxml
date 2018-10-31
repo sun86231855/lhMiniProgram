@@ -1,0 +1,47 @@
+<!--pages/phone/index.wxml-->
+
+<view class="container"> 
+
+ <image class='login-img' src=' /images/login.jpg'></image>
+
+ <view class="login-from"> 
+ 
+ <!--电话--> 
+ <view class="inputView"> 
+  <text class='iconfont icon-shouji phone' ></text>
+  <input class="inputText" placeholder="请输入手机号" bindinput="bindPhone" /> 
+ </view> 
+
+
+  <!--验证码--> 
+ <view class="inputView"> 
+  <text class='iconfont icon-mima'></text>
+  <input class="inputText" placeholder="请输入验证码" bindinput="phoneCodeInput" /> 
+  <view class='send_but'>
+
+   <!--<view class='getcode' bindtap='getCode'>发送验证码</view>-->
+  
+      <view class='getcode' wx:if="{{isGet == false}}" bindtap='getCode'>发送验证码</view>  
+     <view class='getcode' wx:if="{{isGet == true}}">{{sec}}s后重新发送</view>  
+
+  </view>
+ </view> 
+ 
+ 
+ 
+
+<view class='submit bot_v'>  <button class="tj" bindtap='registerClick'  type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" >登录</button> </view>
+    
+
+ 
+
+ </view> 
+</view> 
+
+
+
+
+
+
+
+

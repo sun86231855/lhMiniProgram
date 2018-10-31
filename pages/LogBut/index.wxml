@@ -1,0 +1,10 @@
+<!--pages/LogBut/index.wxml-->
+<image mode='aspectFill' class='img' src=' /images/login.jpg'></image>
+<!--
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> <image class='img' src='/images/weixin.png'></image> 微信用户快速登录</button>-->
+
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='wx_but'>
+ 微信用户快速登录 </button>
+
+
+ <view class='phone' bindtap='phone'>phone</view> 

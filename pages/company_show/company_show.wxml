@@ -1,0 +1,52 @@
+<!--company_show.wxml  -->
+<view class='container'>
+  <view class='name'>
+    <text class='name-label'>公司名称：</text>
+    <input class='name-input' placeholder='请输入名称' value="{{companyName}}" bindinput='inputCompanyName' />
+  </view>
+  <view class='their'>
+    <text class='their-label' bindtap='checkIndustryShow'>行<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>业：</text>
+    <!-- <text class='their-check' bindtap='checkIndustryShow'><text class='text_t'>{{industryName !=null && industryName != '' ? industryName:''}}</text>
+    <text class='icon-xiajiantou iconfont' bindtap='checkIndustryShow'></text></text> -->
+       <picker mode="selector" range="{{industry}}" value="{{index}}" bindchange="listenerPickerSelected">
+          <text  wx:if="{{industryName == ''}}"hidden='{{flag1}}'>--<text class='red_font'>请选择</text>--</text>
+          <text wx:if="{{industryName == ''}}" class='pick_list' hidden='{{flag2}}'>{{industry[indexd]}}</text>
+          <text wx:if="{{industryName != ''}}"class='red_font'>{{industryName}}</text>
+        </picker>
+  </view>
+  <view class='product'>
+    <text class='product-label'>产品宣传：</text>
+    <textarea class='product-content' placeholder='请填写宣传内容' value='{{summary}}' bindinput='inputSummary'></textarea>
+  </view>
+  <view class='tel'>
+    <text class='tel-label'>联系电话：</text>
+    <input class='tel-input' placeholder='请输入联系方式' value="{{tel}}" bindinput='inputTel' />
+    <!-- <text class='tel-check'>同个人电话</text> -->
+  </view>
+  <view class='post'>
+    <text class='post-label' bindtap='checkPostionShow'>职<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>位：</text>
+    <!-- <text class='post-check' bindtap='checkPostionShow'><text class='text_t'>{{professionName != null && professionName != ''? professionName:''}}</text>
+    <text class='icon-xiajiantou iconfont' bindtap='checkPostionShow'></text>
+    </text> -->
+        <picker mode="selector" range="{{profession}}" value="{{index}}" bindchange="professionSelected">
+          <text wx:if="{{professionName == ''}}" hidden='{{flaga}}'>--<text class='red_font '>请选择</text>--</text>
+          <text wx:if="{{professionName == ''}}" class='pick_list' hidden='{{flagb}}'>{{profession[indexdC]}}</text>
+          <text wx:if="{{professionName != ''}}"class='red_font'>{{professionName}}</text>
+        </picker>
+  </view>
+  <view class='photo'>
+    <text class='photo-label phont_v'>相<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>册：</text>
+    <view class='photo-content'>
+      <view class='add_v' wx:for="{{imageUrlList}}" wx:key="{{item}}" data-index="index">
+        <view class=' iconfont icon-shanchu1 ClearThis' data-index="{{index}}" bindtap="delItem"> </view>
+        <image class='bg_img' mode='aspectFill' src="{{item}}" bindtap="previewImage"></image>
+      </view>
+      <image wx:if="{{imageUrlList.length <= 5}}" src='/images/add.png' bindtap='picUpload' class='add_img'></image>
+      <!--<image wx:if="{{imageUrlList.length <= 5}}" src='/images/add.png' bindtap='cutPic' class='add_img'></image>-->
+    </view>
+  </view>
+
+  <view class='save bot_v'>
+    <view class='save-btn tj' bindtap="save">保存</view>
+  </view>
+</view>

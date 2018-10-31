@@ -1,0 +1,11 @@
+<!--pages/record/record.wxml-->
+<view class="container">
+  <scroll-view class='scroll-content'>
+    <view class='list' wx:for="{{matchBuyPayList}}" wx:key="item.payId" >
+      <view class='header'>搓团：{{item.subject}}<text class='status'>{{item.type=="1"?"+":"-"}}{{item.money}}</text></view>
+      <view class='info'>
+        <view class='info-content'>发布日期：{{item.time}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

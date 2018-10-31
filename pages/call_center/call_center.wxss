@@ -1,0 +1,35 @@
+/**call_center.wxss**/
+/**color #e02e24**/
+page{ background: #F5F5F5}
+.container{ padding:0rpx; margin:0rpx; background: #ffffff}
+.official-accounts,
+.service-tel,
+.service-wechat {
+  width: 95%; margin: 0 2.5%; line-height: 90rpx; height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.title,
+.content {
+  text-align: start;
+}
+
+.title {
+  font-size: 30rpx;display: inline-block; vertical-align:bottom;  padding-right: 10rpx; text-align: right; color: #666; position: relative; padding-left: 52rpx
+}
+.title .iconfont{ font-size:45rpx; padding: 0 6rpx; color: #333;  position: absolute;left:0;
+top:4rpx;
+}
+
+.content {
+  font-size: 28rpx; color: #999; display: inline-block; vertical-align: bottom
+}
+.pic_box{ text-align: center; padding: 100rpx 0}
+.pic_box image{ width: 242rpx; height: 242rpx; padding: 16rpx;}
+.phone{ text-decoration: underline;}
+

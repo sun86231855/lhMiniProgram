@@ -1,0 +1,82 @@
+<view class='container'>
+
+  <view class='top_select_box'>
+    <view class='select_div'>
+      <view class='tit'>选择社群：</view>
+    
+      <picker mode="selector" range="{{selectData}}" value="{{index}}" bindchange="listenerPickerSelected">
+        <text hidden='{{flag1}}'>--<text class='red_font'>请选择</text>--</text>
+        <text hidden='{{flag2}}'>{{selectData[indexd]}}</text>
+      </picker>
+    </view>
+    <view class='id'>
+      <view class='id-label'>身份选择：</view>
+      <view class='id-content'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}" wx:key="{{item.name}}">
+            <radio class='radio_v' value="{{item.name}}" checked="{{item.checked}}" />
+            <text class='text'>{{item.value}}</text>
+          </label>
+        </radio-group>
+      </view>
+
+    </view>
+  </view> 
+
+  <!--学员-->
+  <view class='student_box' hidden='{{flagchoose}}'>
+    <view class='class'>
+      <view class='select_div bot_b'>
+        <view class='tit'>选择班级：</view>
+        <view class='select_box'>
+   
+
+         <picker mode="selector" range="{{selectClassData}}" value="{{index}}" bindchange="classListSelected">
+            <text hidden='{{flaga}}'>--<text class='red_font'>请选择</text>--</text>
+            <text hidden='{{flagb}}'>{{selectClassData[indexdC]}}</text>
+          </picker> 
+
+        </view>
+      </view>
+    </view>
+    <view class='select_div'>
+      <view class='tit'>是否为TAI：</view>
+      <switch class='switch_box' checked = '{{ifTaiChecked}}' bindchange="switch1Change" />
+    </view>
+
+
+    <view class='remark'>
+      <text class='remark-label'>备注：</text>
+      <textarea class='remark-content' placeholder='请输入备注内容' value='{{remark}}' bindinput='inputRemark'></textarea>
+    </view>
+  </view>
+
+  <!--机构-->
+  <view class='student_box' hidden='{{flagchooserz}}'>
+    <view class='class'>
+      <view class='select_div'>
+        <view class='tit'>姓名：</view>
+        <view class='select_box'>
+          <input type='text' bindinput='changeName' placeholder='请输入姓名'></input>
+        </view>
+      </view>
+    </view>
+
+
+
+     <view class='remark'>
+      <text class='remark-label'>备注：</text>
+      <textarea class='remark-content' placeholder='请输入备注内容' bindinput='inputRemark'></textarea>
+    </view>  
+  </view>
+  <view class=' bot_v'>
+    <view class='tj' bindtap='submit'>申请</view>
+  </view>
+
+
+
+
+  <!-- <view class='bot_v'>
+    <view class='next-btn tj' bindtap='next'>下一步</view>
+  </view> -->
+</view>

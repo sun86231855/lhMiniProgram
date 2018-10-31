@@ -1,0 +1,15 @@
+<!--pages/AllClass/details.wxml-->
+<view class='container_box '>
+  <block wx:for="{{itemList}}" wx:key="id">
+    <view wx:if="{{item.mainFlag==1}}" class='item_container' bindtap='itemSelected' data-index='{{index}}'>
+      <image class='select_icon' src="{{item.isSelected?'/images/selected.png':'/images/unselected.png'}}"></image>
+
+      <text class='text'>{{item.name}}</text>
+
+    </view>
+  </block>
+  <view class='bot_v'>
+    <button bindtap='doConfirm' class='confirm'>确定</button>
+  </view>
+
+</view>

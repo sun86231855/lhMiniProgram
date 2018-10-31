@@ -1,0 +1,66 @@
+/**route.wxss**/
+.container{ padding:0rpx; margin:0rpx; background: #eee}
+.user_base_info{ width:100%; flex-direction: row; justify-content: center; font-size:30rpx; margin:0;position: relative; background: #fc493f;margin-top:-45rpx;}
+.user_base_info .bg_img{ width: 100%; z-index:0 ; bottom: 0; left: 0; position: absolute}
+.user_box{ width: 100%; margin:0; box-sizing: border-box; height: 350rpx ; position: relative}
+.user_base_info .user_avatar{ width:150rpx; height:150rpx;  border-radius:100%; overflow: hidden; margin:20px auto;  position: relative; z-index: 999; top: 20%}
+.user_base_info .user_avatar image{ width:101%; height:100%;}
+.user_base_info .user_info{ margin: 0 auto; line-height: 48rpx;color:#363636; padding: 10rpx 0 0 0;  width: 50%; position: relative; z-index: 999; bottom: -4% }
+.user_base_info .user_info .name{ font-size: 28rpx; font-weight: 500; height: 60rpx; line-height: 60rpx; width: 100%; display: flex}
+.user_base_info .user_info .qianming{font-size: 28rpx; font-weight: 500; height: 60rpx; line-height: 60rpx; width: 100%; display: flex}
+.user_base_info .user_info .qianming .text{ width: 100%; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block; }
+.user_base_info .user_info .name .name{ width: 25%; }
+.user_base_info .user_info .name .text{ width: 75%; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block; }
+.user_base_info .user_info .qianming{ width: 100%; font-size: 28rpx;}
+.user_base_info .user_info .phone{ font-size: 28rpx; height: 60rpx; line-height: 60rpx;width: 100%; display: flex  }
+.user_base_info .user_info .phone .name{ width: 22%; }
+.user_base_info .user_info .phone .text{ width: 78%; overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+display:block;
+
+ }
+.user_base_info .message{ position: absolute; right: 10px; top: 40px; font-size: 20px; color: #fff}
+.user_bot{display:flex; width: 100%; color: #fff; padding: 4px 0}
+.user_bot .bg_box{ background: #333;opacity: 0.1; position: absolute; left: 0; bottom: 0; display: block; width: 100%; height: 28%}
+.user_bot .bot_list{ width: 25%; text-align: center; position: relative; }
+.user_bot .bot_list text{ display: block}
+.user_bot .bot_list .line{ position: absolute; right: 0; height: 90%; margin: 5%; display: block; width: 1px; background: #eea65b; top: 0}
+
+.quick_enter{   overflow: hidden;   flex-direction: row; justify-content: space-around; width:100%; box-sizing: border-box; padding:0 0 20rpx 0;  color:#333;  background: #fff; }
+.quick_enter .quick_list{  width: 100%; display: inline-block; vertical-align: top; text-indent: 15rpx; height: 90rpx; line-height: 90rpx; border-bottom: 1px solid #efefef;  position: relative; background: #ffffff }
+.quick_enter .quick_list .ico_pic{ padding: 0 10px 0 0; font-size: 35rpx;}
+.quick_enter .quick_list .right_ico{ position: absolute; top: 0; right: 2.5%}
+.quick_enter .quick_list .line{ position: absolute; height: 100%; width: 1px; background: #efefef; right: 0 !important; top: 0; left: 100%}
+.text_name{ font-size: 30rpx;}
+.drop_out{ width: 60%; height: 70rpx; line-height: 70rpx; background: #f03029; color: #fff; font-size: 30rpx; border-radius: 100rpx; margin: 30rpx 20%;}
+.user_addr_manage{ width:100%; display: none}
+.user_addr_manage .user_addr_title{ padding:10rpx 60rpx; display: block; text-align: center; font-size:36rpx;  margin-bottom:40rpx;}
+.user_addr_manage .user_addr_item{ width:100%; display: flex; flex-direction: row; justify-content: center; border-bottom:1px solid #ddd; padding:10rpx 40rpx;
+ vertical-align: middle; line-height: 48rpx;  font-size:30rpx;  box-sizing:border-box;  position: relative;}
+.user_addr_item  .addr_sub{ width:580rpx; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.user_addr_item .addr_edit{ width:50rpx; background:url(../../images/edit.png) no-repeat; background-position: center; background-size:100%;  }
+navigator{ margin:0rpx 0 20rpx; border-bottom:1px solid #ddd; font-size:28rpx; text-align: center; color:#d24a58;}
+/*弹出框  */
+.modal-box{ position:fixed; width:100%; height:100%; top:0; left: 0; background:rgba(0,0,0,0.4); overflow: hidden; display: flex; justify-content: center; align-items: center;}
+.modal-body{
+width:80%;
+overflow:hidden;
+position:fixed;
+top:50%;
+left:0;
+z-index:9999;
+background:#f9f9f9;
+margin:-180rpx 10%;}
+.modal-title { display: flex; justify-content: center; align-content: center; padding: 30rpx 0 0 0 ; font-size: 30rpx;}
+.modal-content{ overflow: hidden; width: 100%; box-sizing: border-box; }
+.btn-container { display: flex; justify-content: center; align-items: center; height: 86rpx}
+.modal-content .name { justify-content: center; align-items: center; box-sizing: border-box; padding: 0 32rpx; margin: 40rpx 0 0 0}
+.name-label {flex-shrink: 0; margin-right: 10rpx; font-size: 27rpx;}
+.name-input { border: 1rpx solid #ccc; border-radius: 10rpx; box-sizing: border-box; height: 60rpx;  padding: 0 10rpx; font-size: 24rpx; color: #969696; margin: 10rpx 0; background: #eee}
+.weui-textarea-counter{ font-size: 26rpx; text-align: right; color: #969696}
+.finish,
+.cancel {width: 50%; display: flex; justify-content: center; align-items: center; height: 100rpx; border-top: 1rpx solid #d8d9db; box-sizing: border-box; font-size: 28rpx;}
+.cancel{ border-right: 1rpx solid #d8d9db; color: #363636 }
+.modal-hint { display: flex; justify-content: left; align-items: left; padding:10rpx 20rpx 40rpx 40rpx; font-size: 24rpx; color: #d24a58;}
+.finish{ color: #37cf37}

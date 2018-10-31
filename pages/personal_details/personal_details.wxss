@@ -1,0 +1,170 @@
+/*personal_details.wxss  */
+/**color #e02e24**/
+input{ padding: 0 10rpx; box-sizing: border-box}
+.ChangeBut{font-size:26rpx;
+background:#e02e24;
+color:#fff;
+height:60rpx;
+width:100%; margin: 0 1%; 
+padding:0;
+text-align:center;
+line-height:60rpx;
+border-radius:6rpx;
+display:inline-block;
+ vertical-align: top;
+
+}
+.container { width: 100%;
+  box-sizing: border-box;
+}
+.phone_v{ }
+.tittle{ max-width: 180rpx !important; text-align: right;  vertical-align: top; padding-right: 10rpx; box-sizing: border-box; display: inline-block; color: #666}
+.top{ border-bottom: 22rpx solid #F5F5F5}
+.top,
+.bottom {
+  width: 100%; padding: 0 2%; 
+   box-sizing: border-box;
+
+}
+.top-title,
+.bottom-title {
+  font-size: 30rpx; font-weight: 600; border-bottom: 1px solid #eee; 
+  color: #666;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20rpx; position: relative; 
+}
+.weui-textarea-counter{ font-size: 24rpx; color: #d24a58; text-align: right; float: right}
+.phone-label,
+.wx-label {
+  /* flex-shrink: 0;
+ 
+  margin-right: 10rpx; */
+   font-size: 30rpx;
+}
+.check-label,
+.bottom-phone-label { color: #666666;
+  font-size: 28rpx; max-width: 180rpx; padding-right: 10rpx; box-sizing: border-box; text-align: right
+}
+.check-content{
+  font-size: 28rpx; width: 180rpx; padding-right: 10rpx; box-sizing: border-box; text-align: left
+}
+.check-label {
+  margin: 10rpx 0;
+  
+}
+.phone-input{ padding:0; width: 53% ; color: #999999;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  height: 80rpx; line-height: 80rpx;
+  box-sizing: border-box;
+   display: inline-block; vertical-align: top; border: none}
+
+.wx-input,
+.bottom-phone-input{
+  border: none; color: #999999;
+  width: 73%;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  height: 80rpx; line-height: 80rpx;
+  box-sizing: border-box;
+  padding-left:0;
+}
+.hy_v{ border-radius: 10rpx; font-size: 24rpx; line-height: 50rpx; height: 50rpx; border: 1px solid #ccc; padding: 0 0 0 10rpx; }
+.hy_v text{ vertical-align: middle; line-height: 50rpx;}
+.skill-content {
+  border: 1rpx solid #ccc; color: #969696;
+  width:100%;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  height: 50rpx; line-height: 40rpx;
+  padding:20rpx; display: inline-block; vertical-align: top; box-sizing: border-box;
+}
+.phone {
+  width: 100%;
+  box-sizing: border-box; border-bottom: 1px solid #eee;height: 80rpx; line-height: 80rpx;
+}
+
+.form_group{ display: inline-block; width: 160rpx; margin-left: 1%;margin-top:8rpx;
+}
+
+.wx {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; border-bottom: 1px solid #eee; height: 80rpx; line-height: 80rpx;
+}
+.help {
+  margin: 5rpx 0;
+  font-size: 22rpx; 
+  color: #d24a58; text-align: center
+}
+.skill{ }
+.bottom-phone{ display: flex;}
+.bottom-check, .bottom-phone {  font-size: 30rpx; height: 80rpx; line-height: 80rpx; border-bottom: 1px solid #eee}
+.skill-label, .bottom-phone-label {  font-size: 30rpx; height: 80rpx; line-height: 80rpx; }
+.bottom-phone-btn { font-size: 24rpx; color: #d24a58; margin-left: 20rpx;}
+.bottom-check-btn{ font-size: 40rpx;margin-right: 10rpx; font-weight: bold; color: #969696}
+.knowBtn {font-size:27rpx; width: 60%; margin:  0 20%;height:60rpx;display:flex;justify-content:center;align-items:center;padding:0 20rpx;border-radius:30rpx;background-color:#e02e24;color:#fff;flex-shrink:0; margin-top: 15rpx; line-height: 60rpx;}
+.bottom-check{ display: flex }
+.save-btn {font-size: 28rpx;}
+.height{ height: 300rpx; overflow: hidden}
+.content2{ color: #999999; width: 100%; overflow: hidden;  z-index: 0}
+.check-content{  line-height: 60rpx}
+.check-content .radio{ display: block}
+
+.modal-box{ position:fixed; width:100%; height:100%; top:0px; background:rgba(0,0,0,0.4); overflow: hidden; z-index: 99}
+.modal-body{position:relative; background: #fff; z-index: 999; width: 90%; margin: 20% 5%; border-radius: 16rpx; padding: 20rpx 0 }
+.modal-content{  width: 90%; padding: 0 5%;}
+.checkbox{}
+.radio_v{ top: -4rpx}
+
+.modal-content .fenxiang{
+
+  height: 40%;
+}
+
+.tittle_v{ }
+.help_v{padding:10rpx 0 20rpx 0; text-align: left}
+
+/*标题  */
+.title{
+  padding: 10rpx;
+}
+.title .label_v{ font-size: 30rpx; width: 100%; display: block;}
+.check{ width: 100%; display: flex; padding: 10rpx 0}
+.tit_check{ font-size: 30rpx;}
+/*内容  */
+.content{
+  padding: 15rpx 30rpx;
+  background-color: #f6f6f6; font-size: 27rpx; border-bottom: 1px solid #ccc
+}
+
+.line_l{ border: 1rpx solid #ccc;}
+.line_bottom{border: 3rpx solid #ccc;}
+
+/*隐藏  */
+.hide{
+ display: none;
+}
+/*显示  */
+.show{ 
+ display: block;
+}
+.yzm{ padding-left: 160rpx; width: 100%; height: 80rpx; line-height: 80rpx; box-sizing: border-box; border-bottom: 1px solid #EEEEEE }
+.yzm .form{ }
+.yzm .form input{ width: 70%; height: 80rpx; line-height: 80rpx; font-size: 30rpx; border: none; border-radius: 10rpx; padding:0 ; box-sizing: border-box; display: inline-block; vertical-align: top}
+.yzm .form .form_group{ width: 28%; height: 60rpx; line-height: 60rpx; border-radius: 10rpx;  display: inline-block; vertical-align: bottom}
+.yzm .form .form_group button{ font-size: 22rpx;background: #e02e24 ; color: #fff; height: 60rpx; width: 90%; margin: 0 5%; padding: 0 ; text-align: center; line-height: 60rpx;}
+
+.bot_t{ background: #fff; width: 100%; height: 90rpx;}
+.tj{ width: 90%; height: 70rpx; line-height: 70rpx; text-align: center; background: #e02e24 !important; color: #fff; margin: 0 5% 20rpx 5%; font-size: 28rpx; border-radius: 10rpx;}
+.tel, .wechat{ border-bottom: 1px solid #EEEEEE}
+.line{ top: 33rpx; left: 0}
+.lin_x{ height: 50rpx;}
+.red_font{ color:#E02E24; padding: 0 4rpx; font-size: 30rpx; }
+
+

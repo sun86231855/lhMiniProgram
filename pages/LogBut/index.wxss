@@ -1,0 +1,3 @@
+/* pages/LogBut/index.wxss */
+.img{ width: 100%; height: 300rpx;}
+.wx_but{ text-align: center; width: 80%; margin: 40rpx 10% 10rpx 10%; border-radius: 15rpx; background: #1aad19; color:#fff; font-size: 30rpx;}

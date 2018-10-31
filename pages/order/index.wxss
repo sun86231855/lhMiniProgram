@@ -1,0 +1,52 @@
+/* pages/DiscountDetails/index.wxss */
+/* 轮播图 */
+.swiper{
+    width:100%;
+    margin:0rpx;
+}
+
+.swiper image{
+    display: inline;
+}
+.img_w{height:420rpx; background:#fff}
+.slide-image{  width: 100%; height: 420rpx; background: #fff  }  
+.container{ background:#fff;}
+.ar_cont{padding:0rpx 2%; width: 96%; font-size:30rpx;  background: #fff;  margin-bottom:120rpx;  line-height: 45rpx;  color:#363636;}
+.ar_cont .ar_cont_h1{font-size: 32rpx; font-weight: 600; color: #333; text-align: center; padding: 15rpx 0}
+.address_list{ position: relative; line-height: 70rpx; border-bottom: 1px solid #efefef}
+.address_list .user_tit{ display: inline-block; vertical-align: top; font-size: 28rpx; font-weight: 600; width: 35%; padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.address_list .address_lin{ line-height: 45rpx;}
+.address_list .user_text{ font-size: 28rpx; padding-top: 14rpx; display: inline-block; vertical-align: top; width: 65%;}
+.user_list_ts{ position: relative; height: 40rpx; line-height: 40rpx; border-bottom: 1px solid #efefef; color: #d24a58; font-size: 24rpx; padding: 5rpx 16rpx}
+.user_list{ position: relative;line-height: 70rpx; border-bottom: 1px solid #efefef}
+.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 30rpx; font-weight: 600; width: 35%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_list .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top; width: 65%; padding-top: 14rpx; line-height: 45rpx;}
+.user_box{ position: relative;  border-bottom: 1px solid #efefef}
+.user_box .user_tit{ display: inline-block; vertical-align: top; font-size:30rpx; font-weight: 600; width: 35%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_box .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top; width: 65%;}
+.ar_cont_tit{ font-size: 36rpx; font-weight: 600; color: #333; text-align: left; border-top: 2px solid #ddd; display: block; width: 100%; padding: 6px 0 0 0; margin: 6px 0 0 0}
+.add{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone_v{ padding: 10px 0}
+.phone_v .image_v{ width: 25%; display: inline-block; vertical-align: top;  }
+.phone_v .image_v image{ width: 50px; height: 50px}
+.user_text.user_box .use_list { display: inline-block; vertical-align: top; margin-right: 10rpx; text-align: center; width: 33%}
+.user_text.user_box .use_list .img{ width: 90rpx; height: 90rpx; border-radius: 10rpx;} 
+.user_text.user_box .use_list .text{ font-size: 24rpx; width: 100%;}
+.icon_box{  display: flex; padding: 10rpx 0 20rpx 0; position: fixed; background: #fff; left: 0; bottom: 0; width: 100%; border-top: 1px solid #ccc}
+.icon_box .icon_list .iconfont{ line-height: 60rpx;  position: relative; text-align: center; font-size: 40rpx;}
+.icon_box .icon_list .text{ font-size: 24rpx; line-height: 20rpx;}
+.icon_box .icon_list.collect{ text-align: center; width: 50%; border-right: 1px solid #ccc; color: #363636 }
+
+.icon_box .icon_list.collect .text{right: 0; top: 0;}
+.icon_box .icon_list.zan{ text-align: center; width: 50%;color: #363636}
+
+.icon_box .iconfont{ padding:  0 10rpx; }
+.tip{ font-size: 22rpx;}
+.icon_box .icon_list.on{ color: #ff5e5e}
+.user_in{ padding: 16rpx 0 20rpx}
+.on{color: #e02e24}
+.icon-zan3{ font-size: 34rpx !important;}
+.serve_box{ width: 96%; margin: 10rpx 1%; padding: 10rpx 1%; border: 1px solid #eee; border-radius: 4rpx;}
+.serve_box .tit{ text-align: center; font-size: 30rpx; padding: 10rpx 0;}
+.serve_box .main_text{ font-size: 28rpx;}

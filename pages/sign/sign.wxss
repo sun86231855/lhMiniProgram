@@ -1,0 +1,49 @@
+/*sign.wxss  */
+.container {
+  margin: 0;
+  padding: 0; width: 100%;
+ height: 100%;
+  box-sizing: border-box;  position: relative
+}
+.sign_w{ padding:100rpx 6% 20rpx 6%;
+position: relative}
+.sign_bg{ position: absolute;top:2%;left:2.5%; z-index:1; width: 95%; }
+.bg_img{ position: absolute; width: 100%;}
+
+.title {
+  font-size: 30rpx;
+  margin-bottom: 10rpx; font-weight: bold; padding: 15rpx 0
+}
+
+.content {
+  border: 1rpx solid #ccc;
+  width: 89%;
+  border-radius: 10rpx;
+
+  box-sizing: border-box;
+ font-size: 28rpx; color: 
+  #E42822;
+  line-height: 35rpx; padding: 0 1% 15rpx 0;
+}
+.help {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  color: #e02e24;
+  margin-bottom: 10rpx;
+  
+}
+
+
+
+.save-btn {
+ 
+  font-size: 27rpx;
+}
+.weui-textarea-counter{ padding-top: 20rpx; width: 100%; text-align: right; font-size: 24rpx; color: #e02e24; position: relative; z-index: 99 }
+.weui-textarea-counter .lin_dian{ position: absolute; top: 0; left: 0; width: 100%;}
+
+
+.prompt .modal-title { padding: 20rpx 0 10rpx 0; font-size: 30rpx; color: #030303; text-align: center; border-bottom: 1px solid #ccc}
+

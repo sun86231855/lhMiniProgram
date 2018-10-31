@@ -1,0 +1,62 @@
+/* pages/DiscountDetails/index.wxss */
+/* 轮播图 */
+.swiper{
+    width:100%;
+    margin:0rpx;
+}
+
+.swiper image{
+    display: inline;
+}
+.img_w{height:420rpx; background:#fff}
+.slide-image{  width: 100%; height: 420rpx; background: #fff  }  
+.container{ background:#fff;}
+.ar_cont{padding:0rpx; width: 96%; font-size:30rpx;  background: #fff;  margin-bottom:120rpx;  line-height: 45rpx;  color:#363636;}
+.ar_cont .ar_cont_h1{font-size: 32rpx; color: #333; text-align: center; padding: 15rpx 0; font-weight: 600}
+.address_list{ position: relative; line-height: 70rpx; border-bottom: 1px solid #efefef; padding: 0 3% }
+.address_list .user_tit{ display: inline-block; vertical-align: top; font-size: 28rpx;  max-width: 35%; padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.address_list .user_tit .ico{ padding-right: 10rpx}
+.address_list .address_lin{ line-height: 45rpx;}
+.address_list .user_text{ font-size: 28rpx; padding-top: 14rpx; display: inline-block; vertical-align: top; }
+.user_list_ts{ position: relative; height: 40rpx; line-height: 40rpx; border-bottom: 1px solid #efefef; color: #d24a58; font-size: 24rpx; padding: 5rpx 16rpx}
+.user_list{ position: relative;line-height: 70rpx; border-bottom: 1px solid #efefef; padding: 0 3%; width: 94%}
+.user_list .tip_text{ color:#d24a58; font-size: 20rpx}
+.user_list .tip_text{ position: absolute; right: 0; top: 4rpx; line-height: 70rpx; text-align: right}
+.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 26rpx; max-width: 40%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_list .user_tit .ico{ padding-right: 10rpx}
+.user_list .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top; padding-top: 17rpx; line-height: 45rpx;}
+.user_box{ position: relative;  border-bottom: 1px solid #efefef}
+.user_box .user_tit{ display: inline-block; vertical-align: top; font-size: 26rpx;  max-width: 38%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_box .user_tit .ico{ padding-right: 10rpx}
+.user_box .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top;}
+.ar_cont_tit{ font-size: 36rpx; font-weight: 600; color: #333; text-align: left; border-top: 2px solid #ddd; display: block; width: 100%; padding: 6px 0 0 0; margin: 6px 0 0 0}
+.add{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone_v{ padding: 10px 0}
+.phone_v .image_v{ width: 25%; display: inline-block; vertical-align: top;  }
+.phone_v .image_v image{ width: 50px; height: 50px}
+.user_text.user_box .use_list { display: inline-block; vertical-align: top; margin-right: 10rpx; text-align: center; width: 100%}
+.user_text.user_box .use_list .img{ width: 60rpx; height: 60rpx; border-radius: 60rpx;} 
+.user_text.user_box .use_list .text{ font-size: 24rpx; width: 100%;}
+.icon_box{  display: flex; padding: 10rpx 0 20rpx 0; position: fixed; background: #fff; left: 0; bottom: 0; width: 100%; border-top: 1px solid #ccc}
+.icon_box .icon_list .iconfont{ line-height: 60rpx;  position: relative; text-align: center; font-size: 40rpx;}
+.icon_box .icon_list .text{ font-size: 24rpx; line-height: 20rpx;}
+.icon_box .icon_list.view_list{ text-align: center; width: 33%; border-right: 1px solid #ccc; color: #363636 }
+
+.icon_box .icon_list.view_list .text{right: 0; top: 0;}
+.icon_box .icon_list.zan{ text-align: center; width: 33%;color: #363636}
+
+.icon_box .iconfont{ padding:  0 10rpx; }
+.tip{ font-size: 22rpx;}
+.icon_box .icon_list.on{ color: #ff5e5e}
+.user_in{ padding: 16rpx 3% 20rpx 3%}
+.on{color: #e02e24}
+.icon-zan3{ font-size: 34rpx !important;}
+
+.zk_detial{ width: 96%; border: 1px solid #eee; margin: 10rpx 1%; padding: 10rpx 1%; border-radius: 4rpx;}
+.zk_detial .tit{ text-align: center; font-size: 30rpx; font-weight: 600; padding: 8rpx 0}
+.zk_detial .text{ font-size: 28rpx;}
+.container { display: block; padding-bottom: 30px}
+.serve_box{ width: 100%;  background: #F5F5F5; padding: 30rpx; box-sizing: border-box}
+.serve_box .tit{ text-align: center; padding: 10rpx 0; font-size: 30rpx}
+.serve_box .main_text{ font-size:24rpx; padding: 0 10rpx 10rpx 10rpx; line-height: 32rpx;}

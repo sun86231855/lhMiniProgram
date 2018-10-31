@@ -1,0 +1,148 @@
+<!--pages/DiscountDetails/index.wxml-->
+
+
+<view class="container">
+  <!--轮播-->
+  <!-- <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="img_w">
+      <block wx:for="{{imageUrlList}}" wx:key="{{index}}">
+        <swiper-item>
+        
+          <block wx:if="{{item}}">
+            <image mode='aspectFill' class='img_i' src="{{item}}" class="slide-image" />
+          </block>
+          <block wx:else>
+            <image src="../../images/default_pic.png" mode="aspectFill"></image>
+          </block>
+      
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+
+  
+    <view class='swipercontent'>
+      <swiper autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" catchtap="onItemClick" current="{{swiperCurrent}}" bindchange="swiperChange">
+        <block wx:for="{{imageUrlList}}" wx:key="index">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" bindtap="swipclick" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png"></image>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="dots">
+        <block wx:for="{{imageUrlList}}" wx:key="unique">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+
+
+  <view class='lin_x'></view>
+  <view class="ar_cont">
+
+    <view class="ar_cont_h1">{{subject}}</view>
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-fuwuleixing'></text>服务类型：</text>
+      <text class='user_text'>{{discountType}}</text>
+    </view>
+
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-zhekoujianjie'></text>折扣简介：</text>
+      <text class='user_text line_3' bindtap="navigateDetail">{{summary}}</text>
+    </view>
+
+    <view class='address_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-dizhi'></text>地址：</text>
+      <text class='user_text'>
+			<text class='address_lin' style="display:block" wx:for="{{lists}}" wx:key="{{index}}">{{item}}</text>
+      </text>
+    </view>
+
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-dianhua'></text>联系电话：</text>
+      <text class='user_text'>{{tel}}</text>
+      <text class='phone icon-dianhua1 iconfont' data-phn="{{tel}}" bindtap="phoneCall"></text>
+       <text class='tip_text'>(提示：可以联系店主进行沟通哦)</text>
+    </view>
+
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-dianneilianxiren'></text>店内联系人：</text>
+      <text class='user_text'>{{storeContacts}}</text>
+    </view>
+
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-dianneilianxidianhua'></text>店内联系人电话：</text>
+      <text class='user_text' wx:if="{{storeContactsTel != null}}">{{storeContactsTel}}</text>
+    </view>
+ 
+    <view class='user_list'>
+      <text class='user_tit'><text class='ico iconfont #icon-youhuixinxi'></text>优惠信息：</text>
+      <text class='user_text'>{{discount}}</text>
+    </view>
+
+
+    <view class='user_box user_in'>
+      <text class='user_tit'><text class='ico iconfont #icon-lianxiren1'></text>联系人：</text>
+      <view class='user_text user_box'>
+        <view class='use_list ' bindtap="navigateDetail" data-id="{{userId}}">
+          <block wx:if="{{iteuserHeaderImageUrlm}}">
+              <image class='img' src="{{userHeaderImageUrl}}" mode="aspectFill"></image>
+            </block>
+            <block wx:else>
+              <image class='img ' src="../../images/user_pic.png"></image>
+            </block>
+          <!-- <image class='img' src="{{userHeaderImageUrl}}"></image> -->
+          <view class='text line_1'>{{userName}}</view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='serve_box'>
+      <view class='tit'>服务流程提示</view>
+      <view class='main_text'>
+        首先点击预定按钮进行预定，系统会发送您的信息到您的同学账号内，进店之后请联系店内联系人或店主沟通折扣情况，店主或联系人会以小程序发送信息来对您信息进行认证(也可出示小程序内个人信息页面进行验证：点击班级-点击自己头像-个人详情)如果出现与信息描述不相符的情况，请联系轮汇在线客服。
+      </view>
+    </view>
+
+
+
+
+
+
+  </view>
+
+</view>
+<view class='icon_box'>
+  <view class='icon_list view_list collect {{isCollection=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}" data-type="2">
+    <view class='icon_list  iconfont icon-shoucang {{isCollection=="0"?"icon-shoucang":"icon-shoucang"}}'></view>
+    <view class='text'>
+    {{isCollection=="0"?"收藏":"已收藏"}}
+    </view>
+
+  </view>
+
+
+  <view class='icon_list view_list collect {{isFixed=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}" data-type="3">
+    <view class='iconfont #icon-yuding {{isFixed=="0"?"icon-dingdan":"icon-zongheyewudingdan"}}'></view>
+    <view class='text'>
+      {{isFixed=="0"?"预定":"已预定"}}
+    </view>
+
+  </view>
+
+
+  <view class='icon_list zan {{isThumbsUp=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}" data-type="1">
+    <view class='iconfont  #icon-dianzan {{isThumbsUp=="0"?"#icon-dianzan":"icon-zan"}}'></view>
+    <view class='text'>
+    {{isThumbsUp=="0"?"点赞":"已点赞"}}</view>
+
+  </view>
+
+</view>

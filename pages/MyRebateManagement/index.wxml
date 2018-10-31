@@ -1,0 +1,133 @@
+<!--pages/RebateManagement/index.wxml-->
+
+
+<view class="body container">
+  <view class="nav bc_white flex_box">
+    <view class="flex_item {{selected?'red':'default'}}" bindtap="selected">
+      我的参与
+      <view class='bot_line'></view>
+    </view>
+    <view class="flex_item {{selected1?'red':'default'}}" bindtap="selected1">折扣收藏<view class='bot_line'></view></view>
+  </view>
+  <view class="{{selected?'show':'hidden'}} bot_top">
+    <scroll-view scroll-y='true' style='height:{{scrHeight}}px'>
+      <view class="item-box">
+        <view class="items">
+          <view wx:for="{{discountList}}" wx:key="{{item.discountId}}" class="item" bindtap='DiscountDetails' data-id="{{item.discountId}}">
+            <view data-index="{{index}}" class="inner txt">
+
+              <view class='main_infor'>
+                <image class="item-img" mode='aspectFill' src="{{item.discountImageUrl}}"></image>
+                <view class='infor'>
+
+                    <view class='infor_tit line_2'>{{item.subject}}</view>
+
+                  <view class='in_list Type'>
+                    <view class='tittle   '>服务类型：</view>
+                    <view class='infor line_1'>{{item.serviceType}}</view>
+                  </view>
+                  <view class='in_list details'>
+                    <view class='tittle'>折扣简介：</view>
+                    <view class='infor line_1'>{{item.summary}}</view>
+                  </view>
+                  <view class='in_list address'>
+                    <view class='tittle'>地 址：</view>
+                    <view class='infor line_1'>{{item.addrs}}</view>
+                  </view>
+
+                  <!-- <view class='in_list specialOffers'>
+                  <view class='tittle'>优惠信息：</view>
+                  <view class='infor line_1'>{{item.preferentialInformation}}</view>
+                </view> -->
+                </view>
+              </view>
+
+
+              <view class='bot_ico'>
+                <view wx:if="{{item.completionOfConsumption!='1'}}">
+                   <view class='but_list false_btn float_right' data-id="{{item.discountId}}" catchtap="wancheng">完成消费</view>
+                   <view class='but_list ok_btn float_right' data-id="{{item.discountId}}" catchtap="quxiao"> 取消预订</view>
+                </view>
+                <view wx:if="{{item.completionOfConsumption=='1'}}">
+                  <view class='but_list float_right' data-id="{{item.discountId}}" catchtap="deleteMsg">删除</view>
+                </view>
+              </view>
+            </view>
+
+
+          </view>
+          <view wx:if="{{discountList.length <= 0 || discountList == null}}" class='no_any no_any_pic'>
+               <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+          </view>
+
+  
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+
+  <view class="{{selected1?'show':'hidden'}} bot_top">
+    <scroll-view scroll-y='true' style='height:{{scrHeight}}px'>
+      <view class="item-box">
+        <view class="items">
+          <view wx:for="{{discountList}}" wx:key="{{item.discountId}}" class="item" bindtap='DiscountDetails' data-id="{{item.discountId}}">
+            <view data-index="{{index}}" class="inner txt">
+
+              <view class='main_infor'>
+             
+                <image class="item-img" mode='aspectFill' src="{{item.discountImageUrl}}"></image>
+                <view class='infor'>
+                    <view class='infor_tit line_2'>{{item.subject}}</view>
+                      <view class='in_list Type'>
+                    <view class='tittle   '>服务类型：</view>
+                    <view class='infor line_1'>{{item.serviceType}}</view>
+                  </view>
+                  <view class='in_list details'>
+                    <view class='tittle'>折扣简介：</view>
+                    <view class='infor line_1'>{{item.summary}}</view>
+                  </view>
+                    <view class='in_list specialOffers'>
+                    <view class='tittle'>优惠信息：</view>
+                    <view class='infor line_1'>{{item.preferentialInformation}}</view>
+                  </view>
+                  <view class='in_list address'>
+                    <view class='tittle'>地 址：</view>
+                    <view class='infor line_1'>{{item.addrs}}</view>
+                  </view>
+                
+                
+                </view>
+              </view>
+
+
+              <view class='bot_ico'>
+
+                <view class='but_list del ok_btn float_right' data-id="{{item.discountId}}" catchtap="delItem">{{type=='1'?'删除':'取消收藏'}}</view>
+                <view class='but_list del ok_btn float_right' data-id="{{item.discountId}}" catchtap="mdfItem" wx:if="{{type=='1'}}">修改</view>
+                <view class='{{item.likeNum >0 ? "red_font":"" }} but_list float_left'  ><text class='iconfont #icon-dianzan'></text>点赞
+                  <text class='text'>{{item.likeNum}}</text>
+                </view>
+                <view class='{{item.markNum >0 ? "red_font":"" }} but_list float_left'>
+                  <text class='iconfont #icon-shoucang'></text>
+                  已收藏
+                  <text class='text'>{{item.markNum}}</text>
+                </view>
+              </view>
+
+            </view>
+
+
+          </view>
+          <view wx:if="{{discountList.length <= 0 || discountList == null}}" class='no_any no_any_pic'>
+              <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

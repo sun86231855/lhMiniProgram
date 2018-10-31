@@ -1,0 +1,21 @@
+<!--add_reward.wxml  -->
+<view class='container'>
+  <view class='theme'>
+    <text class='theme-label'>主题：</text>
+    <input class='theme-input' bindinput='inputSubject'/>
+  </view>
+  <view class='need'>
+    <text class='need-label'>需求行业：</text>
+    <text class='need-check' bindtap='check'>请选择</text>
+	<view class='hy_box'>
+	  <text class='quick_text inmanyline' wx:for="{{industryList}}" wx:key="item.id" >{{item.name}}</text>
+    </view>
+  </view>
+  <view class='content'>
+    <text class='content-label'>内容：</text>
+    <textarea class='content-content' bindinput='textareaSummary'></textarea>
+  </view>
+  <view class='save'>
+    <view class='save-btn' bindtap="submitCooperate">保存</view> 
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/CooperationDetails/index.wxml-->
+<view class="container">
+    <view class="ar_cont">
+        <scroll-view  scroll-y="true"  style='height:100%;'  >
+        <view class='user_img'>
+            <text class='user_text'>{{offerCreateDate}}</text>
+          <image src="{{headImageUrl}}"></image>
+        </view>
+        <view class="ar_cont_h1">{{offerTitle}}</view>
+      
+        <view class='company_box'>
+              <view class='text name line_1 q_font'>{{companyName}}</view>
+              <view class='lin_in'>|</view>
+              <view class='text DemandIndustry'><text>{{offerIndustry}}</text></view>
+        </view>
+     
+        <view class='user_list height'>
+          <text class='user_tit'><text class='line'></text>需求行业：</text>
+          <text class='user_text'>{{offerNeedIndustry}}</text>
+        </view>
+            <view class='user_list'>
+          <text class='user_tit'><text class='line'></text>合作内容：</text>
+          <text class='user_text q_font'>{{offerText}}</text>
+        </view>
+
+
+        <view class='user_list height user_send' bindtap='navigateDetail' data-id="{{offerSenderId}}">
+          <image src="{{headImageUrl}}"></image>
+          <text class='user_tit'>发送人：</text>
+          <text class='user_text'>{{offerSender}}</text>
+        </view>
+      
+
+       
+        </scroll-view >
+    </view>
+    <view class='bot_line '>
+   
+         <view class='item_container' bindtap='itemSelected' data-index='{{index}}' wx:for="{{itemList}}" wx:key="id">  
+          <view class=" {{markUpStatus == 0 ?'selectof':'select'}}" ><view class='text '>{{markupName}}</view>
+        </view>                   
+      </view>  
+      <view class='call_num' data-phn="{{offerTelephone}}" bindtap="phoneCall">拨打电话</view>
+     </view>
+
+
+</view>

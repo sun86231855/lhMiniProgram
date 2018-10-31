@@ -1,0 +1,23 @@
+<!--pages/reward_set/reward_set.wxml-->
+<view class='container'>
+  <view class='theme'>
+    <view class='theme-label'>发布主题：</view>
+    <input class='theme-input' maxlength='30' placeholder='请输入主题' value="{{subject}}" bindinput='inputSubject'/>
+  </view>
+  <view class='need'>
+    <view class='need-label'>行<text decode='{{true}}' space='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>业：</view>
+    <!-- <text class='need-check' bindtap='checkIndustryShow'><text class='text'>{{tradeName!=null?tradeName:''}}</text><text bindtap='checkIndustryShow' class='icon-xiajiantou iconfont'></text></text>  -->
+      <picker mode="selector" range="{{selectData}}" value="{{index}}" bindchange="listenerPickerSelected">
+                <text hidden='{{flag1}}'>--<text class='red_font'>请选择</text>--</text>
+                <text hidden='{{flag2}}'>{{selectData[indexd]}}</text>
+              </picker>
+    
+  </view>
+  <view class='content'>
+    <view class='content-label'>合作内容：</view>
+    <textarea class='content-content' maxlength='82' bindinput='textareaSummary' placeholder='{{summary}}'></textarea>
+  </view>
+  <view class='bot_v'>
+    <view class='tj' bindtap="submitCooperate">保存</view> 
+  </view>
+</view>

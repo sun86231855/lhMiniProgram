@@ -1,0 +1,8 @@
+<!--ol.wxml  -->
+<view class='container'>
+  <view class='list'></view>
+  <view class='send'>
+    <input class='send-input'/>
+    <view class='send-btn'>发送</view>
+  </view>
+</view>

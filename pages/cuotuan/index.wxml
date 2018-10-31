@@ -1,0 +1,70 @@
+<!--pages/cuotuan/index.wxml-->
+<!--<loading hidden="{{!loading}}">
+	{{title}}
+</loading>-->
+<view class="container">
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+
+
+  <!--nav-->
+  <view class="nav_top">
+    <block wx:for="{{navCTTopItems}}" wx:key="item.id">
+      <view class="nav_top_items {{curNavId == item.id ? 'active_'+colors[index] : ''}}" bindtap="switchTab" data-index="{{index}}" data-id="{{item.id}}">
+      <image class="tit_eng" src="{{item.img}}" mode="aspectFill"></image>
+         
+        <text class='text'>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+  <!--list-->
+  <!--线-->
+  <view class='lin_x'></view>
+  <view class="nav_section">
+    <view wx:if="{{list[curIndex]}}" class='list_p'>
+        <block wx:for="{{list[curIndex]}}" wx:key="item.matchBuyId" >
+        
+            <view class="nav_section_items" style="background:#fff" >
+           
+                <!--image-->
+                <view class="section_image" bindtap="doCuoTap" data-aid="{{item.matchBuyId}}">
+                <block wx:if="{{item.masterImageUrl}}">
+                    <image src="{{item.masterImageUrl}}" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" bindtap="doCuoTap"   data-aid="{{item.matchBuyId}}">                 
+                    <view class="section_cont_name inmanyline">{{item.subject}}</view>
+                   
+                    <view class='Position line_3' style="white-space:pre-wrap" >{{item.summary}}</view>
+                     <view class='bot_text'>
+                        <text class='phone_left'><text class='lef_infor'>已有<text class='red_font'>{{item.completPersonNum}}</text>人撮团</text></text>
+                         <progress class='prgress-content' percent="{{item.percent}}" color='red' show-info />
+                         <!-- <text>({{item.standardGroupBuyNumber}}人满)</text> -->
+                                  
+                           <text class="section_book" bindtap="doCuoTap" data-aid="{{item.matchBuyId}}">我要撮团</text>                  
+                     </view>
+                </view>
+                <!--book-->
+             
+            </view>
+            <view class='lin_x'></view>
+        </block>
+        
+    </view>
+     <view wx:else class='no_any no_any_pic'>
+      <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+ 
+    </view>
+
+    
+
+  
+</view>
+ 
+</scroll-view>
+</view>
+

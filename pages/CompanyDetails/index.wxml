@@ -1,0 +1,97 @@
+<!--pages/CompanyDetails/index.wxml-->
+<!--轮播-->
+<!-- <swiper style='height:420rpx;' indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}">  
+        <swiper-item>  
+           <navigator url="{{item.link}}" hover-class="navigator-hover">  
+            <image src="{{item.url}}" class="slide-image" />  
+           </navigator>   
+        </swiper-item>  
+      </block> 
+    
+</swiper> mode='widthFix' -->
+<view class='company_top'>
+
+    <image class='slide-image'  src='/images/com.jpg'></image>
+
+  <view class='company_d'>
+    <view class='use_pic'>
+        <image src="{{userImageUrl}}"></image>
+   </view>
+    <view class='name'>
+
+      <view class='text text_company line_1'>{{name}}</view>
+      <view class='line_l text_line'>|
+       
+      </view>
+       <view class='text text_position line_1'>{{industryName}}</view>
+   
+    </view>
+    <view class='compang_js line_3'>{{summary}}</view>
+   
+
+  </view>
+</view>
+
+<view class='lin_x'></view>
+<view class="container">
+  <view class="ar_cont">
+    <view class='company_news'>
+      <view class='list'>
+        <view class="line"></view>公司信息</view>
+    </view>
+    <!-- <view class="ar_cont_h1">{{name}}</view> -->
+
+    <view class='user_list border_b'>
+      <text class='user_tit'><text class='ico iconfont #icon-suoshuhangye'></text>行<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>业：</text>
+      <!-- <block wx:if="{{you?true:false}}"> -->
+      <text class='user_text {{industryName != null && industryName != "" ? "":"q_color"}}'>{{industryName != null && industryName != "" ? industryName:"未填写"}}</text>
+    </view>
+
+    <view class='user_list company_list '>
+      <text class='user_tit'><text class='ico iconfont #icon-gerenjieshao'></text><text>公司介绍：</text></text>
+      <text class='user_text line_3' wx:if="{{summary != null && summary != '' }}">{{summary}}</text>
+      <text class='user_text line_3 q_color' wx:if="{{summary == null || summary == '' }}">未填写</text>
+
+    </view>
+
+    <view class='user_list border_nh padding'>
+      <text class='user_tit'><text class='ico iconfont #icon-dianneilianxiren'></text><text>联<text decode="{{true}}" space="{{true}}">&nbsp;</text>系<text decode="{{true}}" space="{{true}}">&nbsp;</text>人：</text></text>
+      <view class='user_text user_box'>
+        <view class='use_list ' data-id="{{userId}}" bindtap="navigateDetail">
+          <image class='img' src="{{userImageUrl}}"></image>
+          <view class='text line_1'>{{userName}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='user_list border_b'>
+      <text class='user_tit'><text class='ico iconfont #icon-zhiwei'></text><text>职<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>位：</text></text>
+      <text class='user_text' wx:if="{{position != null && position != ''}}">{{position}}</text>
+      <text class='user_text q_color' wx:if="{{position == null || position == ''}}">未填写</text>
+    </view>
+ 
+    <view class='user_list border_b'>
+      <text class='user_tit'><text class='ico iconfont #icon-gongsidianhua'></text><text>公司电话：</text></text>
+      <text class='user_text under_line' wx:if="{{tel != null && tel != ''}}">{{tel}}</text>
+      <text class='user_text q_color' wx:if="{{tel == null || tel == ''}}">未填写</text>
+      <text class='phone icon-dianhua1 iconfont' data-phn="{{tel}}" bindtap="phoneCall"></text>
+    </view>
+
+    <view class='photo'>
+      <text class='photo_l '><text class='ico iconfont #icon-xiangce'></text><text>相<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>册：</text></text>
+      <view class='photo_v' wx:if="{{detailImageUrlList != null && detailImageUrlList != ''}}">
+        <image class='bg_img' wx:for="{{detailImageUrlList}}" wx:key="{{item}}" src="{{item}}" data-index="{{index}}" bindtap="previewImage"></image>
+      </view>
+
+      <view class='photo_v' wx:else>
+        <view class='q_color'>未上传</view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+</view>

@@ -1,0 +1,71 @@
+<!--reward.wxml-->
+<!--index.wxml-->
+
+  <radio-group bindchange="radioCheckedChange">
+    <view class="flex_box">
+      <view class="flex_item">
+        <label class="{{radioCheckVal==0?'active':''}}" data-type="1">我的发起
+        <view class='bot_line'></view>
+          <radio value="0"   hidden="true"></radio>
+        </label>
+      </view>
+      <view class="flex_item">
+        <label class="{{radioCheckVal==1?'active':''}}" data-type="2" > 合作收藏
+        <view class='bot_line'></view>
+          <radio  value="1"  hidden="true"></radio>
+        </label>
+      </view>
+     
+    </view>
+
+
+  </radio-group>
+<view class="container">
+ <view class='bot_v'  hidden="{{botv}}"  ><view class='add_reward tj'  bindtap='add_reward'>添加合作信息</view></view>
+  <scroll-view class='scroll-content page-body' scroll-y="true"  style='height:{{scrHeight-butHeight}}px' lower-threshold="0" 
+  bindscrolltolower="loadMore" >
+   
+    <view class='list' wx:for="{{cooperateInfoList}}" wx:key="{{item.cooperateId}}">
+      <view bindtap='details' data-cooperateId="{{item.cooperateId}}" class='header'>
+      <view class='name_in line_1'>{{item.cooperateSubject}}</view>
+
+      <!-- <text class='status'>{{item.releaseStateName}}</text> -->
+        <view wx:if="{{item.releaseStateName == '已发布'}}" class='right_pix'><image src='/images/no_fb.png'></image></view>
+        <view wx:else class='right_pix'><image src='/images/y_fb.png'></image></view>
+      
+      </view>
+      <view bindtap='details' data-cooperateId="{{item.cooperateId}}" class='content  line_3'>{{item.cooperateSummary}}</view>
+      <view bindtap='details' data-cooperateId="{{item.cooperateId}}" class='info'>
+        <view class='info-content'><view class='tit'>公司名称：</view><view class='infor line_1'>{{item.companyName}}</view></view>
+        <view class='info-content'><view class='tit'>发布日期：</view><view class='infor'>{{item.releaseDate}}</view></view>
+        <view class='info-content'><view class='tit'>联系方式：</view><view class='infor'>{{item.companyTel}}</view></view>
+        <view class='info-content'><view class='tit'>发布人：</view><view class='infor'>{{item.releasePerson}}</view></view>
+      </view>
+      <block  wx:if="{{pageType != '1'}}">
+		  <view class='btn' wx:if="{{item.releaseStateName == '未发布'}}">
+	    	<view class='btn-content' data-cooperateId="{{item.cooperateId}}" catchtap='del' ><text class='icon-shanchu iconfont' ></text>删除</view>
+		  	<view class='btn-content red_font' data-cooperateId="{{item.cooperateId}}" catchtap='set'><text class='iconfont icon-bianji'></text>修改</view>
+      	<view class='btn-content red_font' data-cooperateId="{{item.cooperateId}}" catchtap='start'><text class='iconfont icon-kaishi'></text>开始</view>
+		  </view>
+		  <view class='btn' wx:else>
+			 <view class='btn-content' bindtap='end' data-cooperateId="{{item.cooperateId}}"><text class='iconfont icon-zhongzhi'></text>结束</view>
+        
+		  </view>
+	  </block>
+	  <block wx:else>
+		  <view class='btn'>
+			<view class=' quxiao_collect' bindtap='doCancel' data-cooperateId="{{item.cooperateId}}">取消收藏</view>
+		  </view>
+      </block>
+     </view>
+     <view wx:if="{{cooperateInfoList.length <= 0 || cooperateInfoList == null}}" class='no_any no_any_pic'>
+        <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+    </view>
+  
+  </scroll-view>
+
+  
+  
+  
+</view>

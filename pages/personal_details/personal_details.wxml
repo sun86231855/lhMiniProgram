@@ -1,0 +1,186 @@
+
+
+<view class='container'>
+  <view class="top">
+    <view class='top-title'><view class='line'></view>联系方式</view>
+
+    <view class='top-content'>
+      <view class='tel'>
+        <view class='phone'>
+          <text class='phone-label tittle phone_v'>联系电话：</text>
+          <input class='phone-input phone_i' bindinput='phoneInput' placeholder='请输入联系方式' value='{{telephone}}'/>
+          <!-- <view class=''>更换手机号</view>  bindtap='clickMe'-->
+          
+        </view>
+       
+        <view class='yzm' >
+          <form bindsubmit="bindMobile" class='form'>
+              <input type="number" placeholder="请输入验证码" maxlength="6" name="data_verify" value="" bindinput='codeInput'/>            
+          </form>
+           <view class="form_group " >
+                <button type="button" class="ChangeBut {{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码</button>
+                <button type="button" class="ChangeBut {{is_show?'hide':'show'}}">{{last_time}}秒后重新发送</button>
+            </view>
+        </view>
+        <view class='check'>
+          <view class='check-label tittle_v'>可视权限：
+               <view class='help'>针对于通讯录</view>
+          </view>
+          <view class='check-content'>
+            <radio-group bindchange="telephoneVisibilityRadioChange">
+              <label class="checkbox radio" >
+                <radio class='radio_v' value="1" checked="{{telephoneVisibility=='1'}}"/>全员可见
+              </label>
+			  <label class="checkbox radio" bindtap="class1ChooseShow">
+                <radio class='radio_v' value="2" checked="{{telephoneVisibility=='2'}}" />部分班级可见
+              </label>
+			  <label class="checkbox radio" bindtap="role1ChooseShow">
+                <radio class='radio_v' value="3" checked="{{telephoneVisibility=='3'}}"/>部分身份可见
+              </label>
+            </radio-group>
+          </view>
+        </view>
+       
+      </view>
+      <view class='wechat'>
+        <view class='wx'>
+          <text class='wx-label tittle' >微<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>信<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>号：</text>
+          <input class='wx-input' bindinput='wecatInput' placeholder='{{wecat}}'  value='{{wecat}}'/>
+        </view>
+        <view class='check'>
+          <view class='check-label '>可视权限：
+             <view class='help'>针对于通讯录</view>
+          </view>
+          <view class='check-content'>
+            <radio-group bindchange="wecatVisibilityRadioChange">
+              <label class="checkbox radio" >
+                <radio class='radio_v' value="1" checked="{{wecatVisibility=='1'}}"/>全员可见
+              </label>
+			  <label class="checkbox radio" bindtap="class2ChooseShow">
+                <radio class='radio_v' value="2" checked="{{wecatVisibility=='2'}}" />部分班级可见
+              </label>
+			  <label class="checkbox radio" bindtap="role2ChooseShow">
+                <radio class='radio_v' value="3" checked="{{wecatVisibility=='3'}}"/>部分身份可见
+              </label>
+            </radio-group>
+          </view>
+        </view>
+       
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='bottom-title'><view class='line'></view>技能展示</view>
+    <view class='bottom-check bottom-phone '><text class='tittle hy_tit'>行<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>业：</text>
+      <!-- <view class='hy_v'>
+      <text class='text bottom-phone-inputs'>{{industryName}}</text><text class='bottom-check-btn icon-xiajiantou iconfont' bindtap='check'></text>
+      </view>  -->
+           <picker mode="selector" range="{{selectData}}" value="{{index}}" bindchange="listenerPickerSelected">
+            <text wx:if="{{selectOne==''}}" hidden='{{flag1}}'>--<text class='red_font'>请选择</text>--</text>
+            <text wx:if="{{selectOne==''}}" hidden='{{flag2}}'>{{selectData[indexd]}}</text>
+            <text wx:esle >{{selectOne}}</text>
+          </picker>
+    </view>
+     
+
+    <view class='bottom-phone'>
+    <text class='bottom-phone-label tittle'>展示电话：</text>  
+    <!-- <text class='bottom-phone-btn' bindtap='doCopy'>同上</text>  -->
+    <input class='bottom-phone-input' placeholder='请输入联系方式' bindinput='changeAbilityTel' value='{{telephoneCopy}}'/>
+  
+    </view>
+   
+      
+    <view class='skill'>
+      <text class='skill-label tittle'>技能介绍：</text><!--{{industrySummary}}-->
+      <!-- <textarea bindinput='industryInput' class='skill-content height' placeholder='{{industrySummary}}'></textarea> -->
+
+       <view class="skill-content height">
+          <textarea  class="content2" bindinput="bindTextAreaChangejl" placeholder="请填写介绍内容" style="height: 10em" value="{{industrySummary}}" maxlength="{{noteMaxLenjl}}" focus />
+          
+       </view>
+    </view>
+    <view class='help help_v' >提示：填写完整的话 会在找专家页面中找到您呦 <text class="weui-textarea-counter">{{noteNowLenjl}}/{{noteMaxLenjl}}</text></view>
+  </view>
+
+ 
+ <view class='save bot_t'>
+    <view class='save-btn tj' bindtap='doSave'>保存</view>
+
+  </view>
+</view>
+
+
+<!--bindtap="hide"-->
+  <view class="modal-box" hidden="{{cflag1}}" >
+    <view class="modal-body">
+      <view class="modal-content">
+        <scroll-view scroll-y='true' style='height:450rpx'>
+		  <checkbox-group bindchange="class1ChooseChange">
+          <view wx:for="{{classList1}}" wx:key="{{item.classId}}" >
+            <view class='title' >
+              <label><checkbox class='tit_check' data-index='{{index}}' checked="{{item.selected}}" value="{{item.classId}}">{{item.className}}</checkbox></label>
+            </view>
+            <view class='line_bottom'></view>
+          </view>
+          </checkbox-group>
+        </scroll-view>
+        <button class="knowBtn" bindtap="class1ChooseHide">确认</button>
+      </view>
+    </view>
+  </view>
+  
+  <view class="modal-box" hidden="{{cflag2}}" >
+    <view class="modal-body">
+      <view class="modal-content">
+        <scroll-view scroll-y='true' style='height:450rpx'>
+		  <checkbox-group bindchange="class2ChooseChange">
+          <view wx:for="{{classList2}}" wx:key="{{item.classId}}" >
+            <view class='title' >
+              <label><checkbox class='tit_check' data-index='{{index}}' checked="{{item.selected}}"  value="{{item.classId}}">{{item.className}}</checkbox></label>
+            </view>
+            <view class='line_bottom'></view>
+          </view>
+          </checkbox-group>
+        </scroll-view>
+        <button class="knowBtn" bindtap="class2ChooseHide">确认</button>
+      </view>
+    </view>
+  </view>
+  
+  <view class="modal-box" hidden="{{rflag1}}" >
+    <view class="modal-body">
+      <view class="modal-content">
+        <scroll-view scroll-y='true' style='height:450rpx'>
+		  <checkbox-group bindchange="role1ChooseChange">
+          <view wx:for="{{roleList1}}" wx:key="{{item.id}}" >
+            <view class='title' >
+              <label><checkbox class='tit_check' data-index='{{index}}' checked="{{item.selected}}" value="{{item.id}}">{{item.name}}</checkbox></label>
+            </view>
+            <view class='line_bottom'></view>
+          </view>
+          </checkbox-group>
+        </scroll-view>
+        <button class="knowBtn" bindtap="role1ChooseHide">确认</button>
+      </view>
+    </view>
+  </view>
+  
+  <view class="modal-box" hidden="{{rflag2}}" >
+    <view class="modal-body">
+      <view class="modal-content">
+        <scroll-view scroll-y='true' style='height:450rpx'>
+		  <checkbox-group bindchange="role2ChooseChange">
+          <view wx:for="{{roleList2}}" wx:key="{{item.id}}" >
+            <view class='title' >
+              <label><checkbox class='tit_check' data-index='{{index}}' checked="{{item.selected}}" value="{{item.id}}">{{item.name}}</checkbox></label>
+            </view>
+            <view class='line_bottom'></view>
+          </view>
+          </checkbox-group>
+        </scroll-view>
+        <button class="knowBtn" bindtap="role2ChooseHide">确认</button>
+      </view>
+    </view>
+  </view>
+  

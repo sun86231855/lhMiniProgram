@@ -1,0 +1,17 @@
+<!--pages/InviteFriends/details.wxml-->
+<view class='user_v'>
+   <view wx:if="{{UserList!=null && UserList.length>0}}" >
+    <view  class='user_list' bindtap='navigateDetail' wx:for="{{UserList}}" wx:key="{{item.userId}}" data-id="{{item.userId}}" >
+           <image class='img' src="{{item.headUrl}}" mode="aspectFill"></image>
+           <view class='text'> {{item.nickName}}</view>
+    </view>
+    </view>
+     <view wx:else class='no_any no_any_pic'>
+         <image class='img' src='/images/no_any_pic.png'></image>
+        <view class='text'>这理是空空如野什么都没有了~</view>
+    </view>
+
+
+
+</view>
+

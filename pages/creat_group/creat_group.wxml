@@ -1,0 +1,26 @@
+<!--creat_group.wxml  -->
+<view class='container'>
+  <view class='name'>
+    <text class='name-label'>圈子名称：</text>
+    <input class='name-input' bindinput='groupNameinput'></input>
+  </view>
+  <view class='select_div' >
+  <view class='tit'>我的社群：</view> 
+    <view class='select_box'> 
+        <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{selectData[index]}}</text>
+            <image class='select_img {{show&&"select_img_rotate"}}' src='/images/gobottom.png'></image>         
+        </view>
+        <view class='option_box'  style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+            <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+        </view>
+      </view>
+ </view>
+  <view class='describe'>
+    <text class='describe-label'>圈子简介：</text>
+    <textarea class='describe-text' bindinput='groupSummaryinput'></textarea>
+  </view>
+  <view class='creat bot_v'>
+    <view class='creat-btn tj' bindtap='createGroup'>创建</view>
+  </view>
+</view>

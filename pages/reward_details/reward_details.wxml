@@ -1,0 +1,86 @@
+<!--pages/reward_details/reward_details.wxml-->
+<view class='container'>
+  <view class='ar_cont'>
+    <scroll-view  scroll-y="true"  style='height:100%;'  >
+      <view class='user_img'>
+          <text class='user_text'>{{releaseDate}}</text>
+        <image src='/images/avatar.png'></image>
+      </view>
+
+         <view class="ar_cont_h1  line_2">{{subject}}</view>
+      
+        <view class='company_box'>
+              <view class='text name line_1 q_font'>{{companyName}}</view>
+              <view class='lin_in'>|</view>
+              <view class='text DemandIndustry'><text>     </text></view><!--行业-->
+        </view>
+
+
+
+        <view class='user_list height'>
+          <text class='user_tit'><text class='line'></text>需求行业：</text>
+          <text class='user_text'>{{tradeName}}</text>
+        </view>
+          <view class='user_list'>
+          <text class='user_tit'><text class='line'></text>合作内容：</text>
+          <text class='user_text q_font'>{{summary}}</text>
+        </view>
+
+          <view class='user_list height user_send' bindtap='navigateDetail' data-id="{{offerSenderId}}">
+          <image src='/images/avatar.png'></image>
+          <text class='user_tit'>发送人：</text>
+          <text class='user_text'>{{releasePerson}}</text>
+        </view>
+
+
+
+
+
+
+
+     
+
+<!--      
+      <view class='theme '>
+        <text class='theme-label'>主题：</text>
+        <text class='theme-input line_2 '>{{subject}}</text>
+      </view>
+      <view class='content'>
+        <text class='content-label'>内容：</text>
+        <text class='content-content'>{{summary}}</text>
+      </view>
+        <view class='need'>
+        <text class='need-label'>公司名称：</text>
+        <text class='need-check'>{{companyName}}</text>
+      </view>
+  
+          <view class='time'>
+        <text class='time-label'>联系方式：</text>
+        <text class="time-content">{{companyTel}}</text>
+      </view>
+         <view class='time'>
+        <text class='time-label'>发布人：</text>
+        <text class="time-content">{{releasePerson}}</text>
+      </view>
+      <view class='need'>
+        <text class='need-label'>需求行业：</text>
+        <text class='need-check'>{{tradeName}}</text>
+      </view>
+  
+  
+      <view class='status'>
+        <text class='status-label'>状态：</text>
+        <text class='status-content'>{{releaseStateName}}</text>
+      </view> -->
+      </scroll-view >
+    </view>
+  <view class='bot_line '>
+   
+         <view class='item_container' bindtap='itemSelected' data-index='{{index}}' wx:for="{{itemList}}" wx:key="id">  
+          <view class=" {{markUpStatus == 0 ?'selectof':'select'}}" ><view class='text '>{{markupName}}</view>
+        </view>                   
+      </view>  
+      <view class='call_num' data-phn="{{offerTelephone}}" bindtap="phoneCall">拨打电话</view>
+     </view>
+</view>
+

@@ -1,0 +1,41 @@
+<!--pages/my_group/index.wxml-->
+<!--pages/my_run_group/my_run_group.wxml-->
+<scroll-view  scroll-y="true"  class="page-body"  style='height:{{scrHeight}}px' lower-threshold="0"  bindscrolltolower="loadMore" scroll-top="{{scrollTop}}" bindscroll="scroll" >
+  <block wx:for="{{matchBuyApplyList}}" wx:key="{{item.id}}" >
+        <view class='list-content' >
+        <view class='ct_v'  data-aid="{{item.id}}">
+             <view class='left'><image class='left-img' src="{{item.masterImageUrl != null && item.masterImageUrl != '' ?item.masterImageUrl:'../../images/user_pic.png'}}"></image></view>
+              <view class='right'>
+                  <view> <!-- bindtap='doCuoTap'   bindtap='doCuoTap' data-aid='{{item.matchBuyId}}'-->
+                          <view class='name'>
+                        <view class='name-title line_1'>{{item.subject}}  </view>
+                        <view class='text_infor'>{{item.stateName}}</view> 
+                      
+                      </view>
+                      <view class='describe'>
+                          <view class='tit'>简介：</view>
+                          <view class='text_infor line_1'>{{item.summary}}</view>
+                      </view>
+                      <view class='describe'>
+                          <view class='tit'>折扣类型：</view>
+                          <view class='text_infor'>{{item.typeName}}</view></view>
+                      <view class='describe'>
+                          <view class='tit'>有效类型：</view>
+                          <view class='text_infor'>{{item.vaildTypeName}}</view></view>
+                
+                  
+                  </view>
+            
+                  <view class='btn-container'>
+                    <view class='btn' bindtap='delItem' data-id="{{item.id}}">删除</view>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='lin_x'></view>
+       </block>
+</scroll-view>
+
+<view class='bot_v'>
+	 <view class='record tj' bindtap='rub_group'>发起撮团</view>
+</view>

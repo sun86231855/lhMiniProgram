@@ -1,0 +1,52 @@
+/*platform.wxss  */
+.container {
+  margin: 0;
+  padding: 20rpx 2%;
+}
+
+.name {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.remark {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+
+.name-label,
+.remark-label {
+  flex-shrink: 0;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.name-input,
+.remark-content {
+  width: 100%;
+  border: 1rpx solid #efefef;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+
+.name-input {
+  height: 50rpx;
+}
+
+.sure {
+
+}
+
+.sure-btn {
+
+}

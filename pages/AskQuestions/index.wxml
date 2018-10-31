@@ -1,0 +1,39 @@
+<!--pages/AskQuestions/index.wxml-->
+<view class='ask_box'>
+      <view class='ask_list'>
+        <view class='tit'>内容标题：</view>
+        <view class='infor'>
+            <input class='input' placeholder='请输入' bindinput="inputSubject"></input>
+        </view>
+      </view>
+    
+        <view class='ask_list'>
+        <view class='tit'>内容分类：</view>
+        <view class='infor'>
+              <picker mode="selector" range="{{selectData}}" value="{{index}}" bindchange="listenerPickerSelected">
+                <text hidden='{{flag1}}'>--<text class='red_font'>请选择</text>--</text>
+                <text hidden='{{flag2}}'>{{selectData[indexd]}}</text>
+              </picker>
+         <!-- <view class='select_box'>
+                <view class='select' catchtap='selectTap'>                  
+                    <text class='select_text'>{{text}}</text>
+                    <image class='select_img {{show&&"select_img_rotate"}}' src='/images/gobottom.png'></image>         
+                </view>
+                <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+                    <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+                </view>
+            </view> -->
+        </view>
+      </view> 
+       <view class='tw_vie'>
+        <view class='tit'><view class='line'></view>提问内容：</view>
+        <view class='infor'>
+            <textarea class='textarea' placeholder='请输入' bindinput="inputSummer"></textarea>
+        </view>
+      </view>
+
+      <view class='bot_v'>
+           <button class='tj' bindtap="submit">提交</button>
+      </view>
+</view>
+

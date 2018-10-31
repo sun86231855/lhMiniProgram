@@ -1,0 +1,139 @@
+/* pages/AddTheDiscount/index.wxss */
+.container {
+  margin: 0 2.5%; width: 95%;
+ 
+}
+.their picker{ color: #999;font-size: 30rpx;display: inline-block; vertical-align: top}
+.ask_box .ask_list .tit{ width: 28%; font-size: 30rpx; padding-right: 10rpx; box-sizing: border-box; text-align: right; line-height: 80rpx; position: relative; color: #666 }
+
+.name,
+.their,
+.tel,
+.yh,
+.jianj
+
+ {
+  width: 100%;
+  /* display: flex; */
+  justify-content: flex-start;
+  align-items: center; padding: 10rpx 0; line-height: 60rpx;
+}
+.photo{  width: 100%;
+  /* display: flex; */
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10rpx 0 20rpx 0; }
+.zk,
+.add_vie {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10rpx 0; border-bottom: 1px solid #EEEEEE
+}
+.add-label{ display: 
+inline-block; vertical-align: top; padding-right: 10rpx; box-sizing: border-box; max-width: 35%; font-size: 30rpx; line-height: 60rpx; text-align: left; color: #666}
+.photo-label {
+  font-size:30rpx; box-sizing: border-box; padding-right: 10rpx; text-align: left;
+  max-width: 35%; display: inline-block; vertical-align: middle; line-height: 100rpx; color: #666
+}
+
+.name-label,
+.their-label,
+.product-label,
+.tel-label {
+  font-size:30rpx; box-sizing: border-box; padding-right: 10rpx; text-align: right;
+  max-width: 35%; display: inline-block; vertical-align: top; color: #666
+}
+.their-check{ line-height: 60rpx;}
+.their-check .text_n{ vertical-align: middle; padding-left: 10rpx;}
+.their-check .iconfont{ padding: 0 10rpx;vertical-align: middle;}
+
+.tel-label {
+  flex-shrink: 0; display: inline-block; vertical-align: top
+}
+
+.name-label,
+.product-label {
+  flex-shrink: 0;
+}
+.name-label text,
+.photo-label text,
+.tel-label text,
+.their-label text{ color:#e02e24 }
+
+.name-input,
+.product-content,
+.tel-input {
+  border-radius: 10rpx;
+  width: 60%; display: inline-block; vertical-align: top;
+  box-sizing: border-box;
+}
+.yh-input{  border-radius: 10rpx;
+  width: 58%; display: inline-block; vertical-align: top;
+  box-sizing: border-box;
+  padding-left: 10rpx;}
+  .zk_t{ display: inline-block; vertical-align: top; line-height: 60rpx; width: 6%; font-size: 24rpx; color: #969696; padding-left:10rpx; box-sizing: border-box}
+.address_list {
+  border-radius: 10rpx;
+  width: 65%;
+  box-sizing: border-box;
+  padding-left: 10rpx; display: inline-block; vertical-align: top
+}
+.add-input{ border-radius: 10rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10rpx; margin-bottom: 10rpx}
+.button_a{ display: flex}
+.button_a .add-li{ 
+line-height:40rpx;
+ color: #999;
+text-align:center;
+margin-top:35rpx;
+padding:0 6px;
+margin:20rpx 30px 10rpx 0; float: right;
+font-size:24rpx; background: none; border: none
+}
+.tex_index{ padding: 0 10rpx;}
+.button_a .add-li .iconfont{ padding:0 10rpx 0 0 }
+
+.name-input {
+  width: 65%; display: inline-block; vertical-align: top
+}
+.their-check {
+  font-size: 28rpx;
+  flex-shrink: 0; display: inline-block; vertical-align: top; 
+}
+
+
+.tel-check,
+.post-check {
+  font-size: 28rpx;
+  color: #969696;
+  flex-shrink: 0; display: inline-block; vertical-align: top; padding:0 10rpx; width: 65%;
+}
+.their-check{ line-height: 50rpx;}
+.their-check .iconfont{ font-weight: bold}
+.add_a{ width: 78rpx; height: 60rpx; margin: 0 20rpx;}
+.zk_text{ vertical-align: top; display: inline-block; padding-top: 8rpx}
+
+.photo-content{ position: relative; display: inline-block; vertical-align: middle; width: 65%}
+.add_img{ width: 160rpx; height: 160rpx; margin-top: 10rpx;}
+.photo-content .bg_img{ width: 160rpx; height: 160rpx; border-radius: 10rpx; }
+input, textarea{ font-size: 30rpx; height: 60rpx; line-height: 60rpx; border: none ; color: #999}
+.radio-group{   
+  flex-direction: column; font-size: 28rpx;  display: inline-block; vertical-align: top; width: 70% 
+   
+}
+.radio{ padding-bottom: 10rpx;max-width: 18%; display: inline-block; vertical-align: top}
+.add_v{ width:160rpx;
+height:160rpx;
+margin-top:10rpx;
+display:inline-block;
+vertical-align:top;
+border-radius:10rpx;
+margin-right:10rpx;
+position:relative; font-size: 30rpx;
+}
+.cut_pic{ height: 45rpx; line-height: 45rpx; padding: 0 10rpx; color: #fff; background: #e02e24; font-size: 24rpx; position: absolute; top: 44rpx; right: 0;}
+.add_v .ClearThis{ position: absolute; right: 2rpx; top: 2rpx; font-size: 34rpx; font-weight: bold; color:  red; line-height: 30rpx;}
+.vie_list{ border-bottom: 1px solid #EEEEEE}

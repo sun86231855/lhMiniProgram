@@ -1,0 +1,100 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bussiness/index",
+    "pages/cuotuan/index",
+    "pages/ctdetial/detail",
+    "pages/detail/detail",
+    "pages/Practice/index",
+    "pages/book/book",
+    "pages/technician/technician",
+    "pages/technicain_detail/technicain_detail",
+    "pages/edit_addr/edit_addr",
+    "pages/askedDetial/index",
+    "pages/AskQuestions/index",
+    "pages/ScreeningIndustry/index",
+    "pages/ScreeningIndustrySale/index",
+    "pages/CooperationDetails/index",
+    "pages/CompanyDetails/index",
+    "pages/DiscountDetails/index",
+    "pages/user/user",
+    "pages/call_center/call_center",
+    "pages/feedback/feedback",
+    "pages/association/association",
+    "pages/association_details/association_details",
+    "pages/rub_group/rub_group",
+    "pages/group/group",
+    "pages/group_details/group_details",
+    "pages/creat_group/creat_group",
+    "pages/my_practice/my_practice",
+    "pages/my_run_group/my_run_group",
+    "pages/personal_details/personal_details",
+    "pages/sign/sign",
+    "pages/reward/reward",
+    "pages/add_reward/add_reward",
+    "pages/company_show/company_show",
+    "pages/school/school",
+    "pages/students/students",
+    "pages/platform/platform",
+    "pages/need/need",
+    "pages/reward_set/reward_set",
+    "pages/reward_details/reward_details",
+    "pages/record/record",
+    "pages/details/details",
+    "pages/AllClass/details",
+    "pages/InviteFriends/details",
+    "pages/set_group/set_group",
+    "pages/RebateManagement/index",
+    "pages/AddTheDiscount/index",
+    "pages/LogBut/index",
+    "pages/phone/index",
+    "pages/my_group/index",
+	  "pages/CutPic/index",
+    "pages/MyRebateManagement/index",
+    "pages/order/index",
+    "pages/bannerFirst/index",
+    "pages/bannerSecond/index",
+    
+    "pages/position_select/selector",
+    "pages/dist/index",	"pages/MdfTheDiscount/index"  ],
+    "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e02e24",
+    "navigationBarTitleText": "人脉",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d24a58",
+    "backgroundColor": "#f6f6f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "人脉",
+        "iconPath": "images/rm.png",
+        "selectedIconPath": "images/rmon.png"
+      },
+      {
+        "pagePath": "pages/bussiness/index",
+        "text": "商机",
+        "iconPath": "images/sj.png",
+        "selectedIconPath": "images/sjon.png"
+      },
+     
+ 
+      {
+        "pagePath": "pages/Practice/index",
+        "text": "修炼",
+        "iconPath": "images/jb.png",
+        "selectedIconPath": "images/jbon.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/wd.png",
+        "selectedIconPath": "images/wdon.png"
+      }
+    ]
+  }
+}

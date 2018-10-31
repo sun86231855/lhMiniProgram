@@ -1,0 +1,41 @@
+<!--call_center.wxml-->
+
+<view class="container">
+  <view class='official-accounts'>
+    <text class='title'><text class='iconfont icon-gongzhonghao'></text>公<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>众<text decode='{{true}}' space='{{true}}'>&nbsp;</text>号：</text>
+    <text class='content'>{{official_accounts}}</text>
+  </view>
+  <view class='service-tel'>
+    <text class='title'><text class='iconfont icon-kefudianhua'></text>客服电话：</text>
+    <text class='content'><text class='phone'>{{service_tel}}</text></text>
+  </view>
+  <view class='service-wechat'>
+    <text class='title'><text class='iconfont icon-weixin1'></text>客服微信：</text>
+    <text class='content'>{{service_wechat}}</text>
+  </view>
+
+  <view class='bot_v'>
+     <view class='ol tj' >在线客服</view>
+     <view style='position:absolute;opacity: 0;   top: 10px; '>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+          <contact-button size="27" class='pos'></contact-button>  
+        </view>  
+
+  </view>
+
+</view>
+  <view class='pic_box'>
+      <image src='/images/wc_ewm.png' mode='widthFix'></image>
+       <image src='/images/wx_xcx.png' mode='widthFix'></image>
+  </view>

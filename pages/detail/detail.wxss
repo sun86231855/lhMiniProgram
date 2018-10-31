@@ -1,0 +1,74 @@
+.container{
+    background:#fff;
+}
+.ar_coverpath{width:100%; padding-bottom: 40rpx;  box-sizing:border-box; overflow: hidden;  position: relative; text-align: center; background: #fc493f;}
+.user_in{ width: 100%; z-index: 9999; position: relative; }
+.user_in .user_top{  width: 90%; margin: 16rpx 5%; padding: 60rpx 0 0 0;
+text-align:center;
+flex-direction:row;
+justify-content:space-between;
+}
+.user_in .user_top .user_image{ width:138rpx; height:138rpx; border-radius: 150rpx; position: relative; z-index: 99;  background: #fff; margin-top: 6rpx; }
+.user_in .user_top .user_infor{ position: relative; z-index: 99; text-align: center; font-size: 30rpx; color: #363636; }
+.name{ text-align: center; padding:6rpx 10rpx; font-size: 28rpx; font-weight: 600}
+.zw{ padding-bottom: 10rpx;}
+.zw .text{ font-size: 24rpx; padding:0; display: inline-block; vertical-align: middle}
+.text_company{ width: 47%; text-align: right; color: #666666}
+.text_line{ width: 5%; text-align: center; color: #EEEEEE}
+.text_position{ width: 47%; text-align: left; color: #666666}
+.user_infor .qm{ font-size: 24rpx; width: 100%;  line-height: 30rpx; color: #969696}
+.ar_coverpath .bg_img{ width: 100%; z-index:0;bottom:0;left:0;position:absolute;}
+.line70{ line-height: 60rpx}
+.line30{ line-height: 30rpx}
+
+.ar_cont{ width: 100%;   font-size:30rpx; background: #fff; margin-bottom:40rpx; line-height: 45rpx; color:#666666;}
+.main_infor{width: 100%;}
+.ar_cont .ar_cont_h1{font-size: 30rpx; font-weight: bold; color: #333; text-align: center;
+}
+.q_color{ color: #969696 !important; font-size: 28rpx;}
+.user_js{ width: 96%; padding: 10rpx 2%;  position: relative;  border-bottom: 1px solid #efefef; }
+.user_js .user_tit{ display:inline-block;vertical-align:top;
+font-size:26rpx;color:#333;padding-right:10rpx;text-align:right;box-sizing:border-box;}
+.user_js .user_text{  font-size: 26rpx;display:inline-block; color: #363636;  box-sizing: border-box; line-height: 30rpx; }
+
+.user_list{ width: 96%; padding: 10rpx 2%; position: relative; height: 60rpx; line-height: 60rpx; border-bottom: 1px solid #f7f7f7}
+.user_list_no{ width: 96%; padding: 10rpx 2%; position: relative;  line-height: 60rpx; border-bottom: 1px solid #f7f7f7}
+.user_list_no .user_tit{ display: inline-block; vertical-align: top; font-size: 26rpx;  color: #333; padding-right: 10rpx; text-align: right; box-sizing: border-box}
+.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 26rpx;  color: #333; padding-right: 10rpx; text-align: right; box-sizing: border-box}
+.user_list_no .user_text{ font-size: 28rpx; display: inline-block; vertical-align: top;  color: #363636;overflow: hidden; 
+box-sizing:border-box;}
+.w_100{width:100%;}
+.padd_r{ padding: 0 0 0 38rpx}
+.user_tit .ico{ font-size: 30rpx; padding: 0 10rpx 0 0}
+.user_list .user_text{ font-size: 26rpx; display: inline-block; vertical-align: bottom;  color: #363636; height: 60rpx; overflow: hidden}
+.ar_cont_tit{ font-size: 30rpx; font-weight: 600; color: #333; text-align: left;display: block; width: 100%; margin: 0 ; border-bottom: 1px solid #efefef; padding-left: 34rpx; line-height: 80rpx; height: 80rpx; position: relative; box-sizing: border-box }
+.line{top: 26rpx;}
+.add{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone{ float: right; font-size: 38rpx; font-weight: 600; position: absolute; right: 2%; top: 10rpx;}
+.phone_v{ padding: 10px 0}
+.phone_v .image_v{ width: 25%; display: inline-block; vertical-align: top; text-align: center  }
+.phone_v .image_v image{ width: 80rpx; height: 80rpx; border-radius: 100rpx;}
+.ar_book{ display: none; background:#E02E24; font-size: 32rpx; color:#fff; border-radius: 4rpx; margin:40rpx 0rpx 10rpx;}
+.photo_no{ width: 96%; padding: 10rpx 2%;  position: relative;line-height: 100rpx; border-bottom: 1px solid #f7f7f7}
+.photo{ width: 96%; padding: 10rpx 2%;  position: relative;line-height: 100rpx; border-bottom: 1px solid #f7f7f7}
+.photo_l {display: inline-block; vertical-align: top; font-size:26rpx;  text-align: right; padding-right: 10rpx; box-sizing: border-box; color: #333; }
+.photo_l .ico{ margin-right: 10rpx}
+.photo_v{ display: inline-block; margin-top: 36rpx; line-height: 60rpx; vertical-align: top;}
+.photo_v .bg_img{ width: 100rpx; height: 100rpx; border-radius: 10rpx; margin-right: 5rpx; }
+
+
+.person_photo{ width: 96%; padding: 10rpx 2%;  position: relative;line-height: 60rpx; border-bottom: 1px solid #f7f7f7}
+.person_photo_l {display: inline-block; vertical-align: top; font-size:26rpx;  text-align: right; padding-right: 10rpx; box-sizing: border-box; color: #333; }
+.person_photo_l .ico{ margin-right: 10rpx}
+.person_photo_v{ display: inline-block;line-height: 30rpx; vertical-align: top;}
+.person_photo_v .bg_img{ width: 60rpx; height: 60rpx; border-radius: 60rpx; margin-right: 5rpx; }
+
+.max_w{ max-width: 68%}
+.min_w{ max-width: 32%}
+.lin_x{ height: 18rpx}
+.text_d{ text-decoration: underline}
+.red_font{ color:#E02E24 ！important; font-size:28rpx;
+display:inline-block;
+vertical-align:top;
+height:60rpx;
+overflow:hidden;}

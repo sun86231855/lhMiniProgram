@@ -1,0 +1,55 @@
+<!--pages/set_group/set_group.wxml-->
+<view class="container">
+  <view class='bot_v'>
+      <view class='tj' bindtap='savegroup'>保存</view>
+    </view>
+  <scroll-view class="list-scroll" scroll-y style="width: 100%">
+     
+    <view class='header'>
+      <text class='header-label'>圈子名称：</text>
+      <input class='header-content' bindinput='groupNameInput'  placeholder='groupName' value='{{groupName}}'/>
+    </view>
+    <view class='master'>
+      <text class='master-label'>圈主：</text>
+	  <text class='cont'>{{groupMasterName}} </text>
+    </view>
+    <view class='list'>
+      <text class='list-label'>成员列表：</text>
+      
+        <view wx:if="{{list}}" class='list_user'>
+          <block wx:for="{{list}}" wx:key="item.userId">
+              <view class="nav_section_items" >
+                  <!--image-->
+                  <view class="section_image" bindtap="navigateDetail" data-aid="{{item.userId}}">
+                  <block wx:if="{{item.userImageUrl}}">
+                      <image src="{{item.userImageUrl}}" mode="aspectFill" ></image>
+                  </block>
+                  <block wx:else>
+                      <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                  </block>
+                  </view>
+                  <!--content-->
+                  <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.userId}}">                 
+                      <view class="section_cont_name">{{item.userName}}</view> 
+                  </view>
+              </view>
+              
+          </block>
+        
+      </view>
+      
+      <view class='no_any' wx:else><view class='text'>暂无数据</view></view>
+      
+    </view>
+    
+    <view class='people' style='display:none;'>
+      <text class='people-label'>圈内人数：</text>
+      <input class='people-number'/>
+    </view>
+    <view class='content'>
+      <text class='content-title'>圈子简介：</text>
+      <textarea class='content-content' bindinput='groupSummaryInput' value='{{groupSummary}}'></textarea>
+    </view>
+ 
+  </scroll-view>
+</view>

@@ -1,0 +1,54 @@
+/* pages/phone/index.wxss */
+page{  height: 100%; }  
+.container {  height: 100%;  display: flex;  flex-direction: column;  padding: 0;  box-sizing: border-box; background-color: #fff } 
+ 
+/*登录图片*/ 
+
+.login-img{ width: 100%; height: 400rpx; } 
+ 
+/*表单内容*/ 
+.login-from { flex: auto; height:100%; width: 90%; margin: 0 5%; padding-top: 42rpx; } 
+ 
+.inputView {  background-color: #fff;  line-height: 44px;  display: inline-block; vertical-align: top; position: relative; width: 100%;  border-bottom: 1px solid #ccc} 
+.inputView .iconfont { font-size: 50rpx}
+/*输入框*/ 
+.nameImage, .keyImage {  margin-left: 22px;  width: 14px;  height: 14px } 
+ 
+.registerBtn {  color: #545454;  font-size: 14px ;  
+background: #00aaff !important; border-radius: 30rpx; width: 60%; margin: 20rpx 20% 40rpx 20%; height: 70rpx; line-height: 70rpx; position: fixed; bottom: 20rpx;} 
+.inputText {  flex: block;  display: inline-block; vertical-align: top; text-align: left; padding: 0 0 0 20rpx;  margin-right: 22px;  margin-top: 11px;  color: #cccccc;  font-size: 14px; position: relative; width: 80% } 
+.send_but{ position: absolute; top: 10rpx; right: 0; font-size: 26rpx;} 
+
+.line {  width: 100%;  height: 1px;  background-color: #cccccc;  margin-top: 1px; } 
+/*按钮*/ 
+.loginBtnView {  width: 100%; height: auto; margin-top: 35px; margin-bottom: 0px;  padding-bottom: 0px; } 
+.loginBtn {  width: 60%;  background: linear-gradient(to bottom, #ffa11b 0%,#ff5a00 100%); height: 80rpx; line-height: 80rpx; margin: 10rpx 20%; border-radius: 100rpx; text-align: center; color: #fff   } 
+.label-1, .label-2{  margin-bottom: 15px;}
+.label-1__text, .label-2__text { display: inline-block; vertical-align: middle;}
+.label-1__icon {  position: relative;  margin-right: 10px;  display: inline-block;  vertical-align: middle;  width: 18px;  height: 18px;  background: #fcfff4;}
+.label-1__icon-checked {  position: absolute;  top: 3px;  left: 3px;  width: 12px;  height: 12px;  background: #1aad19; border: 1px solid #1aad19    }
+.label-2__icon { position: relative; display: inline-block; vertical-align: middle; margin-right: 10px; width: 18px; height: 18px; background: #fcfff4;  border-radius: 50px;}
+.label-2__icon-checked {  position: absolute;  left: 3px;  top: 3px;  width: 12px;  height: 12px;  background: #1aad19;  border-radius: 50%;}
+.label-4_text{  text-align: center;   margin-top: 15px;}
+.remember_password{ font-size: 30rpx; margin-top: 20rpx; height: 50rpx;}
+.remember_password .remember{ float: left}
+.forget_m{ float: right}
+.item_container {height: 46rpx; display: inline-block; vertical-align: bottom ; width: 100%; text-align: center  }   
+.select_icon {  width: 40rpx;   height: 40rpx;  }   
+
+.selected{ border: 1px solid red; padding: 2px;}
+.unselected{ border: 2px solid green; padding: 2px; color: green}
+.check{ display: inline-block; vertical-align: top;}
+.item_container .text{ display: inline-block; vertical-align: top; line-height: 42rpx; font-size: 30rpx; color: #666; padding-left: 10rpx !important}
+.text_v{ display: inline-block; vertical-align: middle}
+.text .protocol{ color: #1f7abe; padding: 0 10rpx; vertical-align: middle; border: none; font-size: 26rpx; display: inline-block;}
+
+
+.register_v{ margin-top: 110rpx;}
+.No_account_number{ text-align: center; font-size: 30rpx; display: block}
+.register_w{ width: 100%; height: auto; margin-top: 0px; margin-bottom: 0px;  padding-bottom: 0px; }
+.register{width: 60%; margin: 20rpx auto 0 auto; height: 100rpx; line-height: 100rpx; }
+.group{ text-align: center}
+.phone{font-size: 50rpx; }
+.line_w{margin:10rpx 2% 10rpx 2%;
+}

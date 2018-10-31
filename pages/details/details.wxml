@@ -1,0 +1,14 @@
+<!--pages/details/details.wxml-->
+<view class="container">
+  
+    <view class='list'>
+      <view class='header'>金额：<text class='status'>{{money}}</text></view>
+      <view class='content'>{{subject}}</view>
+      <view class='info'>
+        <view class='info-content'>类型：{{type}}</view>
+        <view class='info-content'>时间：{{time}}</view>
+        <view class='info-content'>交易单号：{{number}}</view>
+        <view class='info-content'>退回账号：{{person}}</view>
+      </view>
+    </view>
+</view>

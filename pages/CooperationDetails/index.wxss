@@ -1,0 +1,54 @@
+/* pages/CooperationDetails/index.wxss */
+page{ background: #eee}
+.container{
+}
+.user_img{ width: 100%; text-align: center; position: relative}
+.user_img .user_text{ position: absolute; top: 10rpx; right: 10rpx; font-size: 22rpx; color: #333333}
+.user_img image{ width: 138rpx; height: 138rpx; border-radius: 138rpx; overflow: hidden; margin: 24rpx auto 18rpx auto}
+.ar_coverpath{width:100px; height: 100px; box-sizing:border-box; border-radius: 100px;overflow: hidden; margin: 2%  auto;}
+.ar_coverpath image{
+    width:100%;
+    height:390rpx;
+}
+.ar_cont{ margin:3%;   width: 94%; position: fixed; z-index: 9; height: 96%; background: #fff;
+    font-size:30rpx;
+    line-height: 45rpx; border-radius: 20rpx; overflow: hidden
+
+}
+.lin_height{ line-height:28rpx;
+padding:20rpx 0;
+}
+.detil_infor{ font-size: 30rpx; width: 90%; padding: 0 5%}
+.ar_cont .ar_cont_h1{font-size: 32rpx; color: #333; text-align: center; padding: 20rpx 0
+}
+.user_list{ padding: 6rpx 3% 0 34rpx; position: relative; line-height: 70rpx; border-bottom: 1px solid #efefef; }
+.height{height:70rpx;}
+
+.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 28rpx; font-weight: 600; color: #333333 }
+.user_list .user_text{ font-size: 26rpx; display: inline-block; vertical-align: top; color: #333333}
+.ar_cont_tit{ font-size: 36rpx; font-weight: 600; color: #333; text-align: left; border-top: 2px solid #ddd; display: block; width: 100%; padding: 6px 0 0 0; margin: 6px 0 0 0}
+.add{ float: right; font-size: 28rpx; font-weight: 600; position: absolute; right: 2%; top: 0;}
+.phone{ float: right; font-size: 38rpx; font-weight: 600; line-height: 60rpx;  position: absolute; right: 0; top: 17rpx;z-index: 9999}
+.pic_list{ width: 40%; height: 200rpx;}
+.icon-shoucang1{ }
+.bot_line{padding:0;position:fixed;left:3%;bottom:2%;width:94%; text-align: center; z-index: 999; border-radius: 0 10rpx 10rpx 0}
+.item_container{ display: inline-block; vertical-align: middle; text-align: center; width: 50%; background: #E42822; color: #ffffff; height: 80rpx; line-height: 80rpx;  border-radius:0 0 0 20rpx;}
+.item_container .iconfont{line-height:60rpx; width: 100%;
+position:relative;
+text-align:center;
+font-size:40rpx;
+}
+.item_container .text{font-size:24rpx; width: 100%;
+line-height:80rpx;
+}
+.call_num{ display: inline-block; vertical-align: middle; text-align: center; width: 50%; height: 80rpx; font-size: 24rpx; line-height: 80rpx; background: #12AE2C; color: #ffffff; border-radius:0 0 20rpx 0;
+}
+.select{background: #ededed; color: #363636}
+.selectof{ }
+.user_send{ position: absolute; left: 0; bottom: 100rpx; border: none; color: #999999; }
+.user_send .user_tit{ font-weight: 400; color: #999999; }
+.user_send .user_text{color: #999999;}
+.user_send image{ width: 58rpx; height: 58rpx; margin-right: 10rpx; border-radius: 100rpx; overflow: hidden}
+.q_font{ color: #666666 !important}
+.line {top:28rpx;}
+

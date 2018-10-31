@@ -1,0 +1,14 @@
+<!--platform.wxml  -->
+<view class='container'>
+  <view class='name'>
+    <text class='name-label'>姓名</text>
+    <input class='name-input' bindinput='inputName'/>
+  </view>
+  <view class='remark'>
+    <text class='remark-label'>备注</text>
+    <textarea class='remark-content' bindinput='inputRemark'></textarea>
+  </view>
+  <view class='sure bot_v'>
+    <view class='sure-btn tj' bindtap='submit'>申请</view>
+  </view>
+</view>

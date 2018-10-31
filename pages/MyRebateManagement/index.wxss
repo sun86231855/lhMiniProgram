@@ -1,0 +1,90 @@
+/* pages/RebateManagement/index.wxss */
+/**index.wxss**/  
+radio-group{  
+  width: 100%;  
+}  
+.flex_box{  
+  width: 100%;  
+ 
+}  
+.flex_item{  
+  flex: 1;  background: #fff; 
+  text-align: center;  font-size: 32rpx; 
+   display: inline-block;  
+  width: 50%;   position: relative; line-height: 82rpx; height: 82rpx;
+}  
+.flex_item.red{  
+  color: red;   
+    
+}  
+.red .bot_line{ position: absolute; width: 36%; height: 1px; background: red !important; bottom: 0 ; left:28% ;z-index:999; }  
+view{
+    box-sizing: border-box;
+}
+.item-box{
+    width: 96%;
+    margin: 0 2%;
+}
+.bot_top{ padding-top: 20rpx; background: #F5F5F5}
+.infor{ line-height: 40rpx; font-size: 26rpx; color: #666}
+
+.infor .name{ font-size: 30rpx; }
+.infor
+.items{
+    width: 100%;
+}
+.item{
+    overflow: hidden; padding: 25rpx 0;  background: #ffffff; border-radius: 12rpx; margin-bottom: 20rpx;
+}
+.bot_ico{  font-size: 24rpx; color: #969696; overflow: hidden; border-top: 1px solid #EEEEEE ; margin-top: 20rpx; padding-top: 20rpx }
+.bot_ico .but_list{height: 42rpx; width: 128rpx; line-height: 42rpx; border-radius: 10rpx;margin-left:20rpx }
+.bot_ico .but_list .iconfont{ padding-right: 4rpx;}
+.bot_ico .but_list.ok_btn{ background: #E02E24; color: #fff}
+.bot_ico .but_list.false_btn{ background: 
+#D6D6D6; color: #fff}
+.red_font{color: #E02E24; }
+.bot_ico .but_list .text{ padding: 0 4rpx;  }
+.del{ color: #ff5e5e; text-align: center}
+.item:last-child{
+}
+.float_left{ float: left}
+.float_right{ float: right}
+.inner{
+    top:0; width: 100%;
+}
+.infor_tit{ text-align:left; font-size: 28rpx; width: 100%; padding: 0 ; color: #333}
+.inner.txt{
+    background-color: #fff;
+    width: 100%;
+    z-index: 5;
+    padding:0 10rpx;
+    transition: left 0.2s ease-in-out;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+.inner.del{
+    background-color: #e64340;
+   text-align: center;
+    z-index: 4; width: 80rpx; height: 45rpx; font-size: 24rpx;line-height: 45rpx; border-radius: 20rpx;
+
+    color: #fff; position: absolute; right: 0; top: 10rpx; 
+}
+.item-img{  width: 184rpx; height: 184rpx; border-radius: 10rpx;  vertical-align: top;  margin-right: 16rpx; display: inline-block;}
+.infor{ display: inline-block; vertical-align: top; width: 70%; box-sizing: border-box; text-align: left }
+.infor .name{display: flex; }
+.infor .name .infor{ font-weight: bold }
+.infor .name .tittle{ width: 35%; font-size: 30rpx; }
+.infor .in_list{ font-size: 26rpx; color:  #666 }
+.infor .in_list .tittle{ max-width: 35%; font-size: 26rpx; color: #666;  padding-right: 5rpx; box-sizing: border-box; text-align: right; display: inline-block; vertical-align: top}
+.thumb{
+    width: 200px;
+    height: 200px;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+.show{display:block;text-align:center;line-height:200rpx;}
+.hidden{display:none;text-align:center;line-height:200px;}
+

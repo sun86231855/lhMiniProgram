@@ -1,0 +1,9 @@
+<!--pages/bannerFirst/index.wxml-->
+<view class='container'>
+  <scroll-view scroll-y="true"  style='height:{{scrHeight}}px' >  
+  <image  src="https://123-1256884206.cos.ap-chengdu.myqcloud.com/banner_l1.jpg" mode="widthFix"></image>
+  </scroll-view>
+</view>
+
+
+

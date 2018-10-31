@@ -1,0 +1,14 @@
+/* pages/AllClass/details.wxss */
+.userinfo { display: flex; flex-direction: column; align-items: center;}
+.userinfo-avatar {  width: 128rpx;  height: 128rpx; margin: 20rpx; border-radius: 50%;}
+.userinfo-nickname { color: #aaa;}
+.usermotto { margin-top: 200px;}
+.item_container {   display: flex; background: #ffffff;   flex-direction: row;   align-items: center;  width: 77%; height: 90rpx; margin: 15rpx 10%; border: 1px solid #efefef; border-radius: 20rpx; padding: 0 0 0 3%; font-size: 24rpx; color: #333 }   
+.select_icon {   width: 32rpx;   height: 32rpx;  }   
+.text {   margin-left: 28rpx;  } 
+.selected{ border: 1px solid red; padding: 2px;}
+.unselected{ border: 2px solid green; padding: 2px; color: green}
+
+.bot_v .all{ width: 30%; float: left; background: #e02e24; margin-left: 20rpx; color: #fff; height: 70rpx; line-height: 70rpx;}
+.bot_v .confirm{ width: 90%; float: right; background: #e02e24; margin:0 5%; color: #fff; height: 70rpx; line-height: 70rpx; font-size: 30rpx;}
+.container_box{ padding-bottom: 160rpx;}

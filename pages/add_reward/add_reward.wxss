@@ -1,0 +1,80 @@
+/*add_reward.wxss  */
+.container {
+  margin: 0;
+  padding: 20rpx;
+}
+
+.theme,
+.need {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+
+.save {
+  width: 100%;
+}
+
+.save-btn {
+  width: 80%;
+}
+
+.theme-label,
+.need-label,
+.content-label {
+  font-size: 32rpx;
+  flex-shrink: 0;
+}
+
+.theme-input {
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.need-check {
+  font-size: 28rpx;
+  color: blue;
+}
+
+.content-content {
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+
+.save {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999999999;
+  width: 100%;
+  background-color: #e02e24;
+  color: #fff;
+  font-size: 28rpx;
+}

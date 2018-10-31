@@ -1,0 +1,43 @@
+/*ol.wxss  */
+/**color #e02e24**/
+.container {
+  margin: 0;
+}
+
+.send {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.send-input {
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 100%;
+  margin-right: 10rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx; border: 1px solid #efefef;
+}
+
+.send-btn {
+  font-size: 27rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  background-color: #e02e24;
+  color: #fff;
+  flex-shrink: 0;
+}

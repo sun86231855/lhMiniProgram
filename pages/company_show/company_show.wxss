@@ -1,0 +1,86 @@
+/*company_show.wxss  */
+.container {
+  margin: 0;
+  padding: 0 3%;
+}
+
+.name,
+.their,
+.tel,
+.post {
+  width: 100%; height: 80rpx; line-height: 80rpx; border-bottom: 1px solid #EEEEEE
+}
+.post .iconfont,
+.their .iconfont{ font-size: 40rpx; font-weight: bold;  color: #969696; padding-right: 10rpx;}
+
+.photo {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10rpx; padding-top: 20rpx;
+}
+.phont_v{ }
+.photo .photo-label{ display: inline-block; vertical-align: top}
+.photo .photo-content{ display: inline-block; vertical-align: top; width: 72%}
+.product {width: 100%;}
+
+.name-label,
+.their-label,
+.product-label,
+.tel-label,
+.post-label,
+.photo-label {
+  font-size: 30rpx; padding-right: 10rpx; box-sizing: border-box;
+  max-width: 180rpx; text-align: center; vertical-align: middle; color: #666666; display: inline-block; line-height: 80rpx; height: 80rpx;
+}
+
+.tel-label {
+  flex-shrink: 0;
+}
+
+.name-label,
+.product-label {
+  flex-shrink: 0;
+}
+
+.name-input,
+.tel-input {
+  border-radius: 10rpx;
+  max-width:80% ;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+.product-content{  border-radius: 10rpx;
+  width:100% ;
+  box-sizing: border-box;
+  padding-left: 10rpx;}
+
+.name-input {
+  max-width:80% ;
+}
+
+.their-check,
+.tel-check,
+.post-check {
+  font-size: 30rpx;
+  color: #999999;
+  flex-shrink: 0; border: none; line-height: 80rpx; 
+}
+.text_t{ padding-left: 10rpx; color: #666666 }
+.their-check,
+.tel-check,
+.post-check text{ vertical-align: middle;}
+.their-check .iconfont{ height: 50rpx; line-height: 50rpx; padding:0 10rpx 0 0;}
+ .their-check .text_t{ height: 50rpx; line-height:55rpx; color: #666666; padding: 0 0 0 10rpx;}
+.their-check text{ vertical-align: middle}
+.photo-content{ position: relative}
+.add_img{ width: 160rpx; height: 160rpx;}
+.add_v{ width: 160rpx; height: 
+160rpx; margin-bottom: 10rpx; display: inline-block; vertical-align: top ; border-radius: 10rpx; margin-right: 10rpx; position: relative;}
+.add_v .ClearThis{ position: absolute; right: 2rpx; top: 2rpx; font-size: 30rpx; font-weight: bold; color:  red;}
+.photo-content .bg_img{ width: 160rpx; height: 160rpx; border-radius: 10rpx; }
+input{ font-size: 28rpx; display: inline-block; vertical-align: middle; padding:0 0 0 16rpx; border: none ; line-height: 80rpx; height: 80rpx; color: #999999} 
+textarea{ font-size: 30rpx; padding:28rpx; border: 1px solid #EEEEEE ; line-height: 45rpx; color: #999999; margin: 0}
+.product-label{ height: 80rpx; line-height: 80rpx;}
+
+

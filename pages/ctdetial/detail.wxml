@@ -1,0 +1,87 @@
+<!--pages/ctdetial/detail.wxml-->
+<!--<loading hidden="{{!loading}}">
+	{{title}}
+</loading>-->
+<view class="container">
+  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+    <!--banner-->
+    <view class="swiper">
+      <swiper style='height:420rpx;' indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for-items="{{imgItem}}">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+
+    <!--nav-->
+    <view class="nav_top">
+      <block wx:for="{{navctxqTopItems}}" wx:key="item.id">
+        <view class="nav_top_items {{curNavId == item.id ? 'active_'+colors[index] : ''}}" bindtap="switchTab" data-index="{{index}}" data-id="{{item.id}}">
+
+          <text>{{item.title}}</text>
+
+        </view>
+      </block>
+    </view>
+    <!--list-->
+
+    <view class="nav_section">
+      <view wx:if="{{list[curIndex]}}" class='list_p'>
+        <block wx:for="{{list[curIndex]}}" wx:key="item.id">
+          <view class="nav_section_items" style="background:#fff">
+            <!--content-->
+            <view class="section_cont" data-aid="">
+              <view wx:if="{{item.subject}}" class="xq_list">
+                <view class='tit'>主题:</view>
+                <view class='text'>{{item.subject}} </view>
+              </view>
+              <view wx:if="{{item.summary}}" class="xq_lt">
+                <view class='tit'>简介:</view>
+                <view class='text' style="white-space:pre-wrap">{{item.summary}}</view>
+              </view>
+              <view wx:if="{{item.payValue}}" class='xq_list'>
+                <view class='tit'>价格:</view>
+                <view class='text'>{{item.payValue}}</view>
+              </view>
+              <view wx:if="{{item.deadLineTime}}" class='xq_list'>
+                <view class='tit'>截止日期:</view>
+                <view class='text'>{{item.deadLineTime}}</view>
+              </view>
+              <view wx:if="{{item.playTypeName}}" class='xq_list'>
+                <view class='text'>{{item.playTypeName}}</view>
+              </view>
+              <view wx:if="{{item.playTypeDetail}}" class='xq_list'>
+                <view class='text'>{{item.playTypeDetail}}</view>
+              </view>
+            </view>
+            <view class='ct_tongji' hidden='{{hiddenFlag}}'>
+              <text class='text_l'>已有{{item.boughtNumber}}人</text>
+
+              <progress percent="{{item.percent}}" class='line_box' stroke-width="12" color="red"/>
+
+
+              <text class='text_z'>标准人数{{item.standardGroupBuyNumber}}人</text>
+            </view>
+
+
+
+          </view>
+
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+  <view  class='bot_v'>
+    <view wx:if="{{personal}}"  class="tj" bindtap="bookTap" data-aid="{{item.id}}">
+      我要撮
+    </view>
+  </view>
+</view>

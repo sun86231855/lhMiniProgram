@@ -1,0 +1,35 @@
+<!--students.wxml  -->
+<view class='container'>
+  
+  <view class='class'  >
+
+  <view class='select_div'>
+    <view class='tit'>选择班级：</view> 
+    <view class='select_box'> 
+        <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{classList[index].className}}</text>
+            <image class='select_img {{show&&"select_img_rotate"}}' src='/images/gobottom.png'></image>         
+        </view>
+        <view class='option_box' style='z-index: 99999999; height:{{show?(classList.length>5?300:classList.length*60):0}}rpx;'>
+            <text class='option' style='{{index==classList.length-1&&"border:0;"}}' wx:for='{{classList}}' wx:key='{{item.classId}}' data-index='{{index}}' catchtap='optionTap'>{{item.className}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='progress'>
+    <text class='progress-label'>阶段：</text>
+    <checkbox-group class="checkbox-container" bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}" wx:key="{{item.name}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='remark'>
+    <text class='remark-label'>备注：</text>
+    <textarea class='remark-content' bindinput='inputRemark'></textarea>
+  </view>
+  <view class=' bot_v'>
+    <view class='tj' bindtap='submit'>申请</view>
+  </view>
+</view>

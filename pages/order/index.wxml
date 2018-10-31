@@ -1,0 +1,146 @@
+<!--pages/order/index.wxml-->
+
+<view class="container">
+  <!--轮播-->
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="img_w">
+      <block wx:for="{{imageUrlList}}" wx:key="{{index}}">
+        <swiper-item>
+          <!-- <navigator url="{{item}}" hover-class="navigator-hover">   -->
+          <block wx:if="{{item}}">
+            <image mode='aspectFill' class='img_i' src="{{item}}" class="slide-image" />
+          </block>
+          <block wx:else>
+            <image src="../../images/default_pic.png" mode="aspectFill"></image>
+          </block>
+          <!-- </navigator>    -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+  <!-- <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+              autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for-items="{{banner_url}}" wx:key="item.id">
+              <swiper-item>
+                <block wx:if="{{item}}">
+                  <image src="{{item}}"  mode="aspectFill"/>
+                </block>
+                <block wx:else>
+                  <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+              </swiper-item>
+          </block>
+      </swiper>
+  </view> -->
+
+
+  <view class="ar_cont">
+
+    <view class="ar_cont_h1">{{subject}}</view>
+    <view class='user_list'>
+      <text class='user_tit'>服务类型：</text>
+      <text class='user_text'>{{discountType}}</text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='user_list'>
+      <text class='user_tit'>折扣简介：</text>
+      <text class='user_text line_3' bindtap="navigateDetail">{{summary}}</text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='address_list'>
+      <text class='user_tit'>地址：</text>
+      <text class='user_text'>
+			<text class='address_lin' style="display:block" wx:for="{{lists}}" wx:key="{{index}}">{{item}}</text>
+      </text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='user_list'>
+      <text class='user_tit'>联系电话：</text>
+      <text class='user_text'>{{tel}}</text>
+      <text class='phone icon-dianhua1 iconfont' data-phn="{{tel}}" bindtap="phoneCall"></text>
+
+    </view>
+
+    <view class='lin_x'></view>
+    <view class='user_list_ts'>
+      <text class='user_tit'></text>
+      <text class='user_text'>(提示：可以联系店主进行沟通哦)</text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='user_list'>
+      <text class='user_tit'>店内联系人：</text>
+      <text class='user_text'>{{storeContacts}}</text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='user_list'>
+      <text class='user_tit'>店内联系人电话：</text>
+      <text class='user_text'>{{storeContactsTel}}</text>
+    </view>
+    <view class='lin_x'></view>
+    <view class='user_list'>
+      <text class='user_tit'>优惠信息：</text>
+      <text class='user_text'>{{discount}}</text>
+    </view>
+
+    <view class='lin_x'></view>
+
+    <view wx:if="{{ifAppointment=='1'}}">
+      <view wx:for="{{userList}}" wx:key = "{{index}}">
+        <view class='user_list'>
+          <text class='user_tit'>预约时间：</text>
+          <text class='user_text'>{{item.createDate}}</text>
+        </view>
+        <view class='lin_x'></view>
+        <view class='user_box user_in'>
+          <text class='user_tit'>联系人：</text>
+          <view class='user_text user_box'>
+            <view class='use_list ' bindtap="navigateDetail" data-id="{{userId}}">
+              <image class='img' src="{{item.userHeaderImageUrl}}"></image>
+              <view class='text line_1'>{{item.userName}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='lin_x'></view>
+        <view class='user_list'>
+          <text class='user_tit'>同学电话：</text>
+          <text class='user_text'>{{item.tel}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+  </view>
+
+</view>
+<!-- <view class='icon_box'>
+      <view class='icon_list collect {{isCollection=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}"  data-type="2">
+            <view class='iconfont {{isCollection=="0"?"icon-xin":"icon-shoucang1"}}'></view><view class='text'>收藏</view>
+            
+      </view>
+
+         <view class='icon_list collect {{isCollection=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}"  data-type="2">
+            <view class='iconfont {{isCollection=="0"?"icon-dingdan":"icon-zongheyewudingdan"}}'></view>
+            <view class='text'>
+               {{isCollection=="0"?"预定":"已预定"}}
+            </view>
+           
+      </view>
+    
+        <view class='icon_list zan {{isThumbsUp=="0"?"":"on"}}' bindtap="collectAndPraise" data-id="{{discountId}}"  data-type="1">
+            <view class='iconfont   {{isThumbsUp=="0"?"icon-zan3":"icon-zan"}}'></view> <view class='text'>点赞</view>
+            
+      </view>
+      
+  </view>
+       -->

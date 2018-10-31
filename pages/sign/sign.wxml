@@ -1,0 +1,30 @@
+<!--sign.wxml  -->
+<view class='container'>
+  <view class='sign_w'>
+        <view class='sign_infor'>
+                    <view class='title'>修改个性签名</view>
+          <!-- <textarea class='content' bindinput='signInput' placeholder='{{signName}}'></textarea> -->
+            <view class="modal-content">
+                  <textarea class="content" bindinput="bindTextAreaChangejl" placeholder="请输入" style="height: 8em" value="{{signName}}" maxlength="{{noteMaxLenjl}}" focus />
+                  <view class="weui-textarea-counter">
+                      {{noteNowLenjl}}/{{noteMaxLenjl}}
+                      <image class='lin_dian' mode='widthFix' src='/images/lin_dian.png'></image>
+                  </view>
+          </view>
+
+          
+
+          </view>
+
+          
+
+
+          <!-- <view class='help'>提醒：最多可输入200个字</view> -->
+          <view class='save bot_v'>
+            <view class='save-btn tj' bindtap='doSave'>保存</view>
+        </view>
+       <image src='/images/sign_bg.png' mode='widthFix' class='sign_bg'></image>
+  </view>
+
+  <image src='/images/qianm_bg.png' mode='widthFix' class='bg_img'></image>
+</view>

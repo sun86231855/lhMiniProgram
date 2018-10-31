@@ -1,0 +1,81 @@
+<!--associiation_details.wxml-->
+<view class="container">
+  <scroll-view class="list-scroll" scroll-y style='height:{{scrHeight-20}}px; width: 100%'>
+    <view class='set' style='z-index: 9999999;'>
+      <view class='set-btn' bindtap='set_group' hidden="{{!isGroupMaster}}">编辑</view>
+    </view>
+    <view class='header'>
+      <text class='header-label'>圈子名称：</text>
+      <text class='header-content'>{{groupName}}</text>
+
+    </view>
+    <view class='master'>
+      <text class='master-label'>圈主：</text>
+      <text class='master-name'>{{groupMasterName}}</text>
+    </view>
+    <view class='list'>
+      <text class='list-label'>成员列表：</text>
+
+      <view wx:if="{{list}}" class='list_p'>
+        <block wx:for="{{list}}" wx:for-index="index" wx:key="item.userId">
+          <view wx:if="{{index <  pageIndex}}" class="nav_section_items">
+            <!--image-->
+            <view class="section_image" bindtap="navigateDetail" data-aid="{{item.userId}}">
+              <block wx:if="{{item.userImageUrl}}">
+                <image src="{{item.userImageUrl}}" mode="aspectFill"></image>
+              </block>
+              <block wx:else>
+                <image src="../../images/default_pic.png" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.userId}}">
+              <view class="section_cont_name">{{item.userName}}</view>
+            </view>
+            <view class="delect_list" bindtap="removeGroupUser" data-aid="{{item.userId}}">
+              <image src='/images/delect.png'></image>
+
+            </view>
+          </view>
+
+        </block>
+
+      </view>
+
+      <view class='no_any no_any_pic' wx:else>
+        <view class='text'>暂无数据</view>
+      </view>
+
+
+    </view>
+    <view class='href'>
+      <view class='Addmore' bindtap="loadMore">
+        <text>点击查看更多</text>
+      </view>
+    </view>
+    <view class='people'>
+      <text class='people-label'>圈内人数：</text>
+      <text class='people-number'>{{groupPersonNum}}</text>
+    </view>
+    <view class='people'>
+      <text class='people-label'>邀请码：</text>
+      <text class='people-number'>{{inviteCode}}</text>
+    </view>
+    <view class='content'>
+      <text class='content-title'>圈子简介：</text>
+      <text class='content-content'>{{groupSummary}}</text>
+    </view>
+
+  </scroll-view>
+
+
+  <view class='bot_v'>
+    <view class='add_but'>
+      <button class='tj' open-type='share'>邀请加入圈子</button>
+    </view>
+    <view class='creat-group creat_q' bindtap='exitGroup'>
+      <view class='tj'>退出圈子</view>
+    </view>
+  </view>
+
+</view>
