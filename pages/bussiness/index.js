@@ -40,9 +40,6 @@ var search = function (_this, func) {
             for (var i = 0; i < list.length; i++) {
               bizlist.push(list[i]);
             }
-            console.log(bizlist);
-            console.log(bizlist);
-            console.log(bizlist);
             _this.setData({
               "bizlist": bizlist
             });

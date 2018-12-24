@@ -44,7 +44,7 @@
         <text class='max_w user_text {{personal.wecat != null && personal.wecat != ""?"":"q_color"}}'>{{personal.wecat != null && personal.wecat != ''? personal.wecat:"未填写"}}</text>
         <!-- <text  class='add icon-tianjia iconfont'></text>-->
       </view>
-      
+<!--       
      <view class='person_photo'>
         
 	
@@ -58,12 +58,12 @@
           <image class='bg_img' bindtap='detail' data-userId="{{personal.inviterName}}"  src="{{personal.inviterUrl}}"></image> 
         </view>
       
-      </view>
+      </view> -->
 
-      <view class='user_list'>
+      <!-- <view class='user_list'>
         <text class='user_tit'><text class='iconfont ico #icon-yaoqinghaoyou'></text>邀请好友：</text>
         <text class='user_text red_font' style='color:#E02E24' bindtap='InviteFriends'>点击查看</text>
-      </view>
+      </view> -->
       <view class='lin_x'></view>
       <view class="ar_cont_tit">
         <view class='line'></view>TA的技能</view>

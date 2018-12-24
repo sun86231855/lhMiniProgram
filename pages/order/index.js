@@ -15,6 +15,11 @@ Page({
     userList: []
   },
 
+  phoneCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phn
+    })
+  },
 
   // 跳转至详情页
   navigateDetail: function(e) {
@@ -45,10 +50,12 @@ Page({
   onLoad: function(options) {
     var _this = this;
     var discountId = options.discountId;
+    var userIda = options.userIda;
     var ifAppointment = options.ifAppointment;
     _this.setData({
       'discountId': discountId,
-      'ifAppointment': ifAppointment
+      'ifAppointment': ifAppointment,
+      "userIda": userIda
     });
     _this.detail();
   },
@@ -70,10 +77,12 @@ Page({
         var userNameList1 = res.userNameList;
         var telList1 = res.telList;
         var userHeaderImageUrl1 = res.userHeaderImageUrl;
+        var userIdList1 = res.userIdList;
         var createDateList = [];
         var userNameList = [];
         var telList = [];
         var userHeaderImageUrl = [];
+        var userIdList = [];
         if (createDateList1 != '') {
           createDateList = createDateList1.split(",");
         }
@@ -87,13 +96,18 @@ Page({
         if (userHeaderImageUrl1 != ''){
           userHeaderImageUrl = userHeaderImageUrl1.split(",");
         }
+        if (userIdList1 != ''){
+          userIdList = userIdList1.split(",");
+        }
+
         var userList = [];
         for (var i = 0; i < createDateList.length; i++) {
           userList.push({
             "createDate": createDateList[i],
             "userName": userNameList[i],
             "tel": telList[i],
-            "userHeaderImageUrl": userHeaderImageUrl[i]
+            "userHeaderImageUrl": userHeaderImageUrl[i],
+            "userId": userIdList[i]
           });
         }
         _this.setData({

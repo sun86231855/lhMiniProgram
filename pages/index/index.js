@@ -115,10 +115,15 @@ Page({
       title: '欢迎加入社群',
       path: '/pages/index/index?share=1&paramInviteCode=' + this.data.currInviteCode,
       success: function(res) {
-        // 转发成功
+        // 转发成功.
+        console.log(res);
+
+        console.log('转发成功');
       },
       fail: function(res) {
         // 转发失败
+        console.log(res);
+        console.log('转发失败');
       }
     }
   },
@@ -199,6 +204,26 @@ Page({
       });
     }
 
+    var returnType = options.returnType;
+    if (returnType && returnType != null) {
+      if (returnType == 0) {
+        that.setData({
+          classId: options.classId,
+          curNavId: 1,
+          curIndex: 0,
+          returnType: returnType,
+          currOtherName: "切换到其它班级"
+        });
+      } else if (returnType == 1) {
+        that.setData({
+          circlesId: options.circlesId,
+          curNavId: 2,
+          curIndex: 1,
+          returnType: returnType,
+          currOtherName: "切换到其它圈子"
+        });
+      }
+    }
 
     wx.checkSession({
       success: function(res) {
@@ -206,26 +231,6 @@ Page({
 
         // 业务代码
 
-        var returnType = options.returnType;
-        if (returnType && returnType != null) {
-          if (returnType == 0) {
-            that.setData({
-              classId: options.classId,
-              curNavId: 1,
-              curIndex: 0,
-              returnType: returnType,
-              currOtherName: "切换到其它班级"
-            });
-          } else if (returnType == 1) {
-            that.setData({
-              circlesId: options.circlesId,
-              curNavId: 2,
-              curIndex: 1,
-              returnType: returnType,
-              currOtherName: "切换到其它圈子"
-            });
-          }
-        }
 
       },
       fail: function(res) {
@@ -301,11 +306,11 @@ Page({
       pullDownFalg: true
     })
     var that = this;
-    console.log("==============11111111111111111================" + that.data.index);
     doLoadData(that, that.data.index);
   },
   //标签切换
   switchTab: function(e) {
+    console.log();
     let id = e.currentTarget.dataset.id,
       index = parseInt(e.currentTarget.dataset.index)
     this.curIndex = parseInt(e.currentTarget.dataset.index)
@@ -471,6 +476,9 @@ function doLoadData(that, currk) {
   console.log("................................>>>>" + currk);
   var param = {};
   //获取社群列表
+  if (!currk){
+    currk=0;
+  }
   network.doPost('selectAssociationList', param, function(res) {
     if (res) {
       var gymInfo = res.associationList;
@@ -493,7 +501,7 @@ function doLoadData(that, currk) {
           associationId: associationId,
           weatherCheck: true
         });
-        if (assListArry && assListArry[0].isPopup == '1'){
+        if (assListArry && assListArry[currk].isPopup == '1'){
           that.setData({
             weatherCheck:false,
           });
@@ -517,6 +525,15 @@ function doLoadData(that, currk) {
         };
 
         network.doPost('queryFirstPage', paramPage, function(res) {
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          console.log(res);
+          
           if (res) {
             var firstDataList = res.firstDataList;
             var defaultclassName = res.defaultclassName;

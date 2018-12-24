@@ -135,7 +135,7 @@ Page({
   
     headImageUpload : function() {
 		var that = this;
-		var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+      var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
 		var imgUrl="";
 		// 选择文件
 		wx.chooseImage({
@@ -174,7 +174,7 @@ Page({
     
 	detailImageUpload : function(){
 		var that = this;
-		var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
 		var imgUrl="";
 		// 选择文件
 		wx.chooseImage({

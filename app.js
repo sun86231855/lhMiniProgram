@@ -28,3 +28,10 @@ App({
     userInfo:null
   }
 })
+//app.json中的修炼模块。此处用于备忘记录
+/*{
+  "pagePath": "pages/Practice/index",
+  "text": "修炼",
+  "iconPath": "images/jb.png",
+  "selectedIconPath": "images/jbon.png"
+},*/

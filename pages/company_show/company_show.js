@@ -40,6 +40,7 @@ Page({
     countIndex: 3,//最多上传图片的数量
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     imageUrlList:[]
+
   },
   listenerPickerSelected: function (e) {
     //改变index值，通过setData()方法重绘界面
@@ -214,7 +215,7 @@ Page({
 			return;
 		}
 		network.doPost('updateCompanyForMy', param, function (res) {
-      wx.navigateBack();
+			wx.navigateBack();
 		});
 	},
   
@@ -273,7 +274,7 @@ Page({
 	
 	picUpload() {
 		var that = this;
-    var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
 		var imgUrl="";
 		// 选择文件
 		wx.chooseImage({

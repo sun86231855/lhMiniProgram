@@ -226,8 +226,9 @@ Page({
   // 跳转预约详情
   order: function (e) {
     var discountId = e.currentTarget.dataset.id;
+    var userId = e.currentTarget.dataset.userid;
     wx.navigateTo({
-      url: '../order/index?discountId=' + discountId +'&ifAppointment='+"1"
+      url: '../order/index?userIda=' + userId + '&discountId=' + discountId +'&ifAppointment='+"1"
     });
   },
 

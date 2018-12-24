@@ -8,21 +8,29 @@
 .swiper image{
     display: inline;
 }
+.dnlxr_phone{ position: absolute; top: 0; right: 2%; font-size: 28rpx;}
 .img_w{height:420rpx; background:#fff}
 .slide-image{  width: 100%; height: 420rpx; background: #fff  }  
 .container{ background:#fff;}
-.ar_cont{padding:0rpx 2%; width: 96%; font-size:30rpx;  background: #fff;  margin-bottom:120rpx;  line-height: 45rpx;  color:#363636;}
-.ar_cont .ar_cont_h1{font-size: 32rpx; font-weight: 600; color: #333; text-align: center; padding: 15rpx 0}
-.address_list{ position: relative; line-height: 70rpx; border-bottom: 1px solid #efefef}
-.address_list .user_tit{ display: inline-block; vertical-align: top; font-size: 28rpx; font-weight: 600; width: 35%; padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.ar_cont{padding:0; width: 100%; font-size:30rpx;  background: #fff;  margin-bottom:120rpx;  line-height: 45rpx;  color:#363636;}
+.ar_cont .ar_cont_h1{font-size: 32rpx; font-weight: 600; color: #333; text-align: center; padding: 15rpx 0; border-bottom: 14rpx solid #efefef}
+.lx_phone{ text-decoration: underline}
+.font-4{ font-size: 38rpx !important} 
+.font-3{ font-size: 34rpx !important} 
+.address_list{ position: relative; line-height: 70rpx; border-bottom: 1px solid #efefef; padding: 0 2%}
+.address_list .user_tit{ display: inline-block; vertical-align: top; font-size: 27rpx; max-width: 35%; padding-right: 6rpx; box-sizing: border-box; text-align: right}
+.address_list .user_tit .iconfont{ padding-right: 10rpx; font-size: 30rpx;}
 .address_list .address_lin{ line-height: 45rpx;}
 .address_list .user_text{ font-size: 28rpx; padding-top: 14rpx; display: inline-block; vertical-align: top; width: 65%;}
 .user_list_ts{ position: relative; height: 40rpx; line-height: 40rpx; border-bottom: 1px solid #efefef; color: #d24a58; font-size: 24rpx; padding: 5rpx 16rpx}
-.user_list{ position: relative;line-height: 70rpx; border-bottom: 1px solid #efefef}
-.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 30rpx; font-weight: 600; width: 35%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_list{ position: relative;line-height: 70rpx; border-bottom: 1px solid #efefef; width: 0rpx 2%; padding: 0 2%}
+.ist_ts{ position: absolute; right: 2%; top: 0; line-height: 70rpx; font-size: 20rpx; color:#d24a58}
+.user_list .user_tit{ display: inline-block; vertical-align: top; font-size: 27rpx;  max-width: 35%;padding-right: 6rpx; box-sizing: border-box; text-align: right;}
+.user_list .user_tit .iconfont{ padding-right:10rpx; font-size: 30rpx }
 .user_list .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top; width: 65%; padding-top: 14rpx; line-height: 45rpx;}
 .user_box{ position: relative;  border-bottom: 1px solid #efefef}
-.user_box .user_tit{ display: inline-block; vertical-align: top; font-size:30rpx; font-weight: 600; width: 35%;padding-right: 20rpx; box-sizing: border-box; text-align: right}
+.user_box .user_tit{ display: inline-block; vertical-align: top; font-size:27rpx;  max-width: 35%;padding-right: 6rpx; box-sizing: border-box; text-align: right}
+.user_box .user_tit .iconfont{ padding-right: 10rpx; font-size: 30rpx;}
 .user_box .user_text{ font-size: 27rpx; display: inline-block; vertical-align: top; width: 65%;}
 .ar_cont_tit{ font-size: 36rpx; font-weight: 600; color: #333; text-align: left; border-top: 2px solid #ddd; display: block; width: 100%; padding: 6px 0 0 0; margin: 6px 0 0 0}
 .add{ float: right; font-size: 20px; font-weight: 600; position: absolute; right: 2%; top: 0;}
@@ -44,7 +52,7 @@
 .icon_box .iconfont{ padding:  0 10rpx; }
 .tip{ font-size: 22rpx;}
 .icon_box .icon_list.on{ color: #ff5e5e}
-.user_in{ padding: 16rpx 0 20rpx}
+.user_in{ padding: 16rpx 2% 20rpx 2%}
 .on{color: #e02e24}
 .icon-zan3{ font-size: 34rpx !important;}
 .serve_box{ width: 96%; margin: 10rpx 1%; padding: 10rpx 1%; border: 1px solid #eee; border-radius: 4rpx;}

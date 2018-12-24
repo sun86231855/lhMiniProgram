@@ -140,11 +140,11 @@ Page({
   },
  
   // 跳转至我的修炼页
-  my_practice(e) {
-    wx.navigateTo({
-      url: '../my_practice/my_practice'
-    })
-  },
+  // my_practice(e) {
+  //   wx.navigateTo({
+  //     url: '../my_practice/my_practice'
+  //   })
+  // },
   // 跳转至我的搓团页
   my_run_group(e) {
     wx.navigateTo({
@@ -296,7 +296,7 @@ Page({
 	picUpload() {
 		var that = this;
     console.log("ssssssssssssssssss");
-    var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
 //    var baseUrl="";
     console.log(baseUrl);
 		var imgUrl="";

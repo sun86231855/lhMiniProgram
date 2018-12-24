@@ -1,162 +1,167 @@
 <!--user.wxml-->
 
 <view class="container">
-  <scroll-view scroll-y='true' >
-  <view class="user_base_info" >
-    <view class='user_box'>
-      <view class="user_avatar" bindtap='picUpload'>
+  <scroll-view scroll-y='true'>
+    <view class="user_base_info">
+      <view class='user_box'>
+        <view class="user_avatar" bindtap='picUpload'>
           <image src="{{userData.avatar}}"></image>
-      </view>
-      <view class="user_info">
-         <view class='name ' bindtap='set_name'><view class='name'>姓名：</view><view class='text'>{{userData.username}}</view></view>
-          <view class='qianming '><view class='text'> {{personalitySignature}}</view></view>
-      </view>
-     
-      <!-- <text class='iconfont icon-gerenxinxi message'></text> -->
-     <image class='bg_img' mode="widthFix" src='/images/head_bg.png' ></image>
-    </view>
-  
-  </view>
- <view class='lin_x'></view>
- <!--快速入口-->
- <view class='quick_enter'>
+        </view>
+        <view class="user_info">
+          <view class='name ' bindtap='set_name'>
+            <view class='name'>姓名：</view>
+            <view class='text'>{{userData.username}}</view>
+          </view>
+          <view class='qianming '>
+            <view class='text'> {{personalitySignature}}</view>
+          </view>
+        </view>
 
-    <view class='quick_list' bindtap='sign'>
-         <text class='iconfont #icon-gerenqianming ico_pic'></text>
-         <text class='text_name'>个人签名</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
+        <!-- <text class='iconfont icon-gerenxinxi message'></text> -->
+        <image class='bg_img' mode="widthFix" src='/images/head_bg.png'></image>
+      </view>
+
     </view>
-       <view class='quick_list ' bindtap='personal_details'>
-         <text class='iconfont icon-gerenxinxi ico_pic'></text>
-         <text class='text_name'>个人信息</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
-        
-    </view>
-    <view class='quick_list ' bindtap='company_show'>
-         <text class='iconfont #icon-gongsizhanshi ico_pic'></text>
-         <text class='text_name'>公司展示</text>
-          <text class='iconfont #icon-chakangengduo right_ico '></text>   
-    </view>
- 
+    <view class='lin_x'></view>
+    <!--快速入口-->
+    <view class='quick_enter'>
+
+      <view class='quick_list' bindtap='sign'>
+        <text class='iconfont #icon-gerenqianming ico_pic'></text>
+        <text class='text_name'>个人签名</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+      <view class='quick_list ' bindtap='personal_details'>
+        <text class='iconfont icon-gerenxinxi ico_pic'></text>
+        <text class='text_name'>个人信息</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+
+      </view>
+      <view class='quick_list ' bindtap='company_show'>
+        <text class='iconfont #icon-gongsizhanshi ico_pic'></text>
+        <text class='text_name'>公司展示</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+
       <view class='quick_list ' bindtap='school'>
-         <text class='iconfont #icon-xueyuanrenzheng ico_pic'></text>
-         <text class='text_name'>学院认证</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view> 
-     <view class='lin_x'></view>
-     <!-- <view class='quick_list ' bindtap="group">
+        <text class='iconfont #icon-xueyuanrenzheng ico_pic'></text>
+        <text class='text_name'>学员认证</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+      <view class='lin_x'></view>
+      <!-- <view class='quick_list ' bindtap="group">
          <text class='iconfont icon-quanzi ico_pic'></text>
          <text class='text_name'>我的圈子</text>
          <text class='iconfont icon-youjiantou right_ico'></text>
          <text class='line'></text>
     </view> -->
 
-     <view class='quick_list ' bindtap='association'>
-         <text class='iconfont #icon-wodeshequn ico_pic'></text>
-         <text class='text_name'>我的社群</text>
-          <text class='iconfont #icon-chakangengduo right_ico '></text>
-         
-    </view>
-         <view class='quick_list ' bindtap='my_practice'>
-         <text class='iconfont #icon-wodexiulian ico_pic'></text>
-         <text class='text_name'>我的修炼</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view>
-     <!-- <view class='quick_list ' bindtap='my_run_group'>
+      <view class='quick_list ' bindtap='association'>
+        <text class='iconfont #icon-wodeshequn ico_pic'></text>
+        <text class='text_name'>我的社群</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+
+      </view>
+      <!-- <view class='quick_list ' bindtap='my_practice'>
+        <text class='iconfont #icon-wodexiulian ico_pic'></text>
+        <text class='text_name'>我的修炼</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view> -->
+      <!-- <view class='quick_list ' bindtap='my_run_group'>
          <text class='iconfont icon-tuangou ico_pic'></text>
          <text class='text_name'>我的撮团</text>
          <text class='iconfont icon-youjiantou right_ico'></text>
     </view>  -->
-     <view class='quick_list ' bindtap='reward'>
-         <text class='iconfont #icon-hezuoguanli ico_pic'></text>
-         <text class='text_name'>合作管理</text>
-          <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view>
-    <!-- bindtap='rub_group' -->
-     <!-- <view class='quick_list ' bindtap='mygroup'>
+      <view class='quick_list ' bindtap='reward'>
+        <text class='iconfont #icon-hezuoguanli ico_pic'></text>
+        <text class='text_name'>合作管理</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+      <!-- bindtap='rub_group' -->
+      <!-- <view class='quick_list ' bindtap='mygroup'>
          <text class='iconfont icon-iconset03100 ico_pic'></text>
          <text class='text_name'>发起撮团</text>
          <text class='iconfont icon-youjiantou right_ico'></text>
     </view>    -->
-    
-       <view class='quick_list ' bindtap="RebateManagement">
-         <text class='iconfont #icon-zhekouguanli ico_pic'></text>
-         <text class='text_name'>折扣管理</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view>
-        <view class='quick_list ' bindtap="MyRebateManagement">
-         <text class='iconfont #icon-wodezhekou ico_pic'></text>
-         <text class='text_name'>我的折扣</text>      
+
+      <view class='quick_list ' bindtap="RebateManagement">
+        <text class='iconfont #icon-zhekouguanli ico_pic'></text>
+        <text class='text_name'>折扣管理</text>
         <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view>
+      </view>
+      <view class='quick_list ' bindtap="MyRebateManagement">
+        <text class='iconfont #icon-wodezhekou ico_pic'></text>
+        <text class='text_name'>我的折扣</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
       <view class='quick_list ' bindtap="feedback">
-         <text class='iconfont #icon-fankuijianyi ico_pic'></text>
-         <text class='text_name'>反馈建议</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
+        <text class='iconfont #icon-fankuijianyi ico_pic'></text>
+        <text class='text_name'>反馈建议</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+
+      <view class='quick_list ' bindtap="call_center">
+        <text class='iconfont icon-kefu ico_pic'></text>
+        <text class='text_name'>我的客服</text>
+        <text class='iconfont #icon-chakangengduo right_ico '></text>
+      </view>
+
+
+
+
+
+
+
     </view>
-  
-     <view class='quick_list ' bindtap="call_center">
-         <text class='iconfont icon-kefu ico_pic'></text>
-         <text class='text_name'>我的客服</text>
-         <text class='iconfont #icon-chakangengduo right_ico '></text>
-    </view>
-
-
-    
-    
-   
-
-   
- </view>
 
   </scroll-view>
-    <!-- <navigator class='drop_out'>退出登录</navigator> -->
+  <!-- <navigator class='drop_out'>退出登录</navigator> -->
 </view>
 
 <view class="modal-box" hidden="{{flagPhone}}">
-    <view class="modal-body">
-      <view class='modal-title'>绑定手机号</view>
-      <view class="modal-content">
-         <view class='name'>
-          <text class='name-label'>输入手机号</text>
-          <input class='name-input' bindinput="phoneInput"/>
-          
-        </view> 
-        <view class='btn-container'>
-          <view class="cancel" bindtap="hidePhone">取消</view>
-          <view class="finish" bindtap="updatePhone">绑定</view>
-        </view>
+  <view class="modal-body">
+    <view class='modal-title'>绑定手机号</view>
+    <view class="modal-content">
+      <view class='name'>
+        <text class='name-label'>输入手机号</text>
+        <input class='name-input' bindinput="phoneInput" />
+
+      </view>
+      <view class='btn-container'>
+        <view class="cancel" bindtap="hidePhone">取消</view>
+        <view class="finish" bindtap="updatePhone">绑定</view>
+      </view>
     </view>
   </view>
 </view>
 
- <view class="user_addr_manage">
-    <view class="user_addr_title">【地址管理】</view>
-    <block wx:for="{{addrDate}}" wx:key="item.id">
-      <view class="user_addr_item">
-          <text class="addr_sub">{{item}}</text>
-          <view class="addr_edit" bindtap="editAddr" data-addrid="{{index+1}}"></view>
-      </view> 
-    </block>
-    <navigator url="../edit_addr/edit_addr" >新增地址 +</navigator>
- </view>
- <view class="modal-box" hidden="{{flag}}">
+<view class="user_addr_manage">
+  <view class="user_addr_title">【地址管理】</view>
+  <block wx:for="{{addrDate}}" wx:key="item.id">
+    <view class="user_addr_item">
+      <text class="addr_sub">{{item}}</text>
+      <view class="addr_edit" bindtap="editAddr" data-addrid="{{index+1}}"></view>
+    </view>
+  </block>
+  <navigator url="../edit_addr/edit_addr">新增地址 +</navigator>
+</view>
+<view class="modal-box" hidden="{{flag}}">
 
-    <view class="modal-body">
-      <view class='modal-title'>修改昵称</view>
-      <view class="modal-content">
-        <view class='name'>
-      
-          <input class='name-input'  bindinput="bindTextAreaChangejl" placeholder="输入昵称..."  value="{{infojl}}" maxlength="{{noteMaxLenjl}}" />
-              <view class="weui-textarea-counter">{{noteNowLenjl}}/{{noteMaxLenjl}}</view>
-        </view>
-        <view class='modal-hint'>提醒：如果填写真实名称会更方便其他人找您</view>
-        <view class='btn-container'>
-          <view class="cancel" bindtap="hide">取消</view>
-          <view class="finish" bindtap="updateNick">保存</view>
-          
-        </view>
-        
-     </view>
+  <view class="modal-body">
+    <view class='modal-title'>修改昵称</view>
+    <view class="modal-content">
+      <view class='name'>
+
+        <input class='name-input' bindinput="bindTextAreaChangejl" placeholder="输入昵称..." value="{{infojl}}" maxlength="{{noteMaxLenjl}}" />
+        <view class="weui-textarea-counter">{{noteNowLenjl}}/{{noteMaxLenjl}}</view>
+      </view>
+      <view class='modal-hint'>提醒：如果填写真实名称会更方便其他人找您</view>
+      <view class='btn-container'>
+        <view class="cancel" bindtap="hide">取消</view>
+        <view class="finish" bindtap="updateNick">保存</view>
+
+      </view>
+
     </view>
   </view>
+</view>

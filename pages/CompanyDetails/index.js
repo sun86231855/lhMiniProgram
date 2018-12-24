@@ -68,6 +68,7 @@ Page({
 		  "industryName": res.industryName,
 		  "summary": res.summary,
 		  "userImageUrl": res.userImageUrl,
+      "companyImageUrl": res.companyImageUrl,
 		  "userId": res.userId,
 		  "userName": res.userName,
 		  "tel": res.tel,

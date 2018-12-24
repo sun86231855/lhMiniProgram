@@ -1,7 +1,7 @@
 
-var serverUrl = "http://192.168.51.206:8080/lh/api";
-//var serverUrl = "https://www.sybpm.com/lh/api";
-
+// var serverUrl = "http://192.168.51.206:8080/lh/api";
+var serverUrl = "https://www.sybpm.com/lh/api";
+// var serverUrl = "http://127.0.0.1:8080/api";
 
 var util = require("util.js");
 
@@ -73,7 +73,12 @@ function doPostRequest(method, param, success, fail, complete) {
           });
         }
 	  }else if(header.code == "400"){
-		util.alert("页面有数据项未填写！");
+      if (header.msg =='selectClassList:the system have no class info'){
+        util.alert("当前社群无班级");
+      }else{
+        util.alert("页面有数据项未填写！");
+
+      }
 	  }else if(header.code == "403"){
 	//	util.alert("缺失登陆权限！");
 		that.getToken();

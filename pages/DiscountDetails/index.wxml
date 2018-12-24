@@ -91,7 +91,7 @@
       <text class='user_tit'><text class='ico iconfont #icon-lianxiren1'></text>联系人：</text>
       <view class='user_text user_box'>
         <view class='use_list ' bindtap="navigateDetail" data-id="{{userId}}">
-          <block wx:if="{{iteuserHeaderImageUrlm}}">
+          <block wx:if="{{userHeaderImageUrl}}">
               <image class='img' src="{{userHeaderImageUrl}}" mode="aspectFill"></image>
             </block>
             <block wx:else>

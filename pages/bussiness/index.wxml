@@ -33,7 +33,7 @@
 
         <text class="iconfont icon-shaixuan Screening" bindtap="ScreeningIndustry" style="font-size:22px;color:red"></text>
         <view class='input_box'>
-          <input bindinput="keyWordInput" type="text" confirm-type="search" class=' input login-form-pwd' placeholder='输入公司名或行业关键字' value="{{keyWord}}" placeholder-class="center" id="KeyWord"></input>
+          <input bindinput="keyWordInput" type="text" confirm-type="search" class=' input login-form-pwd' bindconfirm = "keyWordSearch" placeholder='请输入关键字' value="{{keyWord}}" placeholder-class="center" id="KeyWord"></input>
           <text class='iconfont #icon-sousuofangdajing search' style="font-size:22px;" bindtap="keyWordSearch"></text>
         </view>
       </view>

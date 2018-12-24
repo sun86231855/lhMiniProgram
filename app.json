@@ -82,13 +82,6 @@
         "selectedIconPath": "images/sjon.png"
       },
      
- 
-      {
-        "pagePath": "pages/Practice/index",
-        "text": "修炼",
-        "iconPath": "images/jb.png",
-        "selectedIconPath": "images/jbon.png"
-      },
       {
         "pagePath": "pages/user/user",
         "text": "我的",

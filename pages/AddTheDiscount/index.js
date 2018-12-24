@@ -32,6 +32,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    indexd:-1,
     flag1:false,
     flag2:true,
     selectData:['美食','酒店入住','旅游','休闲娱乐','生活服务','宴会','购物','丽人购物','运动健身','母婴亲子','宠物','汽车服务','摄影写真','结婚','家装','其他'],
@@ -174,7 +175,7 @@ Page({
 
   headImageUpload: function() {
     var that = this;
-    var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
     var imgUrl = "";
     // 选择文件
     wx.chooseImage({
@@ -222,7 +223,7 @@ Page({
 
   detailImageUpload: function() {
     var that = this;
-    var baseUrl = "https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
     var imgUrl = "";
     // 选择文件
     wx.chooseImage({
@@ -297,17 +298,15 @@ Page({
       util.alert('请输入折扣简介');
       return;
     }
-
-    if (_this.data.serviceTypeList && _this.data.serviceTypeList.length > 0) {
-      var temp = [];
-      for (var i = 0; i < _this.data.serviceTypeList.length; i++) {
-        temp.push(_this.data.serviceTypeList[i].id);
-      }
-      param.type = temp.join(",");
+/////////////////////////////////////////////////
+    if (_this.data.indexd != -1) {
+      
+      param.type = _this.data.industryIdList[_this.data.indexd];
     } else {
       util.alert('请选择服务类型');
       return;
     }
+    //////////////////////////////////////
     if (util.checkTel(_this.data.tel)) {
       param.tel = _this.data.tel;
     } else {
@@ -369,7 +368,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var _this = this;
+    var param = {};
+    param.type = '4';
+    network.doPost('selectBusinessIndustry', param, function (res) {
+      console.log(res);
+      console.log(res);
+      var industryList = res.industryList;
+      if (industryList && industryList.length>0){
+        var industryIdList = [];
+        var industryNameList = [];
+        for (let i = 0; i < industryList.length;i++){
+          industryIdList.push(industryList[i].id);
+          industryNameList.push(industryList[i].name);
+        }
+        _this.setData({
+          "industryIdList": industryIdList,
+          "industryNameList": industryNameList
+        });
+      }else{
+        _this.setData({
+          "industryIdList": [],
+          "industryNameList":[]
+        });
+      }
+     
+    });
   },
 
   /**

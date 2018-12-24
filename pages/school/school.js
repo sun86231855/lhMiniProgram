@@ -97,6 +97,7 @@ Page({
     var param = {};
     network.doPost('getCommunityListForCollegeCertification', param, function(res) {
       if (res && res.communityList) {
+        
         var selectData = [];
         var selectIdData = [];
         for (let i = 0; i < res.communityList.length; i++){
@@ -178,11 +179,17 @@ Page({
     var d = this.data;
     var param = {};
     param.type = '1';
+    if (this.data.choose == '../students/students'){
+      param.type = '1';
+    }else{
+      param.type = '2';
+    }
     if (this.data.ifTaiChecked){
       param.ifTai = '1';
     }else{
       param.ifTai = '0';
     }
+    console.log(param.type);
     param.communityId = d.selectedCommunityId;
     if (!d.selectedCommunityId){
       return false;

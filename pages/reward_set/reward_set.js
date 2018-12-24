@@ -9,7 +9,7 @@ Page({
     summary:'请填写合作内容',
     flag1:false,
     flag2:true,
-    selectData: ['产品合作', '技术合作', '销售渠道', '媒体合作', '土地场地', 'ToB服务', '招商合作'],
+    selectData: ['产品合作', '技术合作', '销售渠道', '媒体合作', '土地场地', 'ToB服务', '招商合作', '招/投标', '产业整合', '学习成长', '其他合作'],
     index: "", //选择的下拉列表下标
     
   },
@@ -83,8 +83,10 @@ Page({
 		util.alert('请输入主题');
 		return;
 	  }
-	  if(util.checkText(_this.data.tradeId,false)){
-		param.tradeId = _this.data.tradeId;
+    
+
+    if (util.checkText(_this.data.indexd,false)){
+      param.tradeId = _this.data.indexd + 1;
 	  }else{
 		util.alert('请选择行业');
 		return;
@@ -106,8 +108,9 @@ Page({
 		util.alert('请输入主题');
 		return;
 	  }
-	  if(util.checkText(_this.data.tradeId,false)){
-		param.tradeId = _this.data.tradeId;
+    console.log(_this.data+ "12312312312321");
+    if (util.checkText(_this.data.indexd,false)){
+      param.tradeId = _this.data.indexd+1;
 	  }else{
 		util.alert('请选择行业');
 		return;

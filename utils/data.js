@@ -1,5 +1,6 @@
 
-var cosPath ="https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+// var cosPath ="https://123-1256884206.cos.ap-chengdu.myqcloud.com/";
+var cosPath = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
 /**
  * banner数据
  */ 

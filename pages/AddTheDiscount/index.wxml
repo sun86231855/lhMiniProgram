@@ -12,21 +12,21 @@
     </view>
     <view class='their vie_list'>
       <text class='their-label'>服务类型：</text>
-      <!-- <view class='their-check' bindtap='chooseServiceType'>
-        <block wx:if="{{serviceTypeList==null || serviceTypeList.length== 0}}">
-          <text class='icon-xiajiantou iconfont'></text>
-        </block>
-        <block wx:else>
-          <text data-selectedId="{{item.id}}" data-index="{{index}}" wx:for="{{serviceTypeList}}" wx:key="{{item.id}}">
-            <text class='text_n'>{{item.name}}</text>
+        <!-- <view class='their-check' bindtap='chooseServiceType'>
+          <block wx:if="{{serviceTypeList==null || serviceTypeList.length== 0}}">
             <text class='icon-xiajiantou iconfont'></text>
-          </text>
-        </block>
-      </view> -->
-        <picker mode="selector" range="{{selectData}}" value="{{index}}" bindchange="listenerPickerSelected">
-            <text hidden='{{flag1}}'>--<text class='red_font tex_index'>请选择</text>--</text>
-            <text hidden='{{flag2}}'>{{selectData[indexd]}}</text>
-          </picker>
+          </block>
+          <block wx:else>
+            <text data-selectedId="{{item.id}}" data-index="{{index}}" wx:for="{{serviceTypeList}}" wx:key="{{item.id}}">
+              <text class='text_n'>{{item.name}}</text>
+              <text class='icon-xiajiantou iconfont'></text>
+            </text>
+          </block>
+        </view> -->
+        <picker mode="selector" range="{{industryNameList}}" value="{{industryIdList[index]}}" bindchange="listenerPickerSelected">
+          <text hidden='{{flag1}}'>--<text class='red_font tex_index'>请选择</text>--</text>
+          <text hidden='{{flag2}}'>{{selectData[indexd]}}</text>
+        </picker>
     </view>
     <view class='name vie_list'>
       <text class='name-label'>联系电话：</text>

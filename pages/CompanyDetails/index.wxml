@@ -17,7 +17,7 @@
 
   <view class='company_d'>
     <view class='use_pic'>
-        <image src="{{userImageUrl}}"></image>
+        <image src="{{companyImageUrl}}"></image>
    </view>
     <view class='name'>
 

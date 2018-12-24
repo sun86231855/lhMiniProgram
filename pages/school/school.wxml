@@ -56,7 +56,7 @@
     <view class='class'>
       <view class='select_div'>
         <view class='tit'>姓名：</view>
-        <view class='select_box'>
+        <view class='select_box mar'>
           <input type='text' bindinput='changeName' placeholder='请输入姓名'></input>
         </view>
       </view>

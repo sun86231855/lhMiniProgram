@@ -99,8 +99,7 @@ display:inline-block;
 }
 .help {
   margin: 5rpx 0;
-  font-size: 22rpx; 
-  color: #d24a58; text-align: center
+  font-size: 22rpx;  text-align: center
 }
 .skill{ }
 .bottom-phone{ display: flex;}

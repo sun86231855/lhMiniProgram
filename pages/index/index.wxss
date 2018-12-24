@@ -132,7 +132,7 @@ page{
   background: #fff;
   width: 77%;
   margin: -2rpx auto;
-  position: relative; z-index: 9;
+  position: relative; z-index: 99999;
   right: 0;
 }
 .select{

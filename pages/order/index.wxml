@@ -34,68 +34,75 @@
               </swiper-item>
           </block>
       </swiper>
-  </view> -->
+  </view>
+
+
+
+   -->
 
 
   <view class="ar_cont">
 
     <view class="ar_cont_h1">{{subject}}</view>
+
     <view class='user_list'>
-      <text class='user_tit'>服务类型：</text>
+      <text class='user_tit'><text class='iconfont #icon-gongsimingcheng font-4' ></text>服务类型：</text>
       <text class='user_text'>{{discountType}}</text>
     </view>
-    <view class='lin_x'></view>
+
     <view class='user_list'>
-      <text class='user_tit'>折扣简介：</text>
+      <text class='user_tit'><text class='iconfont #icon-wodezhekou'></text>折扣简介：</text>
       <text class='user_text line_3' bindtap="navigateDetail">{{summary}}</text>
     </view>
-    <view class='lin_x'></view>
+
     <view class='address_list'>
-      <text class='user_tit'>地址：</text>
+      <text class='user_tit'><text class='iconfont #icon-dizhi'></text>地<text space='{{true}}' decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>址：</text>
       <text class='user_text'>
 			<text class='address_lin' style="display:block" wx:for="{{lists}}" wx:key="{{index}}">{{item}}</text>
       </text>
     </view>
-    <view class='lin_x'></view>
+ 
     <view class='user_list'>
-      <text class='user_tit'>联系电话：</text>
-      <text class='user_text'>{{tel}}</text>
+      <text class='user_tit'><text class='iconfont#icon-kefudianhua'></text>联系电话：</text>
+      <text class='user_text lx_phone'>{{tel}}</text>
       <text class='phone icon-dianhua1 iconfont' data-phn="{{tel}}" bindtap="phoneCall"></text>
+      <text class='ist_ts'>(提示：可以联系店主进行沟通哦)</text>
 
     </view>
 
-    <view class='lin_x'></view>
-    <view class='user_list_ts'>
-      <text class='user_tit'></text>
-      <text class='user_text'>(提示：可以联系店主进行沟通哦)</text>
-    </view>
-    <view class='lin_x'></view>
+
+  
     <view class='user_list'>
-      <text class='user_tit'>店内联系人：</text>
+      <text class='user_tit'><text class='iconfont #icon-dianneilianxiren'></text>店内联系人：</text>
       <text class='user_text'>{{storeContacts}}</text>
     </view>
-    <view class='lin_x'></view>
-    <view class='user_list'>
-      <text class='user_tit'>店内联系人电话：</text>
+
+
+        <view class='user_list'>
+      <text class='user_tit'><text class='iconfont#icon-dianneilianxidianhua'></text>店内联系人电话：</text>
       <text class='user_text'>{{storeContactsTel}}</text>
+       <text class='iconfont #icon-bohaodianhua1 dnlxr_phone' data-phn="{{offerTelephone}}" bindtap="phoneCall"></text>
     </view>
-    <view class='lin_x'></view>
+
+
     <view class='user_list'>
-      <text class='user_tit'>优惠信息：</text>
+      <text class='user_tit'><text class='iconfont #icon-youhuixinxi'></text>优惠信息：</text>
       <text class='user_text'>{{discount}}</text>
     </view>
 
-    <view class='lin_x'></view>
+
+
 
     <view wx:if="{{ifAppointment=='1'}}">
-      <view wx:for="{{userList}}" wx:key = "{{index}}">
+      <view wx:for="{{userList}}" wx:if="{{item.userId == userIda}}" wx:key = "{{index}}">
         <view class='user_list'>
-          <text class='user_tit'>预约时间：</text>
+          <text class='user_tit'><text class='iconfont #icon-yuding' style='color:#696969;'></text>预约时间：</text>
           <text class='user_text'>{{item.createDate}}</text>
         </view>
-        <view class='lin_x'></view>
+    
+    
         <view class='user_box user_in'>
-          <text class='user_tit'>联系人：</text>
+          <text class='user_tit'><text class='iconfont #icon-lianxiren2'></text>同<text space='{{true}}' decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>学：</text>
           <view class='user_text user_box'>
             <view class='use_list ' bindtap="navigateDetail" data-id="{{userId}}">
               <image class='img' src="{{item.userHeaderImageUrl}}"></image>
@@ -103,9 +110,10 @@
             </view>
           </view>
         </view>
-        <view class='lin_x'></view>
+   
+   
         <view class='user_list'>
-          <text class='user_tit'>同学电话：</text>
+          <text class='user_tit'><text class='iconfont #icon-ffan_lingdai font-3'></text>同学电话：</text>
           <text class='user_text'>{{item.tel}}</text>
         </view>
       </view>

@@ -30,7 +30,7 @@
 
 
 <view class="swiper-container">
- <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+ <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindanimationfinish="swiperChange" class="swiper">
   <block wx:for="{{banner_url}}" wx:key="item.id">
    <swiper-item>
        <block wx:if="{{item}}">
@@ -95,15 +95,15 @@
 
     <!--快速入口-->
 
-    <view class='quick_box_d'>
+    <!-- <view class='quick_box_d'>
       <button bindtap="showDialogBtn" class='share' >
-      <image mode="aspectFill" src='https://123-1256884206.cos.ap-chengdu.myqcloud.com/sqjr.jpg'></image>
+      <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjr.jpg'></image>
       </button>
      
       <button open-type="share" class='share right' >
-        <image mode="aspectFill" src='https://123-1256884206.cos.ap-chengdu.myqcloud.com/sqjryq.jpg'></image>
+        <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjryq.jpg'></image>
       </button>
-    </view>
+    </view> -->
     <!--线-->
     <view class='lin_x'></view>
     <!--nav-->
@@ -121,7 +121,7 @@
     <view class="nav_section">
 
 
-      <view wx:if="{{list != '' && list[curIndex].length>0}}" class='list_p'>
+      <view wx:if="{{list != '' && curIndex==0?list[curIndex].length>0:list[3].length>0}}" class='list_p'>
 
         <view class='tit_top' wx:if="{{curIndex==0 || curIndex ==1}}">
 
@@ -141,7 +141,7 @@
           </view>
         </view>
 
-        <block wx:for="{{list[curIndex]}}" wx:for-index="index" wx:key="item.id">
+        <block wx:for="{{curIndex == 0 ||curIndex == '0'?list[curIndex]:list[3]}}" wx:for-index="index" wx:key="item.id">
 
           <view wx:if="{{index <  pageIndex}}" class="nav_section_items" style="background:#fff">
             <!--image-->
@@ -171,7 +171,7 @@
         </view>
       </view>
 
-      <view wx:if="{{list != '' && list[curIndex].length<=0}}" class='no_any'>
+      <view wx:if="{{list != '' && curIndex==0?list[curIndex].length<=0:list[3].length<=0}}" class='no_any'>
         <image class='img' src='/images/no_any.png'></image>
         <view class='text'>暂无数据</view>
       </view>
