@@ -218,7 +218,7 @@ Page({
 	details: function(e) {
 		var cooperateId = e.currentTarget.dataset.cooperateid;
 		wx.navigateTo({
-			url: '../reward_details/reward_details?cooperateId='+cooperateId
+      url: '../CooperationDetails/index?cooperateId=' + cooperateId 
 		})
 	},
 

@@ -171,8 +171,6 @@ Page({
     });
   },
 
-
-
   headImageUpload: function() {
     var that = this;
     var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";

@@ -33,15 +33,15 @@
       <input class='name-input' placeholder='请输入联系方式' value="" bindinput='telInput' />
     </view>
 
-<!-- 
+ 
     <view class='name vie_list'>
       <text class='name-label'>店内联系人：</text>
       <input class='name-input' placeholder='请输入' value="" bindinput='storeContactsInput' />
-    </view> -->
-    <!-- <view class='name vie_list'>
+    </view> 
+     <view class='name vie_list'>
       <text class='name-label'>店内联系人电话：</text>
       <input class='name-input' placeholder='请输入' value="" bindinput='storeContactsTelInput' />
-    </view> -->
+    </view> 
     <view class='tel vie_list'>
       <text class='tel-label'>优惠信息：</text>
       <input class='yh-input' placeholder='请输入优惠' value="" bindinput='discountInput' />
@@ -60,8 +60,14 @@
         </label>
       </radio-group>
     </view>
-
-
+   <!-- <view class='contacts vie_list'>
+      <text class='name-label'>店内联系人：</text>
+      <input class='name-input' placeholder='请输入店内联系人' value="" bindinput="contactsInput" />
+    </view>
+    <view class='contactsTel vie_list'>
+      <text class='name-label'>店内联系人电话：</text>
+      <input class='name-input' placeholder='请输入店内联系人电话' value="" bindinput='contactsTelInput' />
+    </view>-->
 
     <view class='add_vie'>
       <text class='add-label'>地<text decode='{{true}}' space='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>址：</text>
