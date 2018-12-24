@@ -21,13 +21,13 @@ Page({
     flag2: true,
     flaga: false,
     flagb: true,
-    selectData: ['社群1', '社群2', '社群3', '社群4'],
+    selectData: [],
     selectIdData:[],
     selectedCommunityId: '',
     selectClassData:[],
     selectClassIdData:[],
     selectedClassId:'',
-    classList: ['班级1', '班级2', '班级3', '班级4', '班级5'],
+    classList: [],
     index: 0, //选择的下拉列表下标
     show: false, //控制下拉列表的显示隐藏，false隐藏、true显示
     items: [{
