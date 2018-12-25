@@ -8,7 +8,7 @@
     </view>
     <view class='jianj vie_list'>
       <text class='name-label'>折扣简介：</text>
-      <input class='name-input' placeholder='请输入简介' value="" bindinput="summaryInput" />
+      <textarea class='name-content' placeholder='请输入简介' value='' bindinput='summaryInput'></textarea>
     </view>
     <view class='their vie_list'>
       <text class='their-label'>服务类型：</text>
@@ -44,7 +44,7 @@
     </view> 
     <view class='tel vie_list'>
       <text class='tel-label'>优惠信息：</text>
-      <input class='yh-input' placeholder='请输入优惠' value="" bindinput='discountInput' />
+      <input class='yh-input' placeholder='请输入 10以内折扣数量' value="" bindinput='discountInput' />
       <!-- <text class=' zk_t'>折</text> -->
     </view>
 

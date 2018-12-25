@@ -95,7 +95,7 @@
 
     <!--快速入口-->
 
-    <!-- <view class='quick_box_d'>
+     <view class='quick_box_d'>
       <button bindtap="showDialogBtn" class='share' >
       <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjr.jpg'></image>
       </button>
@@ -103,7 +103,7 @@
       <button open-type="share" class='share right' >
         <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjryq.jpg'></image>
       </button>
-    </view> -->
+    </view> 
     <!--线-->
     <view class='lin_x'></view>
     <!--nav-->

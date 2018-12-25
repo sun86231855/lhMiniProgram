@@ -11,7 +11,7 @@
   </view>
   <view class='name'>
     <view class='header'>昵<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>称：</view>
-    <input class='input-name' placeholder='哈哈镜子里的人' bindinput='textareaTel'/>
+    <input class='input-name' placeholder='请输入姓名' bindinput='textareaTel'/>
   </view>
   <!-- <view class='auth-code'>
     <input class='input-auth-code' placeholder='验证码'/>
