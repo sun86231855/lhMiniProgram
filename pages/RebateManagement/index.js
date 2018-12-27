@@ -40,7 +40,8 @@ Page({
       "discountList": []
     });
     var parameter = {};
-    parameter.type = "3";
+    _this.data.type = "3";
+    parameter.type = _this.data.type;
     network.doPost('getDiscountListForMy', parameter, function (res) {
       if (res != null) {
         console.log(res);
@@ -56,6 +57,7 @@ Page({
       "discountList": []
     });
     var parameter = {};
+    _this.data.type = "1";
     parameter.type = _this.data.type;
     network.doPost('getDiscountListForMy', parameter, function (res) {
       if (res != null) {
@@ -97,7 +99,7 @@ Page({
   //点击删除按钮事件  
   delItem: function (e) {
     var that = this;
-    var id = e.target.dataset.id;
+    var id = e.currentTarget.dataset.id;
     wx.showModal({
       title: '提示',
       content: '是否确定？',
@@ -116,11 +118,34 @@ Page({
   },
 
 
+  //点击删除按钮事件  
+  delDiscount: function (e) {
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '是否确定？',
+      success: function (res) {
+        if (res.confirm) {
+          var param = {};
+          param.type = that.data.type;
+          param.discountId = id;
+          network.doPost('deleteDiscountForMy', param, function (res) {
+
+            that.query();
+          });
+        }
+      }
+    });
+  },
+
+
   mdfItem: function (e) {
     var that = this;
-    var id = e.target.dataset.id;
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../MdfTheDiscount/index?discountId=' + id
+      //url: '../MdfTheDiscount/index?discountId=' + id
+      url: '../AddTheDiscount/index?discountId=' + id
     })
   },
 

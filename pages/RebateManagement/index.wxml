@@ -60,10 +60,10 @@
 
               <view class='bot_ico'>
 
-                <view class='but_list del float_right' data-id="{{item.discountId}}" catchtap="delItem">
+                <view class='but_list del float_right' data-id="{{item.discountId}}" catchtap="delDiscount">
                   <text class='iconfont icon-shanchu'></text>{{type=='1'?'删除':'取消收藏'}}</view>
                 <view class='but_list del float_right red_font' data-id="{{item.discountId}}" catchtap="mdfItem" wx:if="{{type=='1'}}">
-                  <text class='iconfont icon-bianji'></text>修改</view>
+                  <text class='iconfont icon-bianji'></text>修改 </view>
                 <view class='{{item.likeNum >0?"red_font":""}} but_list float_left'>
                   <text class='iconfont icon-dianzan'></text>点赞
                   <text class='text'>{{item.likeNum}}</text>

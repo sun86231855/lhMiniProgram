@@ -32,27 +32,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indexd:-1,
-    flag1:false,
-    flag2:true,
-    selectData:['美食','酒店入住','旅游','休闲娱乐','生活服务','宴会','购物','丽人购物','运动健身','母婴亲子','宠物','汽车服务','摄影写真','结婚','家装','其他'],
+    indexd: -1,
+    flag1: false,
+    flag2: true,
+    selectData: ['美食', '酒店入住', '旅游', '休闲娱乐', '生活服务', '宴会', '购物', '丽人购物', '运动健身', '母婴亲子', '宠物', '汽车服务', '摄影写真', '结婚', '家装', '其他'],
     index: "", //选择的下拉列表下标
     scrHeight: wx.getSystemInfoSync().windowHeight,
-    lists: [{}],
+    lists: [],
     rangeType: "1",
     rangeValue: "",
-    storeContacts:"",
-    storeContactsTel:""
+    storeContacts: "",
+    selectOne: "",
+    storeContactsTel: "",
+    selectDataName:"",
+    isfouce: true,      // 切换
+    summary: ''    // textarea的输入值
   },
-  listenerPickerSelected: function (e) {
+  listenerPickerSelected: function(e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
       flag1: true,
       flag2: false,
-      indexd: e.detail.value,
-
+      indexd: e.detail.value
     });
-  }, 
+  },
 
   // 跳转至详情页
   cutPic: function(e) {
@@ -79,14 +82,14 @@ Page({
 
   },
 
-  storeContactsInput:function(e){
+  storeContactsInput: function(e) {
     var storeContacts = e.detail.value;
     this.setData({
       storeContacts: storeContacts
     });
   },
 
-  storeContactsTelInput:function(e){
+  storeContactsTelInput: function(e) {
     var storeContactsTel = e.detail.value;
     this.setData({
       storeContactsTel: storeContactsTel
@@ -134,9 +137,17 @@ Page({
 
   summaryInput: function(e) {
     this.setData({
+      isfouce: true,
       summary: e.detail.value
     });
   },
+
+  isfouce: function () {
+    this.setData({
+      isfouce: false
+    })
+  },
+
 
   chooseServiceType: function(e) {
     var selectedIndustryIds = "";
@@ -203,9 +214,9 @@ Page({
                   headImageUrl: imgUrl
                 });
               } else {
-				  console.log("---------------^^^^^^^^-------------------");
-				  console.log(err);
-				  console.log(data);
+                console.log("---------------^^^^^^^^-------------------");
+                console.log(err);
+                console.log(data);
                 wx.showToast({
                   title: '请求成功',
                   icon: 'success',
@@ -296,9 +307,9 @@ Page({
       util.alert('请输入折扣简介');
       return;
     }
-/////////////////////////////////////////////////
+    /////////////////////////////////////////////////
     if (_this.data.indexd != -1) {
-      
+
       param.type = _this.data.industryIdList[_this.data.indexd];
     } else {
       util.alert('请选择服务类型');
@@ -356,6 +367,7 @@ Page({
     }
     param.storeContacts = _this.data.storeContacts;
     param.storeContactsTel = _this.data.storeContactsTel;
+    param.id = _this.data.id;
     network.doPost('addDiscountForMy', param, function(res) {
       wx.navigateBack();
     });
@@ -369,14 +381,14 @@ Page({
     var _this = this;
     var param = {};
     param.type = '4';
-    network.doPost('selectBusinessIndustry', param, function (res) {
+    network.doPost('selectBusinessIndustry', param, function(res) {
       console.log(res);
       console.log(res);
       var industryList = res.industryList;
-      if (industryList && industryList.length>0){
+      if (industryList && industryList.length > 0) {
         var industryIdList = [];
         var industryNameList = [];
-        for (let i = 0; i < industryList.length;i++){
+        for (let i = 0; i < industryList.length; i++) {
           industryIdList.push(industryList[i].id);
           industryNameList.push(industryList[i].name);
         }
@@ -384,14 +396,46 @@ Page({
           "industryIdList": industryIdList,
           "industryNameList": industryNameList
         });
-      }else{
+      } else {
         _this.setData({
           "industryIdList": [],
-          "industryNameList":[]
+          "industryNameList": []
         });
       }
-     
-    });
+
+    })
+
+    if (options.discountId) {
+      var discountId = options.discountId;
+      console.log(options); 
+      wx.setNavigationBarTitle({
+        title: '修改折扣'
+      })
+      _this.setData({
+        'discountId': discountId
+      });
+      var param = {};
+      param.discountId = options.discountId;
+      network.doPost('getDiscountDetail', param, function(res) {
+        if (res) {
+          var address = res.addrList;
+          res.lists = address.split("/n");
+
+          res.serviceTypeList = [];
+          var v = {};
+          v.id = res.discountType;
+          v.name = res.discountTypeName;
+          res.serviceTypeList.push(v);
+          
+          _this.setData(res);
+          _this.setData({
+            flag1: true,
+            flag2: false,
+            indexd:res.discountType-1
+          });
+        }
+      });
+    }
   },
 
   /**

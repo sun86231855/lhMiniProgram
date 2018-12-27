@@ -100,6 +100,8 @@ Page({
 
   //初始化回调方法
   onLoad: function () {
+  },
+  onShow: function () {
     console.log('页面加载');
     var _this = this;
     _this.setData({
