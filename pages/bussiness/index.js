@@ -98,6 +98,20 @@ Page({
     })
   },
 
+  //轮播图点击事件
+  swipclick: function (e) {
+    console.log(this.data.swiperCurrent);
+    if (this.data.swiperCurrent == '0') {
+      wx.navigateTo({
+        url: '../bannerFirstSJ/index'
+      });
+    } else {
+      wx.navigateTo({
+        url: '../bannerSecondSJ/index'
+      });
+    }
+
+  },
   //初始化回调方法
   onLoad: function () {
   },

@@ -9,7 +9,7 @@ var util = require("../../utils/util.js");
 Page({
   // 页面初始数据
   data: {
-    
+
 
     swiperCurrent: 0,
     // butHeight: 50,
@@ -17,14 +17,14 @@ Page({
 
     colors: ['red', 'orange', 'yellow', 'green', 'purple'],
     // banner 初始化
- banner_url: fileData.getBannerData(),
+    banner_url: fileData.getBannerData(),
     // banner_url: ["/images/bannera.jpg","/images/bannerb.jpg"],
     classId: "",
     circlesId: "",
     inviteCode: "",
     indicatorDots: true,
     vertical: false,
-   
+
 
     // nav 初始化
     navTopItems: fileData.getIndexNavData(),
@@ -47,7 +47,8 @@ Page({
 
 
     pullDownFalg: true,
-    weatherCheck:false,
+    weatherCheck: false,
+    classShow:false,
   },
   //轮播图的切换事件
   swiperChange: function(e) {
@@ -321,12 +322,18 @@ Page({
     if (index == 0) {
       currOtherName = '点击切换其它班级';
       llreturntype = 0;
+
+      this.setData({
+        classShow: false
+      })
       defaultName = (this.data.defaultclassNameClose).split(",");
       if (this.data.defaultclassName.split(",").length > 1) {
         defaultName = (defaultName + "...").split(",");
-        alert(1);
       }
     } else if (index == 1) {
+      this.setData({
+        classShow: true
+      })
       currOtherName = '点击切换其它圈子';
       llreturntype = 1;
       defaultName = (this.data.defaultCircleNameClose).split(",");
@@ -348,7 +355,7 @@ Page({
   // 跳转至详情页
   navigateDetail: function(e) {
     console.log(e.currentTarget.dataset.aid);
-    if(this.data.weatherCheck){
+    if (this.data.weatherCheck) {
       wx.navigateTo({
         url: '../detail/detail?userId=' + e.currentTarget.dataset.aid
       })
@@ -476,8 +483,8 @@ function doLoadData(that, currk) {
   console.log("................................>>>>" + currk);
   var param = {};
   //获取社群列表
-  if (!currk){
-    currk=0;
+  if (!currk) {
+    currk = 0;
   }
   network.doPost('selectAssociationList', param, function(res) {
     if (res) {
@@ -501,14 +508,14 @@ function doLoadData(that, currk) {
           associationId: associationId,
           weatherCheck: true
         });
-        if (assListArry && assListArry[currk].isPopup == '1'){
+        if (assListArry && assListArry[currk].isPopup == '1') {
           that.setData({
-            weatherCheck:false,
+            weatherCheck: false,
           });
           wx.showModal({
             title: '提示',
             content: '选择该群需要进行认证',
-            success: function (res) {
+            success: function(res) {
               if (res.confirm) {
                 wx.navigateTo({
                   url: '../school/school'
@@ -533,7 +540,7 @@ function doLoadData(that, currk) {
           console.log(res);
           console.log(res);
           console.log(res);
-          
+
           if (res) {
             var firstDataList = res.firstDataList;
             var defaultclassName = res.defaultclassName;

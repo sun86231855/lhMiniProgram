@@ -43,7 +43,7 @@
       <block wx:for="{{picUrlList}}"  wx:key="item.id">
       <swiper-item>
         <block wx:if="{{item}}">
-              <image src="{{item}}" mode="aspectFill" />
+              <image src="{{item}}" mode="aspectFill" bindtap="swipclick"/>
             </block>
             <block wx:else>
               <image src="../../images/default_pic.png" mode="aspectFill"></image>

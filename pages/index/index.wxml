@@ -125,7 +125,7 @@
 
         <view class='tit_top' wx:if="{{curIndex==0 || curIndex ==1}}">
 
-          <view class='text_l'>
+          <view class='text_l' hidden='{{classShow}}'>
             <view class='text_infor'>
               <view class='t_ilist line_1' wx:for="{{defaultName}}" wx:key="index">{{item}}</view>
             </view>
@@ -135,7 +135,7 @@
             </i>
           </view>
 
-          <view class='text_r' data-aid='{{curIndex}}' bindtap='AllClass'>
+          <view class='text_r' data-aid='{{curIndex}}' bindtap='AllClass' hidden='{{classShow}}'>
             <!-- {{currOtherName}} -->
             <text class='iconfont icon-qiehuan '></text>
           </view>
