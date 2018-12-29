@@ -1,7 +1,7 @@
 <!--pages/bannerSecond/index.wxml-->
 <view class='container'>
-  <scroll-view scroll-y="true" height >  
-  <image  src="https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/banner_l2.jpg" mode='widthFix'></image>
+  <scroll-view scroll-y="true"  style='height:{{scrHeight}}px' >  
+  <image  src="https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sj_banner_l2.png" mode='widthFix'></image>
   </scroll-view>
 </view>
 

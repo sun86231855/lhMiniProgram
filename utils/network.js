@@ -1,7 +1,7 @@
 
 // var serverUrl = "http://192.168.51.206:8080/lh/api";
-// var serverUrl = "https://www.sybpm.com/lh/api";
- var serverUrl = "http://127.0.0.1:8080/lh/api";
+ var serverUrl = "https://www.sybpm.com/lh/api";
+// var serverUrl = "http://127.0.0.1:8080/lh/api";
 
 var util = require("util.js");
 

@@ -54,7 +54,8 @@
     "pages/order/index",
     "pages/bannerFirst/index",
     "pages/bannerSecond/index",
-    
+    "pages/bannerFirstSJ/index",
+    "pages/bannerSecondSJ/index",
     "pages/position_select/selector",
     "pages/dist/index",	"pages/MdfTheDiscount/index"  ],
     "window": {

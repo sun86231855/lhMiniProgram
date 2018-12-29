@@ -5,7 +5,7 @@
 <view class="container">
   <scroll-view scroll-y="true" style='height:{{scrHeight}}px' class="page-body">
     <!--banner  bindscrolltolower="loadMore"-->
-<!-- <view class="swiper-container">
+    <!-- <view class="swiper-container">
  <swiper autoplay="auto" interval="5000" duration="500"  current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
 
   <block wx:for="{{banner_url}}" wx:key="item.id">
@@ -29,26 +29,26 @@
 </view> -->
 
 
-<view class="swiper-container">
- <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindanimationfinish="swiperChange" class="swiper">
-  <block wx:for="{{banner_url}}" wx:key="item.id">
-   <swiper-item>
-       <block wx:if="{{item}}">
-            <image src="{{item}}" mode="aspectFill" bindtap="swipclick" />
-      </block>
-      <block wx:else>
-            <image src="../../images/default_pic.png"></image>
+    <view class="swiper-container">
+      <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindanimationfinish="swiperChange" class="swiper">
+        <block wx:for="{{banner_url}}" wx:key="item.id">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" bindtap="swipclick" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png"></image>
+            </block>
+          </swiper-item>
         </block>
-   </swiper-item>
-  </block>
- </swiper>
-  
- <view class="dots">
-  <block wx:for="{{banner_url}}" wx:key="item.id">
-   <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
-  </block>
- </view>
-</view>
+      </swiper>
+
+      <view class="dots">
+        <block wx:for="{{banner_url}}" wx:key="item.id">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
 
 
     <!-- <view class='swipercontent'>
@@ -71,7 +71,7 @@
         </block>
       </view>
     </view> -->
-  <!--线-->
+    <!--线-->
     <view class='lin_x'></view>
     <!--筛选-->
     <view class='select_div'>
@@ -95,15 +95,15 @@
 
     <!--快速入口-->
 
-     <view class='quick_box_d'>
-      <button bindtap="showDialogBtn" class='share' >
-      <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjr.jpg'></image>
+    <view class='quick_box_d'>
+      <button bindtap="showDialogBtn" class='share'>
+        <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjr.jpg'></image>
       </button>
-     
-      <button open-type="share" class='share right' >
+
+      <button open-type="share" class='share right'>
         <image mode="aspectFill" src='https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/sqjryq.jpg'></image>
       </button>
-    </view> 
+    </view>
     <!--线-->
     <view class='lin_x'></view>
     <!--nav-->

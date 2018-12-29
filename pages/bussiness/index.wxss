@@ -11,15 +11,12 @@
 .swipercontent {
   position: relative;
 }
-swiper{
-  width: 100%;
-  height:400rpx;
+.swiper{
+    width:100%;
+    margin:0rpx; position: relative;
 }
-
-swiper image {
-  display: block;
-  width: 100%;
-  height: 100%;
+.swiper image{
+    display: inline;
 }
 
 .dots{

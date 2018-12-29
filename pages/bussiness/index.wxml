@@ -33,30 +33,30 @@
 
         <text class="iconfont icon-shaixuan Screening" bindtap="ScreeningIndustry" style="font-size:22px;color:red"></text>
         <view class='input_box'>
-          <input bindinput="keyWordInput" type="text" confirm-type="search" class=' input login-form-pwd' bindconfirm = "keyWordSearch" placeholder='请输入关键字' value="{{keyWord}}" placeholder-class="center" id="KeyWord"></input>
+          <input bindinput="keyWordInput" type="text" confirm-type="search" class=' input login-form-pwd' bindconfirm="keyWordSearch" placeholder='请输入关键字' value="{{keyWord}}" placeholder-class="center" id="KeyWord"></input>
           <text class='iconfont #icon-sousuofangdajing search' style="font-size:22px;" bindtap="keyWordSearch"></text>
         </view>
       </view>
 
 
-      <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
-      <block wx:for="{{picUrlList}}"  wx:key="item.id">
-      <swiper-item>
-        <block wx:if="{{item}}">
-              <image src="{{item}}" mode="aspectFill" bindtap="swipclick"/>
+      <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindanimationfinish="swiperChange" class="swiper">
+        <block wx:for="{{picUrlList}}" wx:key="item.id">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" bindtap="swipclick" />
             </block>
             <block wx:else>
-              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+              <image src="../../images/default_pic.png"></image>
             </block>
-      </swiper-item>
-      </block>
-    </swiper>
-      
-    <view class="dots">
-      <block wx:for="{{picUrlList}}" wx:key="item.id">
-      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
-      </block>
-    </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="dots">
+        <block wx:for="{{picUrlList}}" wx:key="item.id">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view>
 
 
       <!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" catchtap="onItemClick" current="{{swiperCurrent}}" bindchange="swiperChange">
@@ -133,11 +133,19 @@
 
     <view class="tab">
       <view class="tab-left" bindtap="tabFun">
-        <view class="{{type=='1'? 'active' : ''}} view_infor" id="tab-hd01" data-id="1" data-type="1">找公司<view class='bot_line'></view></view>
+        <view class="{{type=='1'? 'active' : ''}} view_infor" id="tab-hd01" data-id="1" data-type="1">找公司
+          <view class='bot_line'></view>
+        </view>
         <!--超过999后面加+号-->
-        <view class="{{type=='2'? 'active' : ''}} view_infor" id="tab-hd02" data-id="2" data-type="2">找专家<view class='bot_line'></view></view>
-        <view class="{{type=='3'? 'active' : ''}} view_infor" id="tab-hd03" data-id="3" data-type="3">找合作<view class='bot_line'></view></view>
-        <view class="{{type=='4'? 'active' : ''}} view_infor" id="tab-hd04" data-id="4" data-type="4">找折扣<view class='bot_line'></view></view>
+        <view class="{{type=='2'? 'active' : ''}} view_infor" id="tab-hd02" data-id="2" data-type="2">找专家
+          <view class='bot_line'></view>
+        </view>
+        <view class="{{type=='3'? 'active' : ''}} view_infor" id="tab-hd03" data-id="3" data-type="3">找合作
+          <view class='bot_line'></view>
+        </view>
+        <view class="{{type=='4'? 'active' : ''}} view_infor" id="tab-hd04" data-id="4" data-type="4">找折扣
+          <view class='bot_line'></view>
+        </view>
       </view>
 
       <view class="tab-right">
@@ -203,7 +211,7 @@
                   <text class='text' wx:if="{{item.industryName != null && item.industryName != ''}}">{{item.industryName}}</text>
                   <text class='text q_color' wx:else>未填写</text>
                 </view>
-                 <view class='introduction list'>{{item.industrySummary}}</view>
+                <view class='introduction list'>{{item.industrySummary}}</view>
                 <view class='phone'>
                   <!-- <view class='p_list'>
                       <view class='iconfont icon-tongxunlu phone_ico'></view><view class='text line_list'>{{item.industrySummary}}</view></view> -->
@@ -213,7 +221,7 @@
                     <view class='number line_1 q_color' wx:else>未填写</view>
                   </view>
                 </view>
-               
+
               </view>
 
             </view>
