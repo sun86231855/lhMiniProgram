@@ -16,7 +16,6 @@ Page({
   data: {
     ifTaiChecked:true,
     flagchoose: false,
-    flagchooserz: true,
     flag1: false,
     flag2: true,
     flaga: false,
@@ -140,8 +139,7 @@ Page({
     if (this.data.choose == '../platform/platform') {
       console.log(111)
       this.setData({
-        flagchoose: true,
-        flagchooserz: false
+        flagchoose: true
       });
 
       console.log(112)
@@ -149,8 +147,7 @@ Page({
       console.log(222)
 
       this.setData({
-        flagchoose: false,
-        flagchooserz: true
+        flagchoose: false
       });
       console.log(223)
     }
@@ -196,7 +193,6 @@ Page({
     }
 
     param.classId = this.data.selectedClassId;
-    param.remark = d.remark;
     param.name = this.data.name;
     network.doPost('insertAssociationAuthentication', param, function (res) {
       wx.showModal({

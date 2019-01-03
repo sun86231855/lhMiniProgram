@@ -11,7 +11,8 @@ Page({
     currItemId: "",
     curIndex: "",
     associationId: "",
-    assoIndex: ""
+    assoIndex: "",
+    flag:true
   },
   /*xuanz*/
   itemSelected: function(e) {
@@ -43,7 +44,42 @@ Page({
       itemList: this.data.itemList,
       currItemId: currItemId
     });
+    
+    chackFlag(this);
   },
+
+
+  doSelectAll:function(){
+    var currItemId = '';
+    for (var i = 0; i < this.data.itemList.length; i++) {
+      this.data.itemList[i].isSelected = true;
+      currItemId += this.data.itemList[i].id + ','; 
+    }
+    if (currItemId != null && currItemId.length > 0) {
+      currItemId = currItemId.substring(0, currItemId.length - 1);
+    }
+    this.setData({
+      itemList: this.data.itemList,
+      currItemId: currItemId
+    });
+    chackFlag(this);
+  },
+
+
+  doSelectNo: function () {
+    var currItemId = '';
+    for (var i = 0; i < this.data.itemList.length; i++) {
+      this.data.itemList[i].isSelected = false;
+    }
+    
+    this.setData({
+      itemList: this.data.itemList,
+      currItemId: currItemId
+    });
+    chackFlag(this);
+  },
+
+
   chooseCatalog: function(data) {
     var that = this;
     that.setData({ //把选中值放入判断值
@@ -103,7 +139,9 @@ Page({
           itemList: classList,
           currItemId: currItemId1
         });
+        chackFlag(that);
       });
+      
     } else if (curIndex == 1) {
       //获取班级列表selectCirclesList
       network.doPost('selectCirclesList', paramClass, function(res) {
@@ -133,20 +171,22 @@ Page({
         });
       });
     }
+
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    
   },
 
   /**
@@ -202,4 +242,23 @@ Page({
       });
     }
   }
+
+  
 })
+
+function chackFlag(that) {
+  console.log("777777===chackFlag");
+  var currItemId = that.data.currItemId;
+  var itemList = that.data.itemList;
+  var itemNum = itemList.length;
+  var currItemNum = currItemId.split(',').length;
+  if (itemNum == currItemNum){
+    that.setData({
+      flag: true
+    });
+  }else{
+    that.setData({
+      flag: false
+    });
+  }
+}

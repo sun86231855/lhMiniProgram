@@ -121,7 +121,7 @@
     <view class="nav_section">
 
 
-      <view wx:if="{{list != '' && curIndex==0?list[curIndex].length>0:list[3].length>0}}" class='list_p'>
+      <view hidden='{{sqflag}}' class='list_p'>
 
         <view class='tit_top' wx:if="{{curIndex==0 || curIndex ==1}}">
 
@@ -137,7 +137,7 @@
 
           <view class='text_r' data-aid='{{curIndex}}' bindtap='AllClass' hidden='{{classShow}}'>
             <!-- {{currOtherName}} -->
-            <text class='iconfont icon-qiehuan '></text>
+            <text class='iconfont icon-qiehuan '>选择班级</text>
           </view>
         </view>
 
@@ -165,11 +165,15 @@
           </view>
 
         </block>
-        <view class='Addmore' bindtap="loadMore">
+        <view wx:if="{{list != '' && curIndex==0?list[curIndex].length>0:list[3].length>0}}" class='Addmore' bindtap="loadMore">
           <text>查看更多</text>
           <image src='/images/more.png'></image>
         </view>
-      </view>
+        <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+  获取用户信息
+</button>
+<button open-type="openSetting">打开授权设置页</button> -->
+      </view> 
 
       <view wx:if="{{list != '' && curIndex==0?list[curIndex].length<=0:list[3].length<=0}}" class='no_any'>
         <image class='img' src='/images/no_any.png'></image>

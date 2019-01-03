@@ -1,7 +1,7 @@
 <!--pages/AllClass/details.wxml-->
 <view class='container_box '>
   <block wx:for="{{itemList}}" wx:key="id">
-    <view  class='item_container' bindtap='itemSelected' data-index='{{index}}'>
+    <view class='item_container' bindtap='itemSelected' data-index='{{index}}'>
       <image class='select_icon' src="{{item.isSelected?'/images/selected.png':'/images/unselected.png'}}"></image>
 
       <text class='text'>{{item.name}}</text>
@@ -9,7 +9,9 @@
     </view>
   </block>
   <view class='bot_v'>
-    <button bindtap='doConfirm' class='confirm'>确定</button>
+    <button bindtap='doSelectAll' class='select_b' hidden='{{flag}}'>全选</button>
+    <button bindtap='doSelectNo' class='select_b2' hidden='{{!flag}}'>取消全选</button>
+    <button bindtap='doConfirm' class='confirm_b'>确定</button>
   </view>
 
 </view>

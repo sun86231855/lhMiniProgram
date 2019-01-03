@@ -49,6 +49,7 @@ Page({
     pullDownFalg: true,
     weatherCheck: false,
     classShow:false,
+    sqflag:false,
   },
   //轮播图的切换事件
   swiperChange: function(e) {
@@ -230,18 +231,45 @@ Page({
       success: function(res) {
         console.log("人脉 onload加载：处于登录态");
 
-        // 业务代码
-
-
       },
       fail: function(res) {
         console.log("人脉onload加载：重新发起登录请求");
         wx.login({
           success: function(res) {
+            var nickName = '';
+            var avatarUrl = '';
             console.log("wx login success");
+            
+            wx.getSetting({
+
+              success(res) {
+                console.log("授权 onload加载：查看授权");
+                if (res.authSetting['scope.userInfo']) {
+                  console.log("授权 onload加载：已经授权");
+                  // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+                  wx.getUserInfo({
+                    success(res) {
+                      console.log("授权 onload加载：已经授权成功")
+                      const userInfo = res.userInfo;
+                      nickName = userInfo.nickName;
+                      avatarUrl = userInfo.avatarUrl;
+                      console.log(res.userInfo)
+                    }
+                  })
+                } else {
+                  console.log("授权 onload加载：查看是没有授权");
+                }
+              },
+              fail(res) {
+                console.log("授权 onload加载：查看是没有授权");
+              }
+            })
+            console.log("userInfo==========>" + nickName + avatarUrl);
             if (res.code) {
               var param = {};
               param.code = res.code;
+              param.nickName = nickName;
+              param.avatarUrl = avatarUrl;
               //发起网络请求
               wx.request({
                 url: config.serverUrl + '/login',
@@ -302,6 +330,13 @@ Page({
 
     util.stopLoading();
   },
+
+  onGotUserInfo:function(e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
+  },
+
   onShow: function() {
     this.setData({
       pullDownFalg: true
@@ -548,6 +583,7 @@ function doLoadData(that, currk) {
             var returnType = that.data.returnType;
             var defaultclassNameClose = defaultclassName.split(",")[0];
             var defaultCircleNameClose = defaultCircleName.split(",")[0];
+            var sqflag = res.sqflag;
             var defaultName = "";
             console.log("=================================XX==" + returnType + "class=" + defaultclassName + "circle=" + defaultCircleName);
             if (returnType != null && returnType == 1) { //圈子
@@ -581,7 +617,8 @@ function doLoadData(that, currk) {
               defaultclassName: defaultclassName,
               defaultCircleName: defaultCircleName,
               defaultclassNameClose: defaultclassNameClose,
-              defaultCircleNameClose: defaultCircleNameClose
+              defaultCircleNameClose: defaultCircleNameClose,
+              sqflag: sqflag
             });
           }
         });

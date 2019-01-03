@@ -45,17 +45,17 @@
     </view>
 
 
-    <view class='remark'>
+    <!-- <view class='remark'>
       <text class='remark-label'>备注：</text>
       <textarea class='remark-content' placeholder='请输入备注内容' value='{{remark}}' bindinput='inputRemark'></textarea>
-    </view>
+    </view> -->
   </view>
 
   <!--机构-->
-  <view class='student_box' hidden='{{flagchooserz}}'>
+  <view class='student_box'>
     <view class='class'>
       <view class='select_div'>
-        <view class='tit'>姓名：</view>
+        <view class='tit'>真实姓名：</view>
         <view class='select_box mar'>
           <input type='text' bindinput='changeName' placeholder='请输入姓名'></input>
         </view>
@@ -64,10 +64,10 @@
 
 
 
-     <view class='remark'>
+     <!-- <view class='remark'>
       <text class='remark-label'>备注：</text>
       <textarea class='remark-content' placeholder='请输入备注内容' bindinput='inputRemark'></textarea>
-    </view>  
+    </view>   -->
   </view>
   <view class=' bot_v'>
     <view class='tj' bindtap='submit'>申请</view>

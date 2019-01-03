@@ -2,10 +2,28 @@
 
 <view class='container'>
   <view class="top">
-    <view class='top-title'><view class='line'></view>联系方式</view>
+    <view class='top-title'><view class='line'></view>个人信息</view>
 
     <view class='top-content'>
       <view class='tel'>
+        <view class='phone'>
+          <text class='phone-label tittle phone_v'>真实姓名：</text>
+          <input class='phone-input phone_i' bindinput='nameInput' placeholder='请输入真实姓名' value='{{name}}'/>
+          <!-- <view class=''>更换手机号</view>  bindtap='clickMe'-->
+          
+        </view>
+      <view class='photo'>
+        <text class='phone-label tittle phone_v'>头<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>像：</text>
+        <view class='photo-content'>
+          <view class='add_v' wx:if="{{headImageUrl!=null}}">
+            <image class='bg_img' mode='aspectFill' src="{{headImageUrl}}" data-src="{{headImageUrl}}" bindtap="headImageUpload"></image>
+          </view>
+          <view class='add_v' wx:if="{{headImageUrl==null}}">
+            <image src='/images/add.png' bindtap='headImageUpload' class='add_img'></image>
+          </view>
+          <!-- <button class='cut_pic' bindtap='cutPic'>裁剪封面图</button> -->
+        </view>
+      </view>
         <view class='phone'>
           <text class='phone-label tittle phone_v'>联系电话：</text>
           <input class='phone-input phone_i' bindinput='phoneInput' placeholder='请输入联系方式' value='{{telephone}}'/>

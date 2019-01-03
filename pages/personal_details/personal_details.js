@@ -4,6 +4,20 @@ var app = getApp()
 var myData = require('../../utils/data')
 var util = require('../../utils/util')
 var network = require("../../utils/network.js")
+var config = require("../../utils/config.js")
+var COS = require("../../utils/cos-wx-sdk-v5.js")
+var cos = new COS({
+  getAuthorization: function (params, callback) {//获取签名 必填参数
+    // 方法二（适用于前端调试）
+    var authorization = COS.getAuthorization({
+      SecretId: config.SecretId,
+      SecretKey: config.SecretKey,
+      Method: params.Method,
+      Key: params.Key
+    });
+    callback(authorization);
+  }
+});
 Page({
   // 页面初始数据
   data: {
@@ -34,6 +48,8 @@ Page({
     wecatVisibility: "", //微信可见类型 
     itemsa: "",
     itemsb: "",
+    name: "",
+    headImageUrl: "",
     list: [{
         'id': 0,
         'name': "课程1",
@@ -149,6 +165,8 @@ Page({
       var industrySummary = res.industrySummary;
       var industryName = res.industryName;
       var inviterId = res.inviterId;
+      var name = res.name;
+      var headUrl = res.headUrl;
       if (industryName == null) {
         industryName = "";
       }
@@ -182,7 +200,9 @@ Page({
         wecatVisibilityValue: wecatVisibilityValue,
         itemsa: itema,
         itemsb: itemb,
-        selectOne: industryName
+        selectOne: industryName,
+        name:name,
+        headImageUrl: headUrl
 
       });
       that.bindTextAreaChangejl();
@@ -245,6 +265,62 @@ Page({
     });
   },
 
+  headImageUpload: function () {
+    var that = this;
+    console.log("ssssssssssssssssss");
+    var baseUrl = "https://sysykj-1257940010.cos.ap-chengdu.myqcloud.com/";
+    //    var baseUrl="";
+    console.log(baseUrl);
+    var imgUrl = "";
+    // 选择文件
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        if (!(res && res.tempFilePaths)) {
+          return;
+        }
+        var filePath = res.tempFilePaths[0];
+        var Key = filePath.substr(filePath.lastIndexOf('/') + 1); // 这里指定上传的文件名
+        var imgUrl = baseUrl + Key;//图片的获取路径
+        console.log("imgUrl:");
+        console.log(imgUrl);
+
+        cos.postObject({
+          Bucket: config.Bucket,
+          Region: config.Region,
+          Key: Key,
+          FilePath: filePath,
+          onProgress: function (info) {
+
+          }
+        },
+          function (err, data) {
+            if (!err) { //上传成功
+              var param = {};
+              param.headUrl = imgUrl;
+              network.doPost('updateHeadUrl', param, function (res) {
+                that.setData({
+                  'headImageUrl': imgUrl
+                });
+              });
+            }
+          }
+        );
+      }
+    });
+  },
+
+
+  
+  //获取真实姓名
+  nameInput: function(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+
   //获取电话号码
   phoneInput: function(e) {
     this.setData({
@@ -276,6 +352,15 @@ Page({
   },
   doSave: function(e) {
     var that = this;
+
+    var name = that.data.name;
+    if (name == null || name == '') {
+      wx.showToast({
+        title: '真实姓名不允许为空!',
+      })
+      return;
+    };
+
     var telephone = that.data.telephone;
     if (telephone == null || telephone == '') {
       wx.showToast({
@@ -304,6 +389,7 @@ Page({
 
 
     var param = {
+      "name":this.data.name,
       "userTelephone": this.data.telephone,
       "code": this.data.code,
       "userWecat": this.data.wecat,
@@ -607,3 +693,4 @@ var settime = function(that) {
     settime(that)
   }, 1000)
 }
+
